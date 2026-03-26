@@ -27,7 +27,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ steps.owner.outputs.owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GHCR_PAT }}
 
       - name: Docker meta
         id: meta
@@ -39,24 +39,13 @@ jobs:
             type=ref,event=branch
 
       - name: Build and push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
-      - name: Make package public
-        env:
-          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          curl -s -X PATCH \
-            -H "Authorization: Bearer ${GHCR_TOKEN}" \
-            -H "Accept: application/vnd.github+json" \
-            -H "Content-Type: application/json" \
-            -d '{ "visibility": "public" }' \
-            "https://api.github.com/user/packages/container/${{ steps.owner.outputs.owner }}%2Ftaxfile/visibility" || true
 
       - name: Output image ref
         run: echo "Image pushed: ${{ steps.meta.outputs.tags }}"
