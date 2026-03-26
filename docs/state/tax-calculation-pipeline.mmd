@@ -1,0 +1,38 @@
+flowchart TD
+    A[OrchestratorInput] --> B[Income Aggregation]
+    B --> C[W-2 Wages + 1099 Income + Other Income]
+    C --> D[Schedule 1: Additional Income + Adjustments]
+    D --> E[AGI = Total Income - Adjustments]
+    E --> F[Deduction Resolver]
+    F --> G{Standard > Itemized?}
+    G -->|Yes| H[Standard Deduction from Config]
+    G -->|No| I[Itemized: SALT cap + Mortgage + Charity + Medical]
+    H --> J[Taxable Income = AGI - Deductions]
+    I --> J
+    J --> K[Form 1040 Core: Tax Bracket Calculation]
+    K --> L[Schedule D: Capital Gains + QDI Adjustment]
+    L --> M[Schedule 2: Additional Taxes + SE Tax]
+    M --> N[Schedule 3: Nonrefundable Credits]
+    N --> O[Schedule 8812: CTC Calculation]
+    O --> P[Tax After Credits = Tax - Credits]
+    P --> Q[Total Payments = Withheld + Estimated]
+    Q --> R{Payments > Tax?}
+    R -->|Yes| S[Refund = Payments - Tax]
+    R -->|No| T[Amount Owed = Tax - Payments]
+    S --> U[CompleteTaxReturn.federal]
+    T --> U
+    U --> V[NJ Tax Engine]
+    V --> W[NJ Taxable Income]
+    W --> X{Property Tax Credit > Deduction Savings?}
+    X -->|Yes| Y[Apply $500 Credit Cap]
+    X -->|No| Z[Deduct Property Tax]
+    Y --> AA[NJ Tax via Progressive Brackets]
+    Z --> AA
+    AA --> AB[NJ Refund/Owed]
+    AB --> AC[CompleteTaxReturn.newJersey]
+    AC --> AD[TaxSummary + AuditTrail + Flags]
+
+    style A fill:#e1f5fe
+    style U fill:#c8e6c9
+    style AC fill:#c8e6c9
+    style AD fill:#fff9c4

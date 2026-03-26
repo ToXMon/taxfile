@@ -1,0 +1,15 @@
+node_modules
+.next
+.git
+.gitignore
+*.md
+data/tests
+data/test-data
+data/test-results
+docs
+.github
+taxfile-workpack
+*.tsbuildinfo
+next-env.d.ts
+.eslintrc.json
+.DS_Store

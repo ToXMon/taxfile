@@ -1,0 +1,34 @@
+sequenceDiagram
+    participant User
+    participant UploadStep
+    participant API as /api/documents/extract
+    participant Pipeline as extraction/pipeline
+    participant OCR as ocr/tesseract
+    participant Detector as type-detection
+    participant Mapper as field-mapper
+    participant Flagger as flagger
+    participant Store as Zustand Store
+
+    User->>UploadStep: Select file(s) + type hint
+    UploadStep->>API: POST FormData {file, documentType}
+    API->>Pipeline: extractDocument(file, typeHint)
+    Pipeline->>OCR: extractTextFromFile(file)
+    OCR-->>Pipeline: OCRResult {fullText, blocks}
+
+    alt typeHint provided and valid
+        Pipeline->>Detector: Use typeHint directly
+    else no typeHint
+        Pipeline->>Detector: detectDocumentType(fullText)
+        Detector-->>Pipeline: {detectedType, confidence, reason}
+    end
+
+    Pipeline->>Mapper: mapFields(docType, ocrResult)
+    Mapper-->>Pipeline: FormLineMap {fields, confidence}
+
+    Pipeline->>Flagger: flagAnomalies(fields, docType)
+    Flagger-->>Pipeline: TaxLineItem[] with flagged updates
+
+    Pipeline-->>API: ExtractedDocument
+    API-->>UploadStep: JSON {id, type, fields, confidence}
+    UploadStep->>Store: addDocument(extracted)
+    Store-->>User: Document appears in list

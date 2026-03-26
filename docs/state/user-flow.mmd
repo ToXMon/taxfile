@@ -1,0 +1,49 @@
+stateDiagram-v2
+    [*] --> UPLOAD
+    UPLOAD --> REVIEW: Documents uploaded
+    REVIEW --> QUESTIONS: All docs reviewed
+    QUESTIONS --> SUMMARY: Answers validated
+    SUMMARY --> FORMS: Return calculated
+    FORMS --> [*]: PDFs downloaded
+
+    REVIEW --> UPLOAD: Back
+    QUESTIONS --> REVIEW: Back
+    SUMMARY --> QUESTIONS: Back
+    FORMS --> SUMMARY: Back
+
+    state UPLOAD {
+        [*] --> DragDrop
+        DragDrop --> OCRProcessing: File selected
+        OCRProcessing --> TypeDetection
+        TypeDetection --> FieldMapping
+        FieldMapping --> ConfidenceCheck
+        ConfidenceCheck --> DragDrop: Low confidence
+        ConfidenceCheck --> [*]: Accepted
+    }
+
+    state REVIEW {
+        [*] --> SelectDoc
+        SelectDoc --> ViewFields
+        ViewFields --> EditField: Low confidence
+        EditField --> ConfirmReview
+        ViewFields --> ConfirmReview
+        ConfirmReview --> [*]
+    }
+
+    state SUMMARY {
+        [*] --> DisplaySummary
+        DisplaySummary --> ViewSchedules
+        ViewSchedules --> DisplaySummary
+        DisplaySummary --> ViewAuditTrail
+        ViewAuditTrail --> DisplaySummary
+        DisplaySummary --> [*]: Continue
+    }
+
+    state FORMS {
+        [*] --> SelectForm
+        SelectForm --> PreviewPDF
+        PreviewPDF --> DownloadSingle
+        DownloadSingle --> [*]
+        SelectForm --> DownloadAllZIP
+        DownloadAllZIP --> [*]
+    }

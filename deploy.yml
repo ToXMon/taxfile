@@ -1,0 +1,53 @@
+version: "2.0"
+
+services:
+  app:
+    image: ghcr.io/toxmon/taxfile:main
+    params:
+      storage:
+        - name: data
+          mount: /app/data
+    expose:
+      - port: 3000
+        as: 80
+        to:
+          - global: true
+        http_options:
+          max_body_size: 52428800
+          read_timeout: 60000
+          send_timeout: 60000
+          next_cases:
+            - error
+            - timeout
+            - "502"
+            - "503"
+            - "504"
+
+profiles:
+  compute:
+    app:
+      resources:
+        cpu:
+          units: 1
+        memory:
+          size: 2Gi
+        storage:
+          - name: app-storage
+            size: 2Gi
+          - name: data
+            size: 5Gi
+            attributes:
+              class: beta2
+              persistent: true
+  placement:
+    mainstream:
+      pricing:
+        app:
+          denom: uact
+          amount: 5000
+
+deployment:
+  app:
+    mainstream:
+      profile: app
+      count: 1
