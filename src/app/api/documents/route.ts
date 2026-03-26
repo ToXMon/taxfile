@@ -8,7 +8,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import type { ExtractedDocument, DocumentType } from '@/lib/types';
+import type { ExtractedDocument } from '@/lib/types';
 
 const documents: Map<string, ExtractedDocument> = new Map();
 

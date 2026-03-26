@@ -33,7 +33,6 @@ function makeLine(value: number, label: string, line: string, irsRef: string, no
 const SE_NET_EARNINGS_FACTOR = 0.9235;
 
 /** Combined SE tax rate: 12.4% SS + 2.9% Medicare = 15.3% per IRC §1401 */
-const SE_TAX_RATE = 0.153;
 
 /** Social security wage base limit (2025) — half of SE tax only applies below this */
 const SS_WAGE_BASE_2025 = 176100;

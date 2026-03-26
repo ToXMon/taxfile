@@ -12,10 +12,10 @@ import type {
 } from '@/lib/types';
 import { FEDERAL_TAX_2025, NJ_TAX_2025, CREDITS_2025 } from '@/config/tax-year/2025';
 import { aggregateIncome, buildScheduleB, calculateScheduleD, calculateSchedule1, resolveDeduction, calculateScheduleA, calculate1040Core, calculateSchedule2, calculateSchedule3 } from './federal';
-import type { IncomeSummary } from './types';
+
 import { calculateCTC } from './credits/child-tax-credit';
 import { calculateEITC, calculateEducationCredits } from './credits/eitc-education';
-import { aggregateNJIncome, toNJFilingStatus, calculateNJScheduleB, calculateNJScheduleA, calculateNJScheduleC, calculateNJ1040, calculatePropertyTaxElection, calculateNJEITC } from './nj';
+import { aggregateNJIncome, toNJFilingStatus, calculateNJScheduleB, calculateNJScheduleA, calculateNJScheduleC, calculateNJ1040, calculatePropertyTaxElection } from './nj';
 
 // ─── Types ──────────────────────────────────────────────────────────
 
@@ -124,9 +124,6 @@ export function calculateFullReturn(input: OrchestratorInput): CompleteTaxReturn
   const fedTaxAfterCredits = Math.max(0, fedTax - fedCredits);
   const fedRefundable = ctc.refundableCTC + eitc.credit + edu.aotcRefundable;
   const njWithholding = documents.filter(d => d.type === 'W2').reduce((s, d) => s + (d.fields['stateTax']?.value ?? 0), 0);
-  const fedWithholding = documents.filter(d => d.type === 'W2').reduce((s, d) => s + (d.fields['federalTax']?.value ?? 0), 0);
-  const fedPayments = fedWithholding;
-  const fedRefundOrOwed = fedPayments - fedTaxAfterCredits + fedRefundable;
 
   // ═══ NJ STATE PIPELINE ═══════════════════════════════════════════
 
@@ -164,8 +161,6 @@ export function calculateFullReturn(input: OrchestratorInput): CompleteTaxReturn
   const ptElection = calculatePropertyTaxElection({ propertyTaxesPaid, njTaxableIncome: Math.max(0, njIncome.njGrossIncome - njSchA.chosenDeduction), filingStatus: njFS }, NJ_TAX_2025);
   allFlags.push(...ptElection.flags);
 
-  // 19. NJ EITC
-  const njEitc = calculateNJEITC(eitc.credit, CREDITS_2025.nj);
 
   // 20. NJ-1040 core
   const njCore = calculateNJ1040({

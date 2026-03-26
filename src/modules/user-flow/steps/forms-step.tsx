@@ -8,7 +8,6 @@
 
 import { useState, useCallback, useEffect } from 'react';
 import { useTaxReturnStore } from '@/stores/tax-return-store';
-import { downloadForms } from '@/modules/forms-generation/assembler';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';

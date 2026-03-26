@@ -185,7 +185,6 @@ export function resolveDeduction(
   // ── Choose Method ──────────────────────────────────────────────────
   const isItemized = itemizedTotal > standardTotal;
   const chosen = isItemized ? itemizedDeduction : standardDeduction;
-  const savings = Math.abs(itemizedTotal - standardTotal);
 
   return {
     standardDeduction,
