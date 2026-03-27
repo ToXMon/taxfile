@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consumer Protection Statutes: Disclaimer & Waiver Enforceability Research</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 960px; margin: 40px auto; padding: 0 20px; line-height: 1.7; color: #1a1a1a; background: #fff; }
+h1 { font-size: 1.6em; text-align: center; border-bottom: 3px double #333; padding-bottom: 15px; margin-bottom: 5px; }
+.subtitle { text-align: center; color: #555; font-style: italic; margin-bottom: 30px; font-size: 0.95em; }
+h2 { font-size: 1.3em; color: #1a3a5c; border-bottom: 2px solid #1a3a5c; padding-bottom: 5px; margin-top: 35px; }
+h3 { font-size: 1.1em; color: #2a5a3c; margin-top: 25px; margin-bottom: 8px; }
+h4 { font-size: 1em; color: #333; margin-top: 18px; margin-bottom: 6px; font-style: italic; }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.92em; }
+th, td { border: 1px solid #ccc; padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: #f0f4f8; font-weight: bold; color: #1a3a5c; }
+tr:nth-child(even) { background: #f9f9f9; }
+.settled { border-left: 4px solid #2a7a3c; padding-left: 12px; margin: 12px 0; }
+.gray { border-left: 4px solid #c4a000; padding-left: 12px; margin: 12px 0; background: #fffef0; }
+.implication { border-left: 4px solid #8b0000; padding-left: 12px; margin: 12px 0; background: #fff5f5; }
+.citation { color: #1a3a5c; font-weight: bold; }
+blockquote { border-left: 3px solid #999; margin: 12px 0; padding: 8px 15px; color: #444; font-style: italic; background: #f9f9f9; }
+.toc { background: #f5f7fa; padding: 20px 25px; border: 1px solid #ddd; margin: 20px 0; }
+.toc a { color: #1a3a5c; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.toc ul { list-style: none; padding-left: 0; }
+.toc ul ul { padding-left: 20px; }
+.toc li { margin: 4px 0; }
+.disclaimer-box { background: #fff3cd; border: 1px solid #ffc107; padding: 12px 15px; margin: 20px 0; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<div class="disclaimer-box">
+<strong>LEGAL RESEARCH DISCLAIMER:</strong> This memorandum is prepared for informational and internal strategic planning purposes only. It does not constitute legal advice and should not be relied upon as such. No attorney-client relationship is created. All conclusions are based on publicly available authorities as of March 2026 and are subject to change based on subsequent judicial decisions, legislative amendments, or regulatory guidance. Consult qualified legal counsel before making compliance decisions.
+</div>
+
+<h1>Consumer Protection Statutes:<br>Disclaimer & Waiver Enforceability</h1>
+<p class="subtitle">New Jersey Consumer Fraud Act &bull; California Consumer Legal Remedies Act &bull; Magnuson-Moss Warranty Act<br>Research Memorandum &mdash; March 2026</p>
+
+<div class="toc">
+<strong>Table of Contents</strong>
+<ul>
+<li><a href="#part-a">Part A: New Jersey Consumer Fraud Act (N.J.S.A. 56:8-1 et seq.)</a>
+  <ul>
+  <li><a href="#a1">A.1 &mdash; Can CFA Claims Be Disclaimed or Waived by Contract?</a></li>
+  <li><a href="#a2">A.2 &mdash; Fenwick v. Kay American Jeep: Strict Liability for Regulatory Violations</a></li>
+  <li><a href="#a3">A.3 &mdash; Cox v. Sears Roebuck: Ascertainable Loss & Regulatory Violations</a></li>
+  <li><a href="#a4">A.4 &mdash; Gennari v. Weichert: CFA Liability for Agents</a></li>
+  <li><a href="#a5">A.5 &mdash; Arbitration Clauses and CFA Claims (Atalese, Skuse, Pace v. Hamilton Cove)</a></li>
+  <li><a href="#a6">A.6 &mdash; Three-Part Test for CFA Liability</a></li>
+  <li><a href="#a7">A.7 &mdash; N.J.S.A. 56:8-2: Definition of Unlawful Practice</a></li>
+  <li><a href="#a8">A.8 &mdash; Does the CFA Apply to Software Transactions?</a></li>
+  </ul>
+</li>
+<li><a href="#part-b">Part B: California Consumer Legal Remedies Act (Civ. Code &sect;1750 et seq.)</a>
+  <ul>
+  <li><a href="#b1">B.1 &mdash; Can CLRA Claims Be Disclaimed?</a></li>
+  <li><a href="#b2">B.2 &mdash; Covered Transactions: &sect;1750</a></li>
+  <li><a href="#b3">B.3 &mdash; Prohibited Practices: &sect;1752 / &sect;1770</a></li>
+  <li><a href="#b4">B.4 &mdash; Exceptions: When CLRA Does Not Apply (&sect;1751)</a></li>
+  <li><a href="#b5">B.5 &mdash; CLRA and Adhesion Contracts</a></li>
+  <li><a href="#b6">B.6 &mdash; Relationship Between CLRA and UCC Warranties</a></li>
+  <li><a href="#b7">B.7 &mdash; Does CLRA Apply to Software Transactions?</a></li>
+  </ul>
+</li>
+<li><a href="#part-c">Part C: Magnuson-Moss Warranty Act (15 U.S.C. &sect;2301 et seq.)</a>
+  <ul>
+  <li><a href="#c1">C.1 &mdash; When Does MMWA Apply to Software?</a></li>
+  <li><a href="#c2">C.2 &mdash; &sect;2301(1): Definition of Consumer Product</a></li>
+  <li><a href="#c3">C.3 &mdash; &sect;2301(6): Definition of Written Warranty</a></li>
+  <li><a href="#c4">C.4 &mdash; &sect;2308: Implied Warranty Disclaimer Prohibition</a></li>
+  <li><a href="#c5">C.5 &mdash; Does a Software EULA Disclaimer Count as a Written Warranty?</a></li>
+  <li><a href="#c6">C.6 &mdash; Interaction Between MMWA and UCC &sect;2-316</a></li>
+  <li><a href="#c7">C.7 &mdash; &sect;2310: Remedial Provisions</a></li>
+  </ul>
+</li>
+<li><a href="#summary">Comparative Summary & Strategic Implications</a></li>
+</ul>
+</div>
+
+<hr>
+
+<!-- ==================== PART A ==================== -->
+<h2 id="part-a">Part A: New Jersey Consumer Fraud Act (N.J.S.A. 56:8-1 et seq.)</h2>
+
+<h3 id="a1">A.1 &mdash; Can CFA Claims Be Disclaimed or Waived by Contract?</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> New Jersey Consumer Fraud Act claims <em>cannot</em> be prospectively disclaimed or waived by contract. The CFA is a remedial statute that the New Jersey Supreme Court has consistently construed liberally in favor of consumers. No contractual provision&mdash;including merger clauses, waiver provisions, or general disclaimers&mdash;has been held to bar a CFA claim. The Act's protections are statutory and non-waivable as a matter of New Jersey public policy.
+</div>
+
+<div class="gray">
+<strong>GRAY AREA:</strong> While no reported decision directly holds that a EULA or software agreement's disclaimer bars a CFA claim, the absence of any such holding, combined with the CFA's uniformly pro-consumer jurisprudence, makes the enforceability of any such disclaimer extraordinarily unlikely. The closest analogous context is arbitration waivers (discussed in A.5 below), where the Court has imposed heightened requirements for any contractual surrender of CFA-related rights.
+</div>
+
+<p><span class="citation">Key Authority:</span> The CFA's non-waivable character is derived from its remedial purpose and the court's consistent interpretive approach. See <em>Cox v. Sears Roebuck & Co.</em>, 138 N.J. 2, 17 (1994) ("The Consumer Fraud Act is a remedial statute and should be construed liberally in favor of consumers."); <em>Moskowitz v. Digital Equipment Corp.</em>, 152 N.J. 349, 373 (1998) (CFA applied broadly to technology-related consumer transactions). The Act provides treble damages, attorney's fees, and costs under N.J.S.A. 56:8-19, reflecting the Legislature's intent to create powerful non-waivable consumer remedies.</p>
+
+<p><strong>ACTUAL LEGAL STANDARD:</strong> The CFA creates a statutory cause of action that vests at the time of the unlawful practice. Because the right to bring a CFA claim arises from statute rather than contract, no contractual provision can eliminate it. A party cannot contract out of a statutory right designed to protect the public. The statute's plain language contains no waiver provision, and the courts have supplied none.</p>
+
+<div class="implication">
+<strong>PRACTICAL IMPLICATION FOR TAX SOFTWARE DEVELOPER:</strong> Any EULA clause stating that the user waives CFA claims, disclaims liability under the CFA, or agrees that the software is provided without any statutory consumer protection rights is <strong>void and unenforceable</strong> under New Jersey law. Do not include such provisions&mdash;they provide no protection and may be used against the company as evidence of bad faith or consciousness of liability. Focus compliance efforts on ensuring that marketing claims, feature descriptions, and pricing representations are accurate and non-deceptive, as these are the primary bases for CFA liability in the software context.
+</div>
+
+<h3 id="a2">A.2 &mdash; Fenwick v. Kay American Jeep: Strict Liability for Regulatory Violations</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> <span class="citation">Fenwick v. Kay American Jeep, Inc.</span>, 72 N.J. 372 (1977), established that violations of regulations promulgated under the CFA (N.J.A.C. 13:45A et seq.) constitute per se unlawful practices under N.J.S.A. 56:8-2, <em>without any requirement of intent, knowledge, or culpability</em>. A party subject to the regulations is presumed to know them, and any violation is automatically a CFA violation regardless of the defendant's state of mind.
+</div>
+
+<p><span class="citation">Key Holding:</span> The NJ Supreme Court held that the omission of an odometer reading from a vehicle advertisement violated the CFA's implementing regulations even absent proof of intent to deceive. The Court distinguished between the intent requirements for different subsections of N.J.S.A. 56:8-2: the knowledge and intent requirement applies only to "the knowing concealment, suppression, or omission of any material fact," not to affirmative misrepresentations or regulatory violations.</p>
+
+<blockquote>
+"The requirement that knowledge and intent be shown is limited to the concealment, suppression or omission of any material fact." &mdash; <em>Fenwick</em>, 72 N.J. at 377, 371 A.2d 13.
+</blockquote>
+
+<div class="gray">
+<strong>GRAY AREA:</strong> <em>Fenwick</em> involved specific advertising regulations. The question of whether general CFA principles (unconscionable commercial practices, affirmative misrepresentations) also carry strict liability has been answered partially: affirmative misrepresentations under the first clause of 56:8-2 require knowing conduct, while regulatory violations under the third clause do not. The "unconscionable commercial practice" prong occupies a middle ground where courts examine the totality of circumstances.
+</div>
+
+<div class="implication">
+<strong>PRACTICAL IMPLICATION FOR TAX SOFTWARE DEVELOPER:</strong> If the NJ Division of Consumer Affairs has promulgated regulations applicable to tax preparation software or online services (e.g., specific advertising disclosure requirements, pricing transparency rules), violation of those regulations triggers strict CFA liability&mdash;even if the violation was inadvertent. The company must maintain rigorous compliance with any applicable NJ CFA regulations, as intent is irrelevant for regulatory violation claims.
+</div>
+
+<h3 id="a3">A.3 &mdash; Cox v. Sears Roebuck: Ascertainable Loss & Regulatory Violations</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> <span class="citation">Cox v. Sears Roebuck & Co.</span>, 138 N.J. 2 (1994), established three critical principles: (1) "ascertainable loss" under the CFA is synonymous with "measurable loss" and does not require actual out-of-pocket expenditure; (2) a violation of the CFA's Home Improvement Practices Regulations alone can establish the "unlawful practice" element of CFA liability; and (3) the CFA applies to services, not just goods.
+</div>
+
+<p><span class="citation">Key Holdings:</span></p>
+<ul>
+<li><strong>Ascertainable Loss:</strong> A victim need not actually spend money on repairs or suffer out-of-pocket expenditures. An estimate of damages calculated within a reasonable degree of certainty suffices. An inappropriate debt or lien against a consumer can constitute a loss before the consumer is obligated to pay.</li>
+<li><strong>Regulatory Violations as Unlawful Practice:</strong> Failure to comply with the Home Improvement Practices Regulations (N.J.A.C. 13:45A-16) constituted an unlawful practice under the CFA because the regulations were promulgated pursuant to the Attorney General's authority under N.J.S.A. 56:8-4.</li>
+<li><strong>CFA Covers Services:</strong> The CFA's protections extend to services (home improvement contracting), not merely the sale of tangible goods.</li>
+</ul>
+
+<div class="implication">
+<strong>PRACTICAL IMPLICATION FOR TAX SOFTWARE DEVELOPER:</strong> For a tax software product, ascertainable loss could include: (a) the cost of the software subscription itself if obtained through deceptive practices; (b) penalties or interest incurred due to incorrect tax calculations caused by software defects or misleading representations; (c) the cost of hiring a tax professional to correct errors; or (d) the value of time lost dealing with software failures. The "measurable loss" standard is low and plaintiff-friendly. Additionally, <em>Cox</em> confirms that CFA liability extends to service transactions, which supports application to software-as-a-service.
+</div>
+
+<h3 id="a4">A.4 &mdash; Gennari v. Weichert: CFA Liability for Agents</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> <span class="citation">Gennari v. Weichert Co. Realtors</span>, 148 N.J. 582 (1997), held that a real estate sales agent (Weichert) was liable under the CFA for affirmative misrepresentations made to purchasers of new homes, even though the agent was not the developer/seller. The Court rejected the argument that only the party directly selling the merchandise could be liable, establishing that any person who engages in prohibited conduct "in connection with the sale or advertisement of any merchandise or real estate" falls within the CFA's reach.
+</div>
+
+<p><span class="citation">Key Holding:</span> The CFA's language&mdash;"the act, use or employment by any person of any... misrepresentation... in connection with the sale or advertisement of any merchandise or real estate" (N.J.S.A. 56:8-2)&mdash;is broad enough to encompass intermediaries, agents, and service providers who participate in the sales process. Weichert was found liable as the "sole proximate cause" of the purchasers' damages based on its misrepresentations about home features and quality.</p>
+
+<div class="gray">
+<strong>GRAY AREA:</strong> <em>Gennari</em> did not directly address whether contractual waiver provisions in the purchase agreement could bar CFA claims. The case's primary contribution is extending CFA liability to non-seller participants in the transaction chain. However, the Court's broad, pro-consumer interpretive approach reinforces the conclusion that CFA rights are not subject to contractual limitation. No case subsequent to <em>Gennari</em> has allowed a contractual disclaimer to bar CFA claims.
+</div>
+
+<div class="implication">
+<strong>PRACTICAL IMPLICATION FOR TAX SOFTWARE DEVELOPER:</strong> If the tax software company makes representations about its product (e.g., "guarantees maximum refund," "IRS-compliant calculations," "free filing" when conditions apply) through any channel&mdash;website, marketing materials, in-app prompts, affiliate partners&mdash;those representations can form the basis of CFA liability. Third-party affiliates, referral partners, or marketplace platforms that make misrepresentations about the software in connection with its sale could also face CFA exposure, per <em>Gennari</em>'s broad liability standard.
+</div>
+
+<h3 id="a5">A.5 &mdash; Arbitration Clauses and CFA Claims</h3>
+
+<h4>Atalese v. U.S. Legal Services Group, L.P.</h4>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> <span class="citation">Atalese v. U.S. Legal Services Group, L.P.</span>, 219 N.J. 430 (2014), held that an arbitration clause in a consumer contract must <em>clearly and unambiguously</em> notify the consumer that she is waiving the right to seek relief in a judicial forum. An arbitration provision that fails to include express waiver-of-rights language is unenforceable. The Court emphasized that N.J.S.A. 56:8-2 requires consumer contracts to be "written in a simple, clear, understandable and easily readable way," and that arbitration provisions surrendering constitutional rights (access to courts) require equivalent clarity.
+</div>
+
+<p><span class="citation">Key Holding:</span> An arbitration clause that stated disputes "shall be resolved by binding arbitration" without explicitly stating that the consumer waived the right to seek relief in court was unenforceable. The Court treated the arbitration clause like any other contractual provision surrendering a fundamental right, requiring clear and unambiguous language.</p>
+
+<h4>Skuse v. Pfizer, Inc.</h4>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> <span class="citation">Skuse v. Pfizer, Inc.</span>, 244 N.J. 30 (2020), clarified that while <em>Atalese</em> requires express waiver language, that requirement can be satisfied through communications accompanying the arbitration agreement. Pfizer's Mutual Arbitration and Class Waiver Agreement, delivered via email with FAQ documents that clearly explained the rights being waived, satisfied <em>Atalese</em> even though the Agreement itself was characterized as a "training module." The Court held that an employee's continued employment for 60 days after receipt constituted assent where the waiver language was clear and unmistakable.
+</div>
+
+<p><span class="citation">Important Distinction:</span> <em>Skuse</em> arose in the employment context (LAD claims), not a consumer CFA context. However, the decision confirms that <em>Atalese</em>'s express waiver standard applies broadly and can be met through accompanying communications, not solely through the four corners of the arbitration clause itself.</p>
+
+<h4>Pace v. Hamilton Cove</h4>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> <span class="citation">Pace v. Hamilton Cove</span>, 254 N.J. 404 (2024), held that a class action waiver in a consumer lease agreement was enforceable even without an accompanying arbitration clause, reversing the Appellate Division's bright-line rule to the contrary. The NJ Supreme Court held that the FAA preempts state-law rules that disproportionately burden arbitration, and that class action waivers unconnected to arbitration agreements are subject to ordinary contract law principles (unconscionability analysis) rather than per se invalidation.
+</div>
+
+<div class="gray">
+<strong>GRAY AREA:</strong> The interaction between <em>Atalese</em> (express waiver required) and <em>Pace</em> (class action waivers enforceable under ordinary contract principles) creates tension. <em>Atalese</em> specifically addressed waivers of the right to a judicial forum in the arbitration context. <em>Pace</em> addressed class action waivers standing alone. Whether a stand-alone class action waiver in a consumer contract must meet <em>Atalese</em>'s express standard, or whether ordinary unconscionability analysis suffices, remains to be fully clarified. The 2023 Appellate Division decision in <em>Achey v. Cellco Partnership</em> declined to enforce an arbitration clause in a CFA class action, finding the clause insufficiently clear under <em>Atalese</em> and <em>Wang</em> standards.
+</div>
+
+<div class="implication">
+<strong>PRACTICAL IMPLICATION FOR TAX SOFTWARE DEVELOPER:</strong> If the EULA includes an arbitration clause covering CFA claims, it must contain <strong>express, clear, and unambiguous language</strong> stating that the user waives the right to seek relief in a judicial forum. Generic "disputes shall be arbitrated" language is insufficient under <em>Atalese</em>. However, even a perfectly drafted arbitration clause does <em>not</em> waive the underlying CFA claim&mdash;it only changes the forum from court to arbitration. The CFA claim itself remains alive in arbitration. A class action waiver in the EULA may be enforceable under <em>Pace</em>, but only if it survives general unconscionability analysis under New Jersey contract law.
+</div>
+
+<h3 id="a6">A.6 &mdash; Three-Part Test for CFA Liability</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> To establish CFA liability, a plaintiff must prove three elements: <span class="citation">(1) an unlawful practice</span> as defined in N.J.S.A. 56:8-2; <span class="citation">(2) an ascertainable loss</span>; and <span class="citation">(3) a causal connection</span> between the unlawful practice and the ascertainable loss.
+</div>
+
+<table>
+<tr><th>Element</th><th>Legal Standard</th><th>Key Authority</th></tr>
+<tr>
+  <td><strong>Unlawful Practice</strong></td>
+  <td>Any of: (a) unconscionable/abusive commercial practice; (b) deception, fraud, false pretense, false promise, or misrepresentation; (c) knowing concealment, suppression, or omission of material fact with intent to induce reliance; OR (d) violation of any regulation promulgated under N.J.S.A. 56:8-4 (strict liability).</td>
+  <td><em>Fenwick</em>, 72 N.J. 372; <em>Cox</em>, 138 N.J. 2; N.J.S.A. 56:8-2</td>
+</tr>
+<tr>
+  <td><strong>Ascertainable Loss</strong></td>
+  <td>Measurable loss; does not require actual out-of-pocket expenditure. Estimate within reasonable degree of certainty suffices. Inappropriate debt/lien can constitute loss before payment obligation arises.</td>
+  <td><em>Cox</em>, 138 N.J. 2; <em>Harnish v. Widener</em>, 833 F.3d 298 (3d Cir. 2016)</td>
+</tr>
+<tr>
+  <td><strong>Causal Connection</strong></td>
+  <td>Plaintiff must show that the unlawful practice caused the loss. Not strict causation&mdash;the loss must be traceable to the CFA violation.</td>
+  <td><em>Harnish v. Widener</em>, 833 F.3d at 305</td>
+</tr>
+</table>
+
+<div class="implication">
+<strong>PRACTICAL IMPLICATION FOR TAX SOFTWARE DEVELOPER:</strong> The three-part test means that even if a plaintiff proves deceptive conduct (element 1), they still must prove measurable loss (element 2) and causation (element 3). For tax software, the loss element is typically satisfied by the subscription cost, penalty costs, or correction costs. The causation element requires showing that the specific deceptive practice (e.g., misleading "free" claim) caused the user to purchase or use the software and incur the loss. These elements provide some defense depth, but the thresholds are low and plaintiff-friendly.
+</div>
+
+<h3 id="a7">A.7 &mdash; N.J.S.A. 56:8-2: Definition of Unlawful Practice</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> N.J.S.A. 56:8-2 defines "unlawful practice" as:
+</div>
+
+<blockquote>
+"The act, use or employment by any person of any commercial practice that is unconscionable or abusive, deception, fraud, false pretense, false promise, misrepresentation, or the knowing, concealment, suppression, or omission of any material fact with intent that others rely upon such concealment, suppression or omission, in connection with the sale or advertisement of any merchandise or real estate, or with the subsequent performance of such person as aforesaid, whether or not any consumer has in fact been misled, deceived or damaged thereby."
+</blockquote>
+
+<p><strong>Three distinct bases for liability:</strong></p>
+<ol>
+<li><strong>Affirmative misrepresentations</strong> (deception, fraud, false pretense, false promise, misrepresentation): The statute's structure, read with <em>Fenwick</em>, requires knowing conduct for affirmative misrepresentations.</li>
+<li><strong>Knowing omissions</strong> (knowing concealment, suppression, or omission of material fact with intent to induce reliance): Requires both knowledge and intent.</li>
+<li><strong>Regulatory violations</strong> (violation of regulations under N.J.S.A. 56:8-4): Strict liability&mdash;no intent or knowledge required. <em>Fenwick</em>, 72 N.J. at 377.</li>
+</ol>
+
+<p><strong>Critical phrase:</strong> "whether or not any consumer has in fact been misled, deceived or damaged thereby"&mdash;this means the unlawful practice is established by the conduct itself, not by the consumer's subjective reaction. However, ascertainable loss remains required for a private right of action.</p>
+
+<h3 id="a8">A.8 &mdash; Does the CFA Apply to Software Transactions?</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> The CFA applies to the sale or advertisement of "merchandise," defined by N.J.S.A. 56:8-1(c) as "any objects, wares, goods, commodities, <strong>services</strong> or <strong>anything</strong> offered, directly or indirectly to the public for sale." The definition is extraordinarily broad&mdash;it explicitly includes services and uses the catch-all phrase "or anything." The NJ Supreme Court has applied the CFA to technology-related consumer transactions in <em>Moskowitz v. Digital Equipment Corp.</em>, 152 N.J. 349 (1998) (computer equipment and services).
+</div>
+
+<div class="gray">
+<strong>GRAY AREA:</strong> No reported New Jersey decision directly applies the CFA to downloadable software or SaaS products. However, the statutory language presents no barrier: (1) "services" is explicitly included, covering SaaS; (2) "anything offered to the public for sale" is a catch-all that would encompass software licenses; (3) <em>Moskowitz</em> applied the CFA to technology transactions. The B2B context raises a separate question: in <em>Princeton Healthcare System</em>, the NJ Supreme Court adopted a four-factor test for determining whether a B2B transaction falls within the CFA: (1) complexity of the transaction; (2) sophistication of the parties; (3) nature of the relationship; (4) public availability of the merchandise. For mass-market tax software sold to individual consumers, all four factors favor CFA applicability.
+</div>
+
+<div class="implication">
+<strong>PRACTICAL IMPLICATION FOR TAX SOFTWARE DEVELOPER:</strong> The CFA almost certainly applies to tax software sold to New Jersey consumers. The statutory definition of "merchandise" is broad enough to encompass software, and the CFA has been applied to technology transactions. The company should assume CFA coverage and structure its marketing, disclosures, and user communications accordingly. The four-factor B2B test is irrelevant for consumer-facing products but could be relevant if the software is marketed to businesses or tax professionals.
+</div>
+
+<hr>
+
+<!-- ==================== PART B ==================== -->
+<h2 id="part-b">Part B: California Consumer Legal Remedies Act (Civ. Code &sect;1750 et seq.)</h2>
+
+<h3 id="b1">B.1 &mdash; Can CLRA Claims Be Disclaimed?</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> <span class="citation">No.</span> Cal. Civ. Code &sect;1751 provides unambiguously: <strong>"Any waiver by a consumer of the provisions of this title is contrary to public policy and shall be unenforceable and void."</strong> This is an absolute statutory prohibition on CLRA waivers. Unlike the NJ CFA, where the non-waivability is judicially implied from the statute's remedial purpose, California has codified the non-waiver rule in explicit statutory text.
+</div>
+
+<p><span class="citation">Statutory Text (Cal. Civ. Code &sect;1751):</span> "Any waiver by a consumer of the provisions of this title is contrary to public policy and shall be unenforceable and void." (Added by Stats. 1970, Ch. 1550.)</p>
+
+<p>The term "consumer" is defined in Cal. Civ. Code &sect;1761(d) as "an individual who seeks or acquires, by purchase or lease, any goods or services for personal, family, or household purposes."</p>
+
+<div class="gray">
+<strong>GRAY AREA:</strong> The CLRA's non-waiver provision has been tested primarily in the context of arbitration agreements and class action waivers. The California Supreme Court has held that waivers of the right to seek public injunctive relief are invalid under California law broadly (see <em>McGee v. Aetna Life, etc.</em>). However, the interaction between the CLRA's non-waiver provision and the Federal Arbitration Act's preemption doctrine remains contested. In <em>Meyer v. Uber Technologies, Inc.</em>, California courts have grappled with whether requiring a consumer to arbitrate CLRA claims effectively constitutes a "waiver" of CLRA provisions. The prevailing view is that arbitration of CLRA claims is permissible (the forum changes, but the statutory right persists), but class action waivers that effectively eliminate the CLRA's remedial mechanisms may face challenges.
+</div>
+
+<div class="implication">
+<strong>PRACTICAL IMPLICATION FOR TAX SOFTWARE DEVELOPER:</strong> Any EULA clause attempting to disclaim CLRA rights, waive CLRA claims, or exclude CLRA liability is <strong>per se void and unenforceable</strong> under &sect;1751. This is even more explicit than the NJ CFA's judicially-implied non-waivability. Including such provisions provides zero legal protection and may demonstrate bad faith. Note: &sect;1751's non-waiver rule applies only to "consumers" as defined&mdash;if the software is sold exclusively to businesses for commercial purposes (not personal/family/household), the CLRA may not apply at all (see B.4 below).
+</div>
+
+<h3 id="b2">B.2 &mdash; Covered Transactions: &sect;1750</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> Cal. Civ. Code &sect;1750 declares unlawful "methods of competition and unfair or deceptive acts or practices undertaken by any person in a transaction intended to result or which results in the sale or lease of goods or services to any consumer." The CLRA covers transactions for the sale or lease of <strong>goods or services</strong> to <strong>consumers</strong> (individuals acquiring for personal, family, or household purposes under &sect;1761(d)).
+</div>
+
+<p><strong>Scope:</strong> The CLRA covers both goods and services. It applies to the transaction itself ("intended to result or which results in the sale or lease") and to practices connected with that transaction. Unlike some state UDAP statutes, the CLRA requires a transaction with a consumer&mdash;it does not cover deceptive advertising that never leads to a purchase (though California's Unfair Competition Law, Bus. & Prof. Code &sect;17200, fills that gap).</p>
+
+<h3 id="b3">B.3 &mdash; Prohibited Practices: &sect;1752 / &sect;1770</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> Cal. Civ. Code &sect;1752 provides: "The provisions of this title are not exclusive. The remedies provided herein for violation of any section of this title or for conduct proscribed by any section of this title shall be in addition to any other procedures or remedies for any violation or conduct provided for in any other law." This means CLRA remedies are <strong>additive</strong>&mdash;they supplement, rather than replace, UCC warranty claims, common law fraud claims, or other statutory remedies.
+</div>
+
+<p>Cal. Civ. Code &sect;1770 lists 23 specific prohibited practices, including:</p>
+<ul>
+<li>&sect;1770(a)(5): Representing that goods or services have sponsorship, approval, characteristics, ingredients, uses, benefits, or quantities that they do not have</li>
+<li>&sect;1770(a)(7): Representing that goods or services are of a particular standard, quality, or grade, if they are not</li>
+<li>&sect;1770(a)(9): Advertising goods or services with intent not to sell them as advertised</li>
+<li>&sect;1770(a)(14): Using deceptive representations in marketing (false pricing, "bait and switch")</li>
+<li>&sect;1770(a)(16): Representing that a transaction confers rights or remedies that it does not confer</li>
+</ul>
+
+<div class="implication">
+<strong>PRACTICAL IMPLICATION FOR TAX SOFTWARE DEVELOPER:</strong> CLRA &sect;1770(a)(5) and (a)(7) could be triggered by misrepresentations about software capabilities (e.g., claiming the software handles all NJ tax situations when it does not). &sect;1770(a)(16) could apply if the EULA or marketing suggests the user has rights or remedies they do not actually have. Because &sect;1752 makes CLRA remedies additive to UCC warranty claims, a plaintiff could pursue both breach of implied warranty under UCC &sect;2-314 and CLRA &sect;1770 claims simultaneously for the same conduct.
+</div>
+
+<h3 id="b4">B.4 &mdash; Exceptions: When CLRA Does Not Apply (&sect;1751)</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> The CLRA does <strong>not</strong> apply to: (1) transactions with persons who are not "consumers" as defined (i.e., business-to-business transactions for commercial purposes); (2) advertising by or conduct of media outlets (newspapers, broadcasters) that are not themselves the sellers, unless the media outlet is directly engaged in the deceptive practice; (3) certain regulated industries where specific statutory schemes preempt the CLRA (e.g., some insurance and banking activities). The CLRA also requires a 30-day notice and cure period under &sect;1782(a) before filing suit, giving the defendant an opportunity to correct the violation.
+</div>
+
+<p><strong>30-Day Cure Right:</strong> Under Cal. Civ. Code &sect;1782(a), a consumer must give the business 30 days' written notice of the alleged violation and an opportunity to cure. If the business cures within 30 days, no action may be maintained. This is a significant practical distinction from the NJ CFA, which has no pre-suit cure requirement.</p>
+
+<div class="implication">
+<strong>PRACTICAL IMPLICATION FOR TAX SOFTWARE DEVELOPER:</strong> The 30-day cure provision under &sect;1782(a) is a valuable defense tool. If a consumer sends a CLRA demand letter, the company has 30 days to correct the alleged violation (e.g., fix a misleading website claim, issue a refund, correct a software feature) and avoid litigation. This cure right does not exist under the NJ CFA. Additionally, if the tax software is marketed exclusively to tax professionals or businesses for commercial use, the CLRA may not apply at all (though the UCL, Song-Beverly Act, and common law claims would remain available).
+</div>
+
+<h3 id="b5">B.5 &mdash; CLRA and Adhesion Contracts</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> California applies a two-prong unconscionability test to adhesion contracts: procedural unconscionability (unequal bargaining power, lack of meaningful choice) and substantive unconscionability (one-sided or oppressive terms). Both prongs need not be present in equal measure, but some of each must be present. <span class="citation">See Armendariz v. Foundation Health Psychcare Services, Inc.</span>, 24 Cal.4th 83 (2000); <em>Spare Parts, Inc. v. Continental Motors Corp.</em>, 104 Cal.App.3d 324 (1979).
+</div>
+
+<div class="gray">
+<strong>GRAY AREA:</strong> Even though &sect;1751 voids CLRA waivers, the question arises whether an adhesive EULA that contains a CLRA waiver is (a) simply void as to the waiver provision (severability), or (b) renders the entire arbitration clause or contract unenforceable. California courts have generally severed invalid provisions while enforcing the remainder, but the cumulative effect of multiple adhesive provisions can tip the balance toward finding the entire agreement unconscionable. The <em>Armendariz</em> framework applies primarily to arbitration agreements; its application to EULA disclaimer provisions is less developed.
+</div>
+
+<h3 id="b6">B.6 &mdash; Relationship Between CLRA and UCC Warranties</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> Cal. Civ. Code &sect;1752 expressly provides that CLRA remedies are "in addition to any other procedures or remedies for any violation or conduct provided for in any other law." This means CLRA claims and UCC warranty claims (implied merchantability under Cal. Com. Code &sect;2101 et seq., which adopts UCC &sect;2-314) can be pleaded and pursued simultaneously. They are not mutually exclusive. A plaintiff can seek UCC remedies (damages for breach of warranty) AND CLRA remedies (injunctive relief, actual damages, punitive damages) for the same underlying conduct.
+</div>
+
+<p><strong>Key Distinction:</strong> UCC warranty claims require privity of contract (or a &sect;2-318 extension) and focus on the product's conformity to contract expectations. CLRA claims focus on deceptive practices in the transaction and do not require privity in the same way. CLRA &sect;1780(a) provides for: (1) actual damages; (2) injunctive relief; (3) punitive damages when the defendant's conduct is willful; (4) attorney's fees; and (5) costs. UCC remedies are limited to contract damages unless otherwise provided.</p>
+
+<div class="implication">
+<strong>PRACTICAL IMPLICATION FOR TAX SOFTWARE DEVELOPER:</strong> A UCC &sect;2-316 implied warranty disclaimer (if properly drafted and conspicuous) may effectively bar UCC breach of warranty claims, but it will <strong>not</strong> bar CLRA claims arising from the same conduct. The CLRA provides an independent statutory cause of action that survives UCC disclaimers. For example, even if the EULA effectively disclaims the implied warranty of merchantability, a CLRA claim based on &sect;1770(a)(5) (misrepresenting software capabilities) would remain available to a California consumer. The Song-Beverly Consumer Warranty Act (Cal. Civ. Code &sect;1790 et seq.) adds another layer, as it restricts warranty disclaimers for consumer goods in California.
+</div>
+
+<h3 id="b7">B.7 &mdash; Does CLRA Apply to Software Transactions?</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> The CLRA applies to transactions for the sale or lease of "goods or services" to "consumers." Software sold to individuals for personal, family, or household use (e.g., personal tax preparation software) qualifies as both a "good" (under the UCC goods classification for standardized software) and a "service" (SaaS). California courts have applied consumer protection statutes to software transactions, though direct CLRA-on-software case law is sparse.
+</div>
+
+<div class="gray">
+<strong>GRAY AREA:</strong> No California appellate decision directly applies the CLRA to software. However, California's Unfair Competition Law (UCL, Bus. & Prof. Code &sect;17200) has been applied to software companies extensively (e.g., cases against TurboTax/Intuit for deceptive "free" advertising). The CLRA's broader remedial provisions (punitive damages, attorney's fees, injunctive relief) make it a more powerful tool than the UCL for individual plaintiffs. The 2024 California Attorney General actions against tax preparation companies under the UCL demonstrate the regulatory appetite for enforcement in this space. The absence of direct CLRA-on-software authority likely reflects plaintiffs' preference for the UCL (which has no privity or standing limitations) rather than any judicial conclusion that the CLRA does not apply.
+</div>
+
+<div class="implication">
+<strong>PRACTICAL IMPLICATION FOR TAX SOFTWARE DEVELOPER:</strong> Assume the CLRA applies to personal tax software sold to California consumers. The combination of CLRA + UCL + Song-Beverly Act creates a three-layer consumer protection regime in California that is among the most aggressive in the nation. A single deceptive practice (e.g., misleading "free" claim) could trigger all three statutes simultaneously. The 30-day cure right under &sect;1782(a) is the primary mitigation tool, and the company should have a rapid-response protocol for CLRA demand letters.
+</div>
+
+<hr>
+
+<!-- ==================== PART C ==================== -->
+<h2 id="part-c">Part C: Magnuson-Moss Warranty Act (15 U.S.C. &sect;2301 et seq.)</h2>
+
+<h3 id="c1">C.1 &mdash; When Does MMWA Apply to Software?</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> The MMWA most likely does <strong>not</strong> apply to purely intangible software (digital downloads, SaaS) because the Act's definition of "consumer product" is limited to "tangible personal property." See 15 U.S.C. &sect;2301(1). However, the MMWA may apply to software sold on physical media (CD-ROM, USB drive, pre-loaded on a tangible device) if the other jurisdictional requirements are met.
+</div>
+
+<div class="gray">
+<strong>GRAY AREA:</strong> No federal appellate decision has squarely addressed whether downloaded software qualifies as "tangible personal property" under the MMWA. The FTC's Interpretations at 16 CFR Part 700 confirm the tangible property requirement. However, courts have sometimes stretched "tangible" in other contexts (e.g., treating digital music as goods under the UCC). If a software company provides a written warranty with its product, the MMWA's restrictions on implied warranty disclaimers could become relevant if a court were to expand the tangible property definition. This is a low-probability but high-impact risk.
+</div>
+
+<h3 id="c2">C.2 &mdash; &sect;2301(1): Definition of Consumer Product</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> 15 U.S.C. &sect;2301(1) defines "consumer product" as:
+</div>
+
+<blockquote>
+"any <strong>tangible personal property</strong> which is distributed in commerce and which is normally used for personal, family, or household purposes (including any such property intended to be attached to or installed in any real property without regard to whether it is so attached or installed)."
+</blockquote>
+
+<p><strong>Key limitations:</strong></p>
+<ul>
+<li><strong>Tangible:</strong> Must be physical, touchable property. Intangible digital goods do not qualify.</li>
+<li><strong>Personal property:</strong> Excludes real property.</li>
+<li><strong>Personal, family, household purposes:</strong> Excludes products for commercial/industrial use.</li>
+<li><strong>Distributed in commerce:</strong> Must be in the stream of commerce.</li>
+<li><strong>Price threshold:</strong> The MMWA's disclosure requirements apply only to written warranties on consumer products costing more than $15. 16 CFR Part 701.</li>
+</ul>
+
+<p><strong>Exclusions explicitly listed in &sect;2301(4):</strong> The term "consumer product" does not include: (A) any article subject to the Federal Hazardous Substances Act; (B) any tobacco product; (C) any component of a consumer product (unless the component is itself a consumer product); and (D) items sold at judicial sale, etc.</p>
+
+<div class="implication">
+<strong>PRACTICAL IMPLICATION FOR TAX SOFTWARE DEVELOPER:</strong> Purely digital tax software (downloaded or SaaS) is almost certainly <strong>not</strong> a "consumer product" under the MMWA because it is not tangible personal property. However, if the software is sold on physical media (CD, USB) or pre-installed on a device sold to consumers, the tangible medium could potentially bring it within the MMWA's scope. The safest approach: assume the MMWA does not apply to digital-only software, but do not rely on this assumption if physical media distribution is used.
+</div>
+
+<h3 id="c3">C.3 &mdash; &sect;2301(6): Definition of Written Warranty</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> 15 U.S.C. &sect;2301(6) defines "written warranty" as:
+</div>
+
+<blockquote>
+(A) any written affirmation of fact or written promise made in connection with the sale of a consumer product by a supplier to a buyer which relates to the nature of the material or workmanship and affirms or promises that such material or workmanship is defect free or will meet a specified level of performance over a specified period of time; or
+
+(B) any undertaking in writing in connection with the sale by a supplier of a consumer product to refund, repair, replace, or take other remedial action with respect to such product in the event that such product fails to meet the specifications set forth in the undertaking,
+
+which written affirmation, promise, or undertaking becomes part of the basis of the bargain.
+</blockquote>
+
+<p><strong>Key elements:</strong> (1) Written; (2) Affirmation of fact or promise; (3) Relates to material/workmanship or performance; (4) Made in connection with sale; (5) Becomes part of the basis of the bargain. A warranty must be a <em>promise</em> or <em>affirmation</em>&mdash;not merely a description or opinion. "This software is great" is not a written warranty. "This software will accurately calculate your federal tax liability" could be.</p>
+
+<h3 id="c4">C.4 &mdash; &sect;2308: Implied Warranty Disclaimer Prohibition</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> 15 U.S.C. &sect;2308 provides:
+</div>
+
+<blockquote>
+"No supplier may disclaim or modify any implied warranty with respect to such consumer product if (1) such supplier makes any written warranty to the consumer with respect to such consumer product, (2) such supplier in connection with such written warranty takes any other action the effect of which is to disclaim or modify any implied warranty with respect to such consumer product, or (3) such product is subject to the provisions of section 2304(a)(2) of this title [full warranty requirements]."
+</blockquote>
+
+<p><strong>Plain meaning:</strong> If a supplier gives a written warranty on a consumer product, the supplier <strong>cannot disclaim or modify</strong> the implied warranties (merchantability, fitness for a particular purpose) that arise under state law. The UCC &sect;2-316 disclaimer mechanisms (conspicuous "merchantability" language, "as is" sales) are <strong>federal preempted</strong> to the extent they would disclaim implied warranties on a warranted consumer product.</p>
+
+<p><strong>Limited exception:</strong> &sect;2308 also provides that "implied warranties may be <em>limited in duration</em> to the duration of a written warranty of reasonable duration, if such limitation is conscionable and is set forth in clear and unmistakable language and prominently displayed on the face of the warranty." This allows duration limitation but not full disclaimer.</p>
+
+<div class="implication">
+<strong>PRACTICAL IMPLICATION FOR TAX SOFTWARE DEVELOPER:</strong> If the MMWA applies (physical media), and if the software includes a written warranty (e.g., "we warrant that the software will perform as described for 90 days"), then <strong>any EULA disclaimer of implied warranties is federally preempted and void</strong>. The company cannot use UCC &sect;2-316's disclaimer mechanisms. The only permissible limitation is a duration limitation (e.g., "implied warranties are limited to 90 days") if conscionable, clear, unmistakable, and prominently displayed. If the company wants to disclaim implied warranties, it must NOT provide any written warranty whatsoever&mdash;selling the product strictly "as is" without any written promise.
+</div>
+
+<h3 id="c5">C.5 &mdash; Does a Software EULA Disclaimer Count as a Written Warranty?</h3>
+
+<div class="gray">
+<strong>GRAY AREA:</strong> This is the critical analytical question. Most software EULAs contain disclaimers ("AS IS," "NO WARRANTY") rather than affirmations of fact or promises. Under the MMWA's definition, a disclaimer is the <em>opposite</em> of a written warranty. A EULA that says "this software is provided AS IS without any warranties" is not a written warranty under &sect;2301(6)&mdash;it is a disclaimer. However, if the same EULA or accompanying materials also contain any affirmative promise (e.g., "free updates for one year," "we will correct bugs reported within the warranty period," "accuracy guaranteed"), that promise could qualify as a written warranty, potentially triggering &sect;2308's prohibition on disclaiming implied warranties.
+</div>
+
+<p><strong>Critical analysis:</strong> The MMWA's interaction with software EULAs creates a paradox: (1) if the EULA contains only disclaimers and no affirmative promises, it is not a written warranty, and the MMWA's disclaimer restrictions do not apply; (2) if the EULA contains any affirmative promise about performance or quality, it may be a written warranty, triggering &sect;2308 and rendering the disclaimers ineffective. The company must choose: either make no promises (avoiding MMWA trigger) or make promises (accepting that implied warranties cannot be disclaimed).</p>
+
+<div class="implication">
+<strong>PRACTICAL IMPLICATION FOR TAX SOFTWARE DEVELOPER:</strong> Review all marketing materials, website content, in-app messages, and EULA provisions for any affirmative promises about software performance, accuracy, or quality. Phrases like "guaranteed accurate," "we stand behind our product," "free bug fixes," or "performance guaranteed" could constitute written warranties under the MMWA. If any such promise exists and the MMWA applies (tangible media), implied warranty disclaimers in the EULA are preempted. The safest approach: ensure all product descriptions are factual representations rather than promises, and avoid any language that could be construed as a warranty undertaking.
+</div>
+
+<h3 id="c6">C.6 &mdash; Interaction Between MMWA and UCC &sect;2-316</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> The MMWA <strong>preempts</strong> state UCC &sect;2-316 disclaimer mechanisms to the extent they conflict. If a written warranty exists on a consumer product, &sect;2308 prohibits what &sect;2-316 permits (disclaimer of implied warranties). The MMWA is the supreme authority on this point under the Supremacy Clause. However, where the MMWA does not apply (no written warranty, or product is not a consumer product), UCC &sect;2-316 governs implied warranty disclaimers.
+</div>
+
+<table>
+<tr><th>Scenario</th><th>Governing Law</th><th>Can Disclaim Implied Warranties?</th></tr>
+<tr>
+  <td>Consumer product + written warranty given</td>
+  <td>MMWA &sect;2308 (preempts UCC)</td>
+  <td><strong>NO</strong> (duration limitation only)</td>
+</tr>
+<tr>
+  <td>Consumer product + NO written warranty</td>
+  <td>UCC &sect;2-316</td>
+  <td>YES (if conspicuous, mentions merchantability, or "as is")</td>
+</tr>
+<tr>
+  <td>Non-consumer product (commercial use)</td>
+  <td>UCC &sect;2-316</td>
+  <td>YES (standard UCC requirements)</td>
+</tr>
+<tr>
+  <td>Intangible software (not a consumer product)</td>
+  <td>UCC &sect;2-316 (if goods) or common law</td>
+  <td>YES (if UCC applies and standard requirements met)</td>
+</tr>
+</table>
+
+<h3 id="c7">C.7 &mdash; &sect;2310: Remedial Provisions</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> 15 U.S.C. &sect;2310(d) provides a private right of action for consumers who are damaged by the failure of a supplier, warrantor, or service contractor to comply with any obligation under the MMWA or a written warranty. Key remedial features:
+</div>
+
+<ul>
+<li><strong>Fee-shifting:</strong> &sect;2310(d)(2) &mdash; Court shall award reasonable attorney's fees to a prevailing consumer, based on the time and expenses of the attorney.</li>
+<li><strong>Damages:</strong> &sect;2310(d)(1) &mdash; Actual damages, but not less than the difference between the purchase price and the value of the product as warranted (for breach of written warranty), or the purchase price (for breach of implied warranty when no written warranty exists).</li>
+<li><strong>No punitive damages:</strong> The MMWA does not provide for punitive damages (unlike the NJ CFA and CLRA).</li>
+<li><strong>Jurisdiction:</strong> &sect;2310(d)(3) &mdash; No jurisdictional minimum amount in controversy; actions may be brought in any district court or state court of competent jurisdiction without regard to the amount in controversy.</li>
+<li><strong>Informal dispute resolution:</strong> &sect;2310(a) &mdash; A warrantor may establish an informal dispute resolution mechanism that satisfies the FTC's requirements; if the consumer does not accept the resolution, the consumer may still sue.</li>
+</ul>
+
+<hr>
+
+<!-- ==================== SUMMARY ==================== -->
+<h2 id="summary">Comparative Summary & Strategic Implications</h2>
+
+<h3>Master Comparison Table</h3>
+<table>
+<tr>
+  <th>Issue</th>
+  <th>NJ CFA</th>
+  <th>California CLRA</th>
+  <th>Magnuson-Moss</th>
+</tr>
+<tr>
+  <td><strong>Can claims be disclaimed/waived?</strong></td>
+  <td><strong>NO</strong> (judicially implied from remedial purpose)</td>
+  <td><strong>NO</strong> (&sect;1751: statutory void provision)</td>
+  <td>N/A (MMWA is a warranty statute, not a fraud statute; but &sect;2308 prohibits disclaiming implied warranties when written warranty given)</td>
+</tr>
+<tr>
+  <td><strong>Source of non-waivability</strong></td>
+  <td>Judicial interpretation (<em>Cox</em>; <em>Moskowitz</em>)</td>
+  <td>Express statutory text (&sect;1751)</td>
+  <td>Statutory preemption of UCC &sect;2-316 (&sect;2308)</td>
+</tr>
+<tr>
+  <td><strong>Applies to software?</strong></td>
+  <td><strong>YES</strong> (broad "merchandise" definition includes services/"anything")</td>
+  <td><strong>LIKELY YES</strong> (covers goods/services to consumers; sparse direct authority)</td>
+  <td><strong>LIKELY NO</strong> for digital; <strong>POSSIBLY YES</strong> for physical media ("tangible personal property" requirement)</td>
+</tr>
+<tr>
+  <td><strong>Treble/punitive damages?</strong></td>
+  <td><strong>YES</strong> (treble damages, &sect;56:8-19)</td>
+  <td><strong>YES</strong> (punitive damages for willful conduct, &sect;1780(a)(3))</td>
+  <td><strong>NO</strong> (actual damages only)</td>
+</tr>
+<tr>
+  <td><strong>Attorney's fees?</strong></td>
+  <td><strong>YES</strong> (&sect;56:8-19)</td>
+  <td><strong>YES</strong> (&sect;1780(e))</td>
+  <td><strong>YES</strong> (&sect;2310(d)(2), fee-shifting)</td>
+</tr>
+<tr>
+  <td><strong>Pre-suit cure/notice?</strong></td>
+  <td><strong>NO</strong></td>
+  <td><strong>YES</strong> (30-day notice & cure, &sect;1782(a))</td>
+  <td>Informal dispute resolution optional (&sect;2310(a))</td>
+</tr>
+<tr>
+  <td><strong>Intent required?</strong></td>
+  <td>Depends on theory: NO for regulatory violations (<em>Fenwick</em>); YES for knowing omissions; mixed for affirmative misrepresentations</td>
+  <td>NO for strict liability practices under &sect;1770; YES for knowing/misleading practices</td>
+  <td>N/A (warranty breach, not fraud)</td>
+</tr>
+<tr>
+  <td><strong>Arbitration of claims?</strong></td>
+  <td>Permitted IF express waiver of judicial forum (<em>Atalese</em>); class action waivers may be enforceable (<em>Pace</em>)</td>
+  <td>Complex interaction with FAA; arbitration generally permitted but class action waivers face scrutiny</td>
+  <td>Claims may be arbitrated; &sect;2310(d) does not restrict forum</td>
+</tr>
+</table>
+
+<h3>Strategic Recommendations for Tax Software Developer</h3>
+
+<div class="implication">
+<strong>1. NEVER include waiver/disclaimer of CFA or CLRA rights in any EULA or contract.</strong> Such provisions are void under NJ law (judicial) and California law (statutory). They provide zero protection and create negative evidentiary value.
+</div>
+
+<div class="implication">
+<strong>2. Ensure all marketing claims are substantiated and non-deceptive.</strong> The primary CFA/CLRA exposure for tax software is deceptive advertising: misleading "free" claims, exaggerated accuracy representations, undisclosed limitations, and dark patterns in user flows. The 2022 Multistate AG settlement with Intuit ("free" TurboTax deception) and 2024 LA City Attorney action against H&R Block demonstrate active enforcement.
+</div>
+
+<div class="implication">
+<strong>3. Implement a 30-day CLRA cure protocol.</strong> California's &sect;1782(a) cure right is the single most valuable defense tool unique to the CLRA. Have a rapid-response process for consumer demand letters.
+</div>
+
+<div class="implication">
+<strong>4. Carefully audit for accidental MMWA "written warranties."</strong> Review all product descriptions, website copy, and EULA provisions for affirmative promises about performance, accuracy, or quality. Any such promise could trigger &sect;2308's implied warranty preemption if the MMWA applies. Use factual descriptions rather than promises.
+</div>
+
+<div class="implication">
+<strong>5. If using an arbitration clause, meet <em>Atalese</em> standards.</strong> The clause must explicitly state that the user waives the right to seek relief in a judicial forum. Generic arbitration language is insufficient under New Jersey law. Remember: arbitration changes the forum but does not eliminate the underlying CFA claim.
+</div>
+
+<div class="implication">
+<strong>6. Maintain rigorous compliance with any applicable NJ CFA regulations.</strong> Under <em>Fenwick</em>, regulatory violations carry strict liability&mdash;no intent required. Monitor NJ Division of Consumer Affairs rulemaking applicable to tax preparation services.
+</div>
+
+<hr>
+
+<h3>Key Citation Index</h3>
+<table>
+<tr><th>Citation</th><th>Court</th><th>Year</th><th>Key Holding</th></tr>
+<tr><td><em>Fenwick v. Kay American Jeep, Inc.</em>, 72 N.J. 372</td><td>NJ Supreme Court</td><td>1977</td><td>Strict liability for CFA regulatory violations; intent limited to knowing omissions</td></tr>
+<tr><td><em>Cox v. Sears Roebuck & Co.</em>, 138 N.J. 2</td><td>NJ Supreme Court</td><td>1994</td><td>Ascertainable loss = measurable loss; CFA applies to services; liberal construction</td></tr>
+<tr><td><em>Gennari v. Weichert Co. Realtors</em>, 148 N.J. 582</td><td>NJ Supreme Court</td><td>1997</td><td>CFA liability extends to agents/intermediaries in the sales chain</td></tr>
+<tr><td><em>Moskowitz v. Digital Equipment Corp.</em>, 152 N.J. 349</td><td>NJ Supreme Court</td><td>1998</td><td>CFA applied to technology-related consumer transactions</td></tr>
+<tr><td><em>Harnish v. Widener Univ. Sch. of Law</em>, 833 F.3d 298</td><td>3rd Cir.</td><td>2016</td><td>Three-part CFA test: unlawful practice, ascertainable loss, causal connection</td></tr>
+<tr><td><em>Atalese v. U.S. Legal Services Group</em>, 219 N.J. 430</td><td>NJ Supreme Court</td><td>2014</td><td>Arbitration clauses must expressly waive right to judicial forum</td></tr>
+<tr><td><em>Skuse v. Pfizer, Inc.</em>, 244 N.J. 30</td><td>NJ Supreme Court</td><td>2020</td><td>Express waiver standard can be met through accompanying communications</td></tr>
+<tr><td><em>Pace v. Hamilton Cove</em>, 254 N.J. 404</td><td>NJ Supreme Court</td><td>2024</td><td>Class action waivers enforceable under ordinary contract principles; FAA preemption</td></tr>
+<tr><td><em>Achey v. Cellco Partnership</em></td><td>NJ App. Div.</td><td>2023</td><td>Declined to enforce arbitration clause in CFA class action under Atalese/Wang standards</td></tr>
+<tr><td>Cal. Civ. Code &sect;1751</td><td>Statute</td><td>1970</td><td>CLRA waivers void and unenforceable as contrary to public policy</td></tr>
+<tr><td>Cal. Civ. Code &sect;1752</td><td>Statute</td><td>1970</td><td>CLRA remedies are additive to other statutory and common law remedies</td></tr>
+<tr><td>Cal. Civ. Code &sect;1770</td><td>Statute</td><td>1970</td><td>23 prohibited practices including misrepresentation of characteristics/quality</td></tr>
+<tr><td>Cal. Civ. Code &sect;1782(a)</td><td>Statute</td><td>1970</td><td>30-day notice and cure right before CLRA suit</td></tr>
+<tr><td>15 U.S.C. &sect;2301(1)</td><td>Federal Statute</td><td>1975</td><td>Consumer product = tangible personal property for personal/household use</td></tr>
+<tr><td>15 U.S.C. &sect;2301(6)</td><td>Federal Statute</td><td>1975</td><td>Written warranty = written affirmation/promise about quality/performance</td></tr>
+<tr><td>15 U.S.C. &sect;2308</td><td>Federal Statute</td><td>1975</td><td>Cannot disclaim implied warranties when written warranty given on consumer product</td></tr>
+<tr><td>15 U.S.C. &sect;2310(d)</td><td>Federal Statute</td><td>1975</td><td>Private right of action; fee-shifting; actual damages minimum</td></tr>
+<tr><td>16 CFR Part 700</td><td>FTC Regulations</td><td>1975</td><td>Interpretations: consumer product = tangible personal property</td></tr>
+<tr><td>16 CFR Part 701</td><td>FTC Regulations</td><td>1975</td><td>Written warranty disclosure requirements for products &gt;$15</td></tr>
+<tr><td>N.J.S.A. 56:8-1(c)</td><td>NJ Statute</td><td>1971</td><td>Merchandise = objects, wares, goods, commodities, services, or anything offered for sale</td></tr>
+<tr><td>N.J.S.A. 56:8-2</td><td>NJ Statute</td><td>1971</td><td>Definition of unlawful practice: unconscionable/deceptive conduct in sale/advertisement</td></tr>
+<tr><td>N.J.S.A. 56:8-19</td><td>NJ Statute</td><td>1971</td><td>Treble damages, attorney's fees, costs for CFA violations</td></tr>
+</table>
+
+</body>
+</html>

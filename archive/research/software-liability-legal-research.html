@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Software Liability Legal Research: UCC Classification, Implied Warranties & EULA Enforcement</title>
+<style>
+  :root { --bg: #0d1117; --surface: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff; --warn: #d29922; --green: #3fb950; --red: #f85149; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; margin: 0; padding: 2rem; }
+  .container { max-width: 960px; margin: 0 auto; }
+  h1 { font-size: 1.8rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; margin-top: 2.5rem; }
+  h2 { font-size: 1.4rem; color: var(--accent); margin-top: 2rem; border-left: 4px solid var(--accent); padding-left: 0.75rem; }
+  h3 { font-size: 1.1rem; color: var(--warn); margin-top: 1.5rem; }
+  h4 { font-size: 1rem; color: var(--muted); margin-top: 1.2rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .box { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin: 1rem 0; }
+  .box-settled { border-left: 4px solid var(--green); }
+  .box-gray { border-left: 4px solid var(--warn); }
+  .box-standard { border-left: 4px solid var(--accent); }
+  .box-juris { border-left: 4px solid var(--red); }
+  .label { font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+  .label-settled { color: var(--green); }
+  .label-gray { color: var(--warn); }
+  .label-standard { color: var(--accent); }
+  .label-juris { color: var(--red); }
+  .case { font-style: italic; }
+  .statute { font-family: 'Courier New', monospace; background: #1c2333; padding: 0.1em 0.4em; border-radius: 3px; font-size: 0.95em; }
+  ul { padding-left: 1.5rem; }
+  li { margin-bottom: 0.4rem; }
+  .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .toc ul { list-style: none; padding-left: 0; }
+  .toc li { margin-bottom: 0.3rem; }
+  .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 2rem; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { border: 1px solid var(--border); padding: 0.6rem 0.8rem; text-align: left; font-size: 0.9rem; }
+  th { background: var(--surface); color: var(--accent); }
+  blockquote { border-left: 3px solid var(--muted); padding-left: 1rem; color: var(--muted); margin: 1rem 0; }
+  .note { font-size: 0.88rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Software Liability Legal Research Report</h1>
+<p class="meta">Prepared: March 2026 | Scope: UCC Article 2 Classification, Implied Warranty Theories, EULA Disclaimer Enforcement | Focus: Tax/Accounting Software Context</p>
+
+<div class="toc">
+<h3 style="margin-top:0; color:var(--text);">Table of Contents</h3>
+<ul>
+  <li><a href="#s1">Subtopic 1: UCC Article 2 vs. 2B/UCITA &mdash; Software as Good or Service</a></li>
+  <li><a href="#s2">Subtopic 2: Contractual Theories &mdash; Implied Warranties Under UCC &sect;2-314 and &sect;2-315</a></li>
+  <li><a href="#s3">Subtopic 3: EULA Enforcement and Disclaimer Analysis</a></li>
+  <li><a href="#master">Master Case Citation Table</a></li>
+  <li><a href="#key">Key Takeaways for Tax Software Liability</a></li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s1">Subtopic 1: UCC Article 2 vs. 2B/UCITA &mdash; Is Software a &ldquo;Good&rdquo; or a &ldquo;Service&rdquo;?</h2>
+
+<h3>The Central Question</h3>
+<p>UCC Article 2 applies to &ldquo;transactions in goods.&rdquo; UCC &sect;2-105(1) defines &ldquo;goods&rdquo; as &ldquo;all things (including specially manufactured goods) which are movable at the time of identification to the contract for sale other than the money in which the price is to be paid.&rdquo; The threshold question for any software liability claim is whether the transaction falls within Article 2&rsquo;s scope.</p>
+
+<h3>The Mixed Transaction Doctrine &amp; Predominant Purpose Test</h3>
+<div class="box box-standard">
+<div class="label label-standard">Actual Legal Standard</div>
+<p>When a contract involves both goods and services (a &ldquo;hybrid&rdquo; or &ldquo;mixed&rdquo; transaction), most courts apply the <strong>predominant purpose test</strong> (also called the &ldquo;predominant factor test&rdquo;). Under this test, the court assesses whether the transaction is primarily a sale of goods (UCC applies) or primarily a provision of services (common law applies). Factors considered include:</p>
+<ul>
+  <li>The language of the contract</li>
+  <li>The nature of the supplier&rsquo;s business</li>
+  <li>The relative values of the goods and services components</li>
+  <li>The compensation structure and projected sales figures</li>
+  <li>Whether the goods or services are the &ldquo;essence&rdquo; of the transaction</li>
+</ul>
+<p><strong>Source:</strong> UCC &sect;2-102 Official Comments; <span class="case">Bonebrake v. Cox</span>, 499 F.2d 951 (8th Cir. 1974) (originating the predominant factor test for hybrid contracts).</p>
+</div>
+
+<h3>Key Case: Advent Systems Ltd. v. Unisys Corp.</h3>
+<div class="box box-settled">
+<div class="label label-settled">Settled Law (Third Circuit)</div>
+<p><span class="case">Advent Systems Ltd. v. Unisys Corp.</span>, <strong>925 F.2d 670</strong> (3d Cir. 1991)</p>
+<p><strong>Holding:</strong> Computer software is a &ldquo;good&rdquo; within the meaning of UCC Article 2. The Third Circuit explicitly reversed the district court&rsquo;s ruling that software was not a good.</p>
+<p><strong>Reasoning:</strong></p>
+<ul>
+  <li>While a computer program originates as an intellectual process, <strong>once it is implanted in a medium</strong> (such as a floppy disc), it becomes tangible, moveable, and available in the marketplace.</li>
+  <li>The court drew an analogy to a compact disc recording of music or a book transcribed from a lecture&mdash;the intellectual work transforms into a readily merchantable commodity.</li>
+  <li>The fact that software may be copyrightable <strong>does not alter its status as a good</strong>, particularly because the UCC definition of goods includes &ldquo;specially manufactured goods.&rdquo;</li>
+  <li>Strong policy arguments: the importance of software to commerce and the substantial benefits of UCC uniformity.</li>
+  <li>For the overall mixed transaction (software + services), the court applied the <strong>predominance test</strong>, looking to compensation structure and projected sales figures to conclude the sale of goods predominated.</li>
+</ul>
+<p><strong>Significance:</strong> This is the leading federal appellate case holding software is a good. It was a contract for distribution of document imaging systems (software + hardware) with accompanying services.</p>
+</div>
+
+<h3>Key Case: RRX Industries, Inc. v. Lab-Con, Inc.</h3>
+<div class="box box-settled">
+<div class="label label-settled">Settled Law (Ninth Circuit)</div>
+<p><span class="case">RRX Industries, Inc. v. Lab-Con, Inc.</span>, <strong>772 F.2d 543</strong> (9th Cir. 1985)</p>
+<p><strong>Holding:</strong> Software is a good under UCC Article 2. The court applied California UCC &sect;2105(1) and concluded, without extensive analysis, that the software was a good. The court applied a <strong>case-by-case analysis</strong>, citing <span class="case">A&amp;B Duplicators, Ltd.</span>, 468 F.2d 695, 697 (2d Cir. 1972), and noted that &ldquo;software packages vary depending on the needs of the individual consumer.&rdquo; The court found that the <strong>sales aspect of the transaction predominated</strong>.</p>
+<p><strong>Facts:</strong> RRX purchased a software system for medical testing laboratories. The contract obligated the seller to correct malfunctions (&ldquo;bugs&rdquo;) but limited consequential damages. The court applied the UCC and upheld the limitation on consequential damages.</p>
+</div>
+
+<h3>Virtual Maintenance Inc. v. Prime Computer, Inc. &mdash; Clarification</h3>
+<div class="box box-gray">
+<div class="label label-gray">Clarification Required</div>
+<p><span class="case">Virtual Maintenance, Inc. v. Prime Computer, Inc.</span>, 957 F.2d 1318, <strong>11 F.3d 660</strong> (6th Cir. 1992-93)</p>
+<p class="note">This case is frequently cited in software litigation contexts but is <strong>primarily an antitrust tying case</strong> under Section 1 of the Sherman Act, 15 U.S.C. &sect; 1&mdash;not a UCC Article 2 classification case. The dispute concerned whether Prime Computer illegally tied software support services to hardware maintenance for its 50 Series minicomputers. The court&rsquo;s analysis did not turn on UCC goods/services classification. While the factual context involves software, this case does <strong>not</strong> provide direct authority on whether software is a &ldquo;good&rdquo; or &ldquo;service&rdquo; under the UCC.</p>
+</div>
+
+<h3>Additional Cases Applying UCC Article 2 to Software (Goods Classification)</h3>
+<table>
+<tr><th>Case</th><th>Citation</th><th>Holding</th></tr>
+<tr><td class="case">A&amp;B Duplicators, Ltd. v. Sea</td><td>468 F.2d 695 (2d Cir. 1972)</td><td>Early case applying UCC to software; case-by-case analysis</td></tr>
+<tr><td class="case">D.P. Technology Corp. v. Sherwood Tool, Inc.</td><td>Connecticut federal court</td><td>Treated all software as a good under the UCC</td></tr>
+<tr><td class="case">Accusoft Inc. v. Peat</td><td>No. 93-2081 (E.D. Pa. 1994)</td><td>Applied UCC Article 2 to software license</td></tr>
+</table>
+
+<h3>Cases Holding Software Is a Service (Not a Good)</h3>
+<div class="box box-gray">
+<div class="label label-gray">Gray Area / Emerging Trend</div>
+<p>A growing body of cases holds that <strong>specially designed/custom software is a service</strong>, not a good:</p>
+<ul>
+  <li><span class="case">Questar Assessment, Inc. v. Utah State Board of Education</span> (Utah 3d Dist. Ct.) &mdash; Contract for design of specialized software to meet buyer&rsquo;s specific needs was a service contract; UCC did not apply.</li>
+  <li><span class="case">Systems Am., Inc. v. Rockwell Software, Inc.</span> (California) &mdash; Custom software compared to a professor&rsquo;s lecture rather than a book; programmer&rsquo;s knowledge and skill were the heart of the transaction.</li>
+  <li><span class="case">TK Power, Inc. v. Textron, Inc.</span> (California) &mdash; Despite physical prototypes, the contract was essentially for &ldquo;knowledge, skill, and ability.&rdquo;</li>
+  <li><span class="case">Wharton Mgmt. Group v. Sigma Consultants, Inc.</span> (Delaware) &mdash; Programmer&rsquo;s knowledge and skill at heart of transaction.</li>
+  <li><span class="case">Liberty Financial Mgmt. Corp. v. Beneficial Data Processing Corp.</span> &mdash; Data analysis, collection, storage, and reporting was a service.</li>
+  <li><span class="case">Simulados Software Ltd. v. Photon Infotech Private, Ltd.</span> (California) &mdash; Custom software held to be a service.</li>
+</ul>
+</div>
+
+<h3>Shrink-Wrap / License vs. Sale Distinction</h3>
+<div class="box box-settled">
+<div class="label label-settled">Settled Law</div>
+<p><span class="case">ProCD, Inc. v. Zeidenberg</span>, <strong>86 F.3d 1447</strong> (7th Cir. 1996)</p>
+<p><strong>Holding:</strong> Shrink-wrap licenses are enforceable contracts under the UCC. Judge Easterbrook held that the license terms inside the box were part of the contract even though they were not visible before purchase. The court found that under UCC &sect;&sect;2-204, 2-206, and 2-207, the terms could become part of the contract upon use. Critically, the court stated: <em>&ldquo;Zeidenberg has not located any Wisconsin case&mdash;for that matter, any case in any state&mdash;holding that under the UCC the ordinary terms found in shrinkwrap licenses require any special prominence, or otherwise are to be undercut rather than enforced.&rdquo;</em></p>
+</div>
+
+<div class="box box-settled">
+<div class="label label-settled">Settled Law (Contrast)</div>
+<p><span class="case">Specht v. Netscape Communications Corp.</span>, <strong>306 F.3d 17</strong> (2d Cir. 2002)</p>
+<p><strong>Holding:</strong> Browse-wrap agreements are <strong>not</strong> enforceable when there is no conspicuous manifestation of assent. Merely clicking a download button does not show consent with license terms if the terms are not conspicuous and it is not explicit that clicking means agreement. This establishes the critical distinction between shrink-wrap (ProCD &mdash; generally enforceable) and browse-wrap (Specht &mdash; generally not enforceable without clear assent).</p>
+</div>
+
+<h3>UCC Article 2B and UCITA &mdash; Why They Failed</h3>
+<div class="box box-standard">
+<div class="label label-standard">Historical Account</div>
+<p><strong>Timeline:</strong></p>
+<ul>
+  <li><strong>Mid-1990s:</strong> NCCUSL and ALI began drafting UCC Article 2B to address software and information transactions.</li>
+  <li><strong>1999:</strong> The American Law Institute (ALI) made an <strong>unprecedented move</strong> and withdrew from the Article 2B project, insisting it should not become part of the UCC. The ALI felt parts of the draft were &ldquo;unbalanced&rdquo; and its proposals to rework problematic provisions were denied.</li>
+  <li><strong>February 2000:</strong> NCCUSL renamed the proposal UCITA (Uniform Computer Information Transactions Act) and approved it as a separate uniform act.</li>
+  <li><strong>2000:</strong> Only <strong>two states</strong> adopted UCITA: <strong>Virginia</strong> and <strong>Maryland</strong>. No other state followed.</li>
+  <li><strong>2000-2003:</strong> Beginning with Iowa in 2000, numerous states passed &ldquo;bomb-shelter&rdquo; laws (Iowa 2000, North Carolina 2001, West Virginia 2001, Vermont 2003, Idaho) to protect citizens from UCITA-like provisions.</li>
+  <li><strong>2003:</strong> The ABA resolution recommending UCITA approval was withdrawn by NCCUSL, effectively acknowledging UCITA lacked consensus to be a uniform act.</li>
+</ul>
+<p><strong>Why UCITA Failed:</strong></p>
+<ul>
+  <li><strong>Pro-vendor bias:</strong> Critics argued UCITA heavily favored software manufacturers over consumers and licensees.</li>
+  <li><strong>License vs. sale recharacterization:</strong> UCITA allowed vendors to characterize transactions as licenses rather than sales, eliminating first-sale doctrine rights (resale of used software).</li>
+  <li><strong>Self-help provisions:</strong> UCITA initially included provisions allowing software vendors to remotely disable software upon breach&mdash;widely criticized as dangerous.</li>
+  <li><strong>Asymmetric liability:</strong> Commercial software makers could use shrinkwrap licenses to avoid defect liability, while free software distributors and small developers without legal knowledge would remain liable.</li>
+  <li><strong>Library and consumer opposition:</strong> Libraries, consumer groups, insurance companies, and legal scholars mounted sustained opposition.</li>
+  <li><strong>Loss of ALI sponsorship:</strong> Without ALI backing, UCITA lacked the credibility needed for widespread adoption (every other UCC article had joint ALI-NCCUSL sponsorship).</li>
+</ul>
+</div>
+
+<h3>The ALI Principles of Software Contracts (2009) &mdash; The Alternative</h3>
+<div class="box box-standard">
+<div class="label label-standard">Soft Law (Not Binding Unless Adopted by Court)</div>
+<p>On May 19, 2009, the ALI unanimously approved the <strong>Principles of the Law of Software Contracts</strong> as a non-statutory alternative. Key features relevant to this research:</p>
+<ul>
+  <li>Largely adopts the UCC position on implied warranties (merchantability and fitness for particular purpose can be disclaimed).</li>
+  <li><strong>Creates a non-disclaimable implied warranty</strong> that software contains no material hidden defects of which the transferring party was aware.</li>
+  <li>This non-disclaimable warranty does <strong>not</strong> apply if the purchaser tested the software as fully as desired or unreasonably refused to test it.</li>
+  <li>Does not require the words &ldquo;warrant&rdquo; or &ldquo;guarantee&rdquo; to create an express warranty.</li>
+  <li>Distributors who merely &ldquo;transfer&rdquo; a warranty without &ldquo;adopting&rdquo; it are not liable for breach.</li>
+</ul>
+<p class="note">The Principles are NOT law in any jurisdiction unless and until a court adopts them. They function as persuasive authority.</p>
+</div>
+
+<h3>Subtopic 1 Summary</h3>
+<div class="box box-settled">
+<div class="label label-settled">Settled Law</div>
+<ul>
+  <li>Off-the-shelf/generic software fixed in a tangible medium is a &ldquo;good&rdquo; under UCC Article 2. <span class="case">Advent Systems</span>, 925 F.2d at 670; <span class="case">RRX Industries</span>, 772 F.2d at 543.</li>
+  <li>The predominant purpose test governs mixed goods/services transactions involving software.</li>
+  <li>Shrink-wrap licenses can form enforceable contracts under the UCC. <span class="case">ProCD</span>, 86 F.3d at 1447.</li>
+  <li>Browse-wrap licenses require conspicuous assent mechanisms to be enforceable. <span class="case">Specht</span>, 306 F.3d at 17.</li>
+  <li>UCITA is effectively dead law&mdash;adopted only in VA and MD, opposed by bomb-shelter laws in 5+ states.</li>
+</ul>
+</div>
+<div class="box box-gray">
+<div class="label label-gray">Gray Area</div>
+<ul>
+  <li><strong>Tax software classification:</strong> Off-the-shelf tax software (TurboTax, etc.) would almost certainly be classified as a &ldquo;good&rdquo; under <span class="case">Advent Systems</span>. However, custom tax software built for a specific enterprise likely falls on the &ldquo;service&rdquo; side under <span class="case

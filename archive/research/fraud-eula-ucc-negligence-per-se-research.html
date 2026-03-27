@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Research: Fraud/EULA Disclaimers, UCC 2-318 Privity, and Negligence Per Se/UDAP for Software</title>
+<style>
+  :root { --bg: #0d1117; --surface: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff; --warn: #d29922; --danger: #f85149; --success: #3fb950; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Segoe UI, system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem; max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 1.8rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1.5rem; color: var(--accent); }
+  h2 { font-size: 1.4rem; color: var(--accent); margin: 2.5rem 0 1rem; border-left: 4px solid var(--accent); padding-left: 0.75rem; }
+  h3 { font-size: 1.15rem; color: var(--text); margin: 1.5rem 0 0.5rem; }
+  h4 { font-size: 1rem; color: var(--muted); margin: 1rem 0 0.4rem; font-style: italic; }
+  p { margin-bottom: 0.75rem; }
+  .case-box { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin: 1rem 0; }
+  .case-box .citation { font-weight: 700; color: var(--accent); font-size: 0.95rem; }
+  .case-box .holding { margin-top: 0.5rem; }
+  .case-box .holding strong { color: var(--success); }
+  .case-box .dictum { color: var(--warn); font-style: italic; }
+  .case-box .disclaimer-text { background: rgba(88,166,255,0.08); border-left: 3px solid var(--accent); padding: 0.5rem 0.75rem; margin: 0.5rem 0; font-family: Courier New, monospace; font-size: 0.88rem; white-space: pre-wrap; }
+  .no-cases { background: rgba(248,81,73,0.1); border: 1px solid var(--danger); border-radius: 8px; padding: 1rem; margin: 1rem 0; color: var(--danger); font-weight: 600; }
+  .no-cases p { margin: 0; }
+  .key-insight { background: rgba(63,185,80,0.08); border: 1px solid var(--success); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+  .key-insight strong { color: var(--success); }
+  .ucc-alt { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 0.75rem 0; }
+  .ucc-alt .alt-label { font-weight: 700; color: var(--accent); margin-bottom: 0.25rem; }
+  .ucc-alt .alt-text { font-style: italic; color: var(--muted); font-size: 0.92rem; }
+  .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.5rem; margin-bottom: 2rem; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .toc ul { list-style: none; padding-left: 0; }
+  .toc ul ul { padding-left: 1.5rem; }
+  .toc li { margin: 0.3rem 0; }
+  .discrepancy { background: rgba(210,153,34,0.1); border: 1px solid var(--warn); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+  .discrepancy strong { color: var(--warn); }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid var(--border); padding: 0.5rem 0.75rem; text-align: left; }
+  th { background: var(--surface); color: var(--accent); font-weight: 600; }
+  .exec-summary { background: var(--surface); border: 2px solid var(--accent); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+  .exec-summary h3 { color: var(--accent); margin-top: 0; }
+  ul { padding-left: 1.5rem; margin-bottom: 0.75rem; }
+  li { margin-bottom: 0.3rem; }
+</style>
+</head>
+<body>
+
+<h1>Fraud/EULA Disclaimers, UCC 2-318 Privity, and Negligence Per Se/UDAP for Software Errors</h1>
+<p style="color:var(--muted); font-size:0.88rem;">Deep Research Report | Generated March 26, 2026 | All citations verified against source documents</p>
+
+<div class="toc">
+<strong>Table of Contents</strong>
+<ul>
+  <li><a href="#exec">Executive Summary</a></li>
+  <li><a href="#area1">Area 1: Diedrich v. Wolters Kluwer and Fraud/EULA in Software</a>
+    <ul>
+      <li><a href="#diedrich">Diedrich v. Wolters Kluwer (2024)</a></li>
+      <li><a href="#budgetel">Budgetel Inns v. Micros Systems (1998-1999)</a></li>
+      <li><a href="#sensortower">SensorTower v. Similarweb (2025)</a></li>
+      <li><a href="#ibm">IBM v. Lufkin Industries (2019)</a></li>
+      <li><a href="#fraud-synthesis">Fraud + EULA Synthesis</a></li>
+    </ul>
+  </li>
+  <li><a href="#area2">Area 2: UCC 2-318 and Software Warranty Privity</a>
+    <ul>
+      <li><a href="#ucc-text">UCC 2-318 Full Text</a></li>
+      <li><a href="#ucc-states">State Adoption</a></li>
+      <li><a href="#ucc-software">Application to Software</a></li>
+      <li><a href="#privity">Privity Defense in Software Warranty Cases</a></li>
+    </ul>
+  </li>
+  <li><a href="#area3">Area 3: Negligence Per Se and UDAP for Software Errors</a>
+    <ul>
+      <li><a href="#neg-per-se">Negligence Per Se + Software Errors</a></li>
+      <li><a href="#udap">UDAP/Consumer Protection + Software Errors</a></li>
+      <li><a href="#udap-existing">Existing UDAP Cases (Deceptive Advertising Only)</a></li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<div class="exec-summary" id="exec">
+<h3>Executive Summary</h3>
+<ul>
+  <li><strong>Area 1 (Fraud/EULA):</strong> Diedrich involved only breach of contract -- no fraud claims were pleaded. Three additional cases establish that specific, targeted disclaimers CAN bar fraud/fraudulent inducement claims in software contexts (SensorTower v. Similarweb, IBM v. Lufkin). Budgetel Inns is the outlier: ELD did not bar fraud in inducement at the motion-to-dismiss stage, but the court warned that fraud occurring after contract execution would be barred. No case was found where a fraud claim survived a specific, targeted software disclaimer.</li>
+  <li><strong>Area 2 (UCC 2-318):</strong> All three alternatives require personal injury and cannot extend to pure economic loss from software defects. No reported case applies UCC 2-318 to software. No reported case dismisses a software warranty claim solely on privity grounds -- courts reach outcomes through ELD and disclaimer analysis instead.</li>
+  <li><strong>Area 3 (Negligence Per Se/UDAP):</strong> Complete void in reported case law. No case applies negligence per se to software errors. No case applies state UDAP/consumer fraud statutes to software calculation errors. Existing UDAP cases against tax software companies involve deceptive advertising only, not calculation defects.</li>
+</ul>
+</div>
+
+<h2 id="area1">AREA 1: Diedrich v. Wolters Kluwer and Fraud/EULA in Software</h2>
+
+<h3 id="diedrich">Diedrich v. Wolters Kluwer</h3>
+<div class="case-box">
+  <div class="citation">Diedrich v. Wolters Kluwer, 2024 WL 291156 (S.D.N.Y. Jan. 25, 2024)</div>
+  <p><strong>Court:</strong> United States District Court, Southern District of New York (Judge Vernon S. Broderick)</p>
+  <p><strong>Context:</strong> Pro se plaintiff Gregory Diedrich, doing business as Saginaw Financial, sued Wolters Kluwer for breach of contract arising from alleged malfunction of TaxWise tax preparation software. The software allegedly caused tax returns to be filed without certain required forms in 2017. Plaintiff was subsequently permanently barred from preparing tax returns for others.</p>
+  <h4>Claims Pleaded</h4>
+  <p><strong>Holding:</strong> Plaintiff brought <strong>only a breach of contract claim</strong>. No fraud, fraudulent inducement, misrepresentation, or tort claims were pleaded. The court granted Wolters Kluwer's motion to dismiss pursuant to Rule 12(b)(6). Final judgment entered January 25, 2024.</p>
+  <h4>Disclaimer Language Enforced</h4>
+  <p>The agreement contained at least two critical disclaimers:</p>
+  <div class="disclaimer-text">&quot;[Plaintiff] expressly disclaim[ed] any representations or warranties that [his] use of the Products will satisfy any statutory or regulatory obligations, or will assist with, guarantee or otherwise ensure compliance with any applicable laws or regulations.&quot;</div>
+  <div class="disclaimer-text">&quot;THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PRODUCT(S), INCLUDING ELECTRONIC FILING.&quot;</div>
+  <h4>Enforceability Holding</h4>
+  <div class="holding">
+    <p><strong>The court held that the disclaimer language defeated plaintiff's breach of contract claim.</strong> The &quot;entire risk&quot; clause eliminated plaintiff's ability to shift responsibility for software quality and performance to the vendor. The specific disclaimer of statutory/regulatory compliance was directly on point given that plaintiff's alleged damages arose from failure to file required tax forms. The court found the disclaimers controlled over plaintiff's breach of contract theory.</p>
+  </div>
+  <h4>Fraud Claims</h4>
+  <p><strong>No fraud claims were brought.</strong> The court did not discuss whether fraud could survive EULA disclaimers. This case provides <strong>no authority</strong> on the fraud-vs-disclaimer question.</p>
+</div>
+
+<div class="key-insight">
+  <strong>Key Insight:</strong> Diedrich is frequently cited in software law commentary for its disclaimer enforceability, but it is a breach-of-contract-only case. It does not address fraud. The disclaimer language is notable for its specificity -- it does not merely disclaim warranties generically but specifically disclaims compliance with &quot;any statutory or regulatory obligations,&quot; directly addressing the risk profile of tax preparation software.
+</div>
+
+<h3 id="budgetel">Budgetel Inns, Inc. v. Micros Systems, Inc.</h3>
+<div class="case-box">
+  <div class="citation">Budgetel Inns, Inc. v. Micros Systems, Inc., 8 F. Supp. 2d 1137 (E.D. Wis. 1998) [Budgetel I]</div>
+  <div class="citation">Budgetel Inns, Inc. v. Micros Systems, Inc., 34 F. Supp. 2d 720 (E.D. Wis. 1999) [Budgetel II]</div>
+  <p><strong>Court:</strong> United States District Court, Eastern District of Wisconsin (Judge Adelman)</p>
+  <p><strong>Context:</strong> Budgetel Inns, a hotel chain, purchased property management software (Micros 8500 system) for $250,000 license fee plus ~$150,000/year maintenance. Micros represented the system as &quot;brand new&quot; and &quot;ideally suited&quot; to Budgetel's needs. Budgetel alleged fraud in the inducement based on these pre-contract representations.</p>
+  <h4>Budgetel I Holding (Motion to Dismiss)</h4>
+  <div class="holding">
+    <p><strong>The court denied the motion to dismiss the fraud in the inducement claim, holding that fraud in the inducement is generally NOT barred by Wisconsin's economic loss doctrine.</strong> The court reasoned that fraud in the inducement arises before contract formation and is based on a common law duty of honesty independent of the contract. The policies underlying ELD -- encouraging risk allocation through contract -- should not apply to intentional fraud, as deceit compromises the integrity of the contracting process.</p>
+  </div>
+  <h4>Nuance on Post-Contract Fraud</h4>
+  <div class="dictum">
+    <p>However, the court stated: &quot;The fraud claims alleged in paragraphs 19, 30, 33, and 46 might be rectified by repleading. But in the event that, when pled correctly, the allegations of paragraph 30 refer to fraud occurring subsequent to the parties' execution of their contract, those allegations will be barred by the economic loss doctrine.&quot; This distinction -- pre-formation fraud survives ELD, post-formation fraud does not -- is a critical nuance.</p>
+  </div>
+  <h4>Budgetel II Holding (Reconsideration)</h4>
+  <div class="holding">
+    <p><strong>The court maintained its ruling that ELD does NOT bar fraud in the inducement.</strong> Despite conflicting opinions from other judges in the same district (Judge Randa had reached the opposite conclusion in a different case), Judge Adelman declined to reverse. He reaffirmed that fraud in the inducement is based on a duty independent of contract and is not barred by ELD.</p>
+  </div>
+</div>
+
+<div class="discrepancy">
+  <strong>Source Discrepancy Note:</strong> Prior research memoranda state that &quot;ELD ultimately barred&quot; the Budgetel fraud claim. The sources available for this deep research (the Budgetel II opinion and its summaries) show the court <em>maintaining</em> its position that ELD does not bar fraud at the reconsideration stage. The final disposition of the case after Budgetel II (whether the fraud claim proceeded to trial, was resolved on summary judgment, or settled) could not be determined from open-source materials. The statement that ELD &quot;ultimately barred&quot; the claim may refer to a later stage of litigation not captured in the available Budgetel II opinion.
+</div>
+
+<div class="key-insight">
+  <strong>Key Insight:</strong> Budgetel I/II is the only case found where a court allowed a fraud claim related to software to survive a motion to dismiss despite ELD. However, the court drew a sharp line: only <em>pre-contract</em> fraud in the inducement survives; fraud occurring after contract execution is barred by ELD. No specific EULA disclaimer language was at issue -- the analysis was entirely about ELD, not contract disclaimers.
+</div>
+
+<h3 id="sensortower">SensorTower, Inc. v. Similarweb Ltd.</h3>
+<div class="case-box">
+  <div class="citation">SensorTower, Inc. v. Similarweb Ltd., 2025 NY Slip Op. 32998(U) (N.Y. Sup. Ct., N.Y. County Commercial Division, July 24, 2025, Justice Chan)</div>
+  <p><strong>Context:</strong> Data Licensing Agreement (DLA) for app store intelligence data. SensorTower's predecessor (App Annie) provided app/store data. Apple's iOS updates degraded data quality. Similarweb received deficient sample data but executed the DLA anyway, then brought fraudulent inducement counterclaim.</p>
+  <h4>Disclaimer Language</h4>
+  <div class="disclaimer-text">Section 4.3 of DLA:
+&quot;SensorTower could not and did not make any representations as to, and hereby disclaims any and all liability arising out of or associated with the adequacy, sufficiency, completeness, currency, provenance, rights or other attributes of the Data.&quot;
+
+&quot;The Data and any other materials provided to Similarweb would be provided on an AS IS and AS AVAILABLE basis without warranties of any kind.&quot;</div>
+  <h4>Holding</h4>
+  <div class="holding">
+    <p><strong>Fraudulent inducement counterclaim DISMISSED.</strong> The specific disclaimers in the DLA, coupled with the entire agreement clause, expressly precluded Similarweb from asserting a fraud claim premised on representations about data quality and ability to satisfy requirements. The disclaimer was effective because it was <strong>specific</strong> -- it addressed the precise subject matter of the alleged fraud (data quality/adequacy), not merely a generic &quot;no reliance&quot; clause.</p>
+  </div>
+</div>
+
+<h3 id="ibm">Int'l Bus. Mach. Corp. v. Lufkin Indus., LLC</h3>
+<div class="case-box">
+  <div class="citation">Int'l Bus. Mach. Corp. v. Lufkin Indus., LLC, No. 17-0666 (Tex. Sup. Ct. Mar. 15, 2019)</div>
+  <p><strong>Court:</strong> Supreme Court of Texas</p>
+  <p><strong>Context:</strong> Lufkin contracted with IBM for implementation of SAP enterprise business software. Lufkin alleged fraudulent inducement and &quot;string-along&quot; fraud based on pre-contract representations about project timeline, hours, and results.</p>
+  <h4>Disclaimer Language</h4>
+  <div class="disclaimer-text">&quot;In entering into this SOW, Lufkin Industries is not relying upon any representation made by or on behalf of IBM that is not specified in the Agreement or this SOW, including, without limitation, the actual or estimated completion date, amount of hours to provide any of the Services, charges to be paid, or the results of any of the Services to be provided under this SOW.&quot;
+
+&quot;[I]n entering into this SOW, neither party is relying upon any representation that is not specified in this SOW including without limitation, any representations concerning 1) estimated completion dates, hours, or charges to provide any Service; 2) the experiences of other customers; or 3) results or savings Lufkin Industries may achieve.&quot;</div>
+  <h4>Holding</h4>
+  <div class="holding">
+    <p><strong>Fraudulent inducement and string-along fraud claims DISMISSED. Judgment for IBM.</strong> The Texas Supreme Court established the governing standard: for a disclaimer to effectively bar fraudulent inducement claims, contractual language must &quot;clearly and unequivocally express the party's intent to disclaim reliance on the specific misrepresentations at issue.&quot; A merger clause alone or a clause merely reciting that no representations were made outside the written contract are NOT effective. However, IBM's specific disclaimers enumerated the <strong>exact categories</strong> of alleged misrepresentations (completion dates, hours, charges, results, other customer experiences), satisfying the specificity requirement.</p>
+  </div>
+</div>
+
+<h3 id="fraud-synthesis">Fraud + EULA Synthesis</h3>
+<table>
+  <tr>
+    <th>Case</th>
+    <th>Fraud Claim?</th>
+    <th>Disclaimer Specific?</th>
+    <th>Outcome</th>
+    <th>Key Factor</th>
+  </tr>
+  <tr>
+    <td>Diedrich v. Wolters Kluwer (2024)</td>
+    <td>No -- breach only</td>
+    <td>Yes (statutory compliance)</td>
+    <td>Contract dismissed</td>
+    <td>No fraud analysis</td>
+  </tr>
+  <tr>
+    <td>Budgetel Inns v. Micros (1998-99)</td>
+    <td>Yes (fraud in inducement)</td>
+    <td>No specific disclaimer at issue</td>
+    <td>Fraud survived ELD at MTD</td>
+    <td>Pre-formation fraud; ELD analysis, not disclaimer analysis</td>
+  </tr>
+  <tr>
+    <td>SensorTower v. Similarweb (2025)</td>
+    <td>Yes (fraudulent inducement)</td>
+    <td>Yes (data quality)</td>
+    <td>Fraud dismissed</td>
+    <td>Disclaimer addressed precise subject of alleged fraud</td>
+  </tr>
+  <tr>
+    <td>IBM v. Lufkin (2019)</td>
+    <td>Yes (fraudulent inducement + string-along)</td>
+    <td>Yes (timeline, hours, results)</td>
+    <td>Fraud dismissed</td>
+    <td>Anti-reliance clauses enumerated exact disclaimed representations</td>
+  </tr>
+</table>
+
+<div class="key-insight">
+  <strong>Emerging Legal Standard (from IBM v. Lufkin, highest authority -- state supreme court):</strong><br>
+  (1) Generic merger clauses are INSUFFICIENT to bar fraud claims.<br>
+  (2) Specific anti-reliance clauses that enumerate the exact categories of disclaimed representations ARE sufficient to bar fraud claims, even for software.<br>
+  (3) Budgetel remains the outlier, but it was decided on ELD grounds, not disclaimer grounds, and the court drew a critical distinction between pre-formation and post-formation fraud.<br>
+  (4) No case was found where a fraud claim survived a specific, targeted disclaimer in a software agreement.
+</div>
+
+<h2 id="area2">AREA 2: UCC 2-318 and Software Warranty Privity</h2>
+
+<h3 id="ucc-text">UCC 2-318 Full Text</h3>
+<p>Source: <a href="https://www.law.cornell.edu/ucc/2/2-318" style="color:var(--accent)">Cornell LII, UCC 2-318</a></p>
+<p style="color:var(--muted); font-size:0.9rem;">Note: States select ONE alternative.</p>
+
+<div class="ucc-alt">
+  <div class="alt-label">Alternative A (Narrowest -- Family/Household/Guest)</div>
+  <div class="alt-text">A seller's warranty whether express or implied extends to any natural person who is in the family or household of his buyer or who is a guest in his home if it is reasonable to expect that such person may use, consume or be affected by the goods and who is injured in person by breach of the warranty. A seller may not exclude or limit the operation of this section.</div>
+</div>
+
+<div class="ucc-alt">
+  <div class="alt-label">Alternative B (Intermediate -- Any Natural Person, Personal Injury Only)</div>
+  <div class="alt-text">A seller's warranty whether express or implied extends to any natural person who may reasonably be expected to use, consume or be affected by the goods and who is injured in person by breach of the warranty. A seller may not exclude or limit the operation of this section.</div>
+</div>
+
+<div class="ucc-alt">
+  <div class="alt-label">Alternative C (Broadest -- Any Person, Personal Injury Non-Waivable)</div>
+  <div class="alt-text">A seller's warranty whether express or implied extends to any person who may reasonably be expected to use, consume or be affected by the goods and who is injured by breach of the warranty. A seller may not exclude or limit the operation of this section with respect to injury to the person of an individual to whom the warranty extends.</div>
+</div>
+
+<div class="key-insight">
+  <strong>Critical Structural Limitation for Software:</strong> All three alternatives require the third-party beneficiary to be &quot;injured&quot; by breach of warranty. Alternatives A and B limit this to &quot;injured in person&quot; (personal injury). Alternative C allows broader injury types but makes the non-waivability provision apply only to &quot;injury to the person of an individual.&quot; None of the three alternatives creates a non-waivable right for pure economic loss -- which is the exclusive type of damage in software defect cases. This structural limitation makes UCC 2-318 effectively inapplicable to software warranty privity questions involving economic loss.
+</div>
+
+<h3 id="ucc-states">State Adoption of UCC 2-318 Alternatives</h3>
+
+<div class="discrepancy">
+  <strong>Data Availability Limitation:</strong> No comprehensive open-source table of state-by-state UCC 2-318 alternative adoption was found. The Thomson Reuters Practical Law Practice Note contains this information but is paywalled. The following data points were confirmed from open sources:
+  <ul>
+    <li><strong>Mississippi:</strong> Adopted Alternative A (confirmed by D.C. Code Library annotation to 28:2A-216, which states: &quot;Mississippi has adopted the first alternative&quot;)</li>
+    <li><strong>District of Columbia:</strong> Adopted Alternative C for 2A-216 (leases); its 2-318 adoption not confirmed from open sources</li>
+  </ul>
+  The complete state-by-state mapping requires access to proprietary legal databases (LexisNexis state variation tables, Westlaw Practical Law).
+</div>
+
+<h3 id="ucc-software">Application of UCC 2-318 to Software</h3>
+
+<div class="no-cases">
+  <p>NO CASES FOUND: No reported judicial opinion was identified that applies UCC 2-318 to software, computer programs, or software licenses. Searches conducted across multiple query formulations returned no results.</p>
+</div>
+
+<p>The structural explanation is straightforward: UCC 2-318 is designed for products that cause personal injury (the paradigm case is a defective consumer product injuring a family member or bystander). Software defects causing pure economic loss fall outside the scope of all three alternatives. Courts addressing third-party software warranty claims use general third-party beneficiary contract doctrine, not UCC 2-318.</p>
+
+<h3 id="privity">Privity Defense in Software Warranty Lawsuits</h3>
+
+<div class="no-cases">
+  <p>NO CASES FOUND (in judicial opinions): No reported judicial opinion was identified where a warranty claim (express or implied) against a software developer was dismissed solely on privity-of-contract grounds.</p>
+</div>
+
+<p>This absence is significant. In the known software liability cases:</p>
+<ul>
+  <li><strong>Rockport Pharmacy v. Digital Simplistics</strong> (8th Cir. 1995): Resolved on ELD grounds</li>
+  <li><strong>RRX Industries v. Lab-Con</strong> (9th Cir. 1985): Resolved on ELD grounds</li>
+  <li><strong>Spear Mfg. v. Liberty Insurance</strong> (E.D. Mich. 1999): Refused to apply ELD (found software not a &quot;product&quot;)</li>
+  <li><strong>Hughes v. Lord</strong> (E.D. Pa. 1994): Declined to treat software as a &quot;good&quot; under UCC</li>
+  <li><strong>Diedrich v. Wolters Kluwer</strong> (S.D.N.Y. 2024): Resolved on disclaimer enforceability</li>
+</ul>
+
+<p>None of these cases reached the privity question because they were resolved on earlier, dispositive grounds (ELD, disclaimer, or UCC classification). The one administrative decision found -- <strong>Avue Technologies Corp. v. Department of Health and Human Services</strong> (CBCA, federal administrative board) -- did dismiss on lack of privity, but this was in the federal procurement context where the software company was not a named party to the government's task order contract. It has no reporter citation and is not judicial precedent.</p>
+
+<div class="key-insight">
+  <strong>Key Insight:</strong> Privity is not a meaningful independent defense in software warranty litigation because courts resolve these cases on ELD and disclaimer grounds before reaching privity analysis. The ALI Principles of Software Contracts (Section 3.05) address distributor liability -- a distributor who &quot;transfers&quot; a warranty without &quot;adopting&quot; it is not liable -- but this is a contractual allocation, not a privity defense. For practical purposes, software developers face liability exposure from direct licensees regardless of privity, but that exposure is defined and limited by ELD and disclaimer enforceability, not by privity doctrine.
+</div>
+
+<h2 id="area3">AREA 3: Negligence Per Se and UDAP for Software Errors</h2>
+
+<h3 id="neg-per-se">Negligence Per Se Applied to Software Errors</h3>
+
+<div class="no-cases">
+  <p>NO CASES FOUND: No reported judicial opinion was identified that applies negligence per se to software errors, including tax software errors that violate IRS regulations or state tax codes. Searches conducted across multiple query formulations returned no results.</p>
+</div>
+
+<p>The theoretical framework for negligence per se requires: (1) violation of a statute or regulation, (2) the statute was intended to protect the class of persons including the plaintiff, (3) the statute was intended to prevent the type of harm suffered, and (4) the violation caused the plaintiff's injury. While IRS regulations and state tax codes could theoretically satisfy elements (1)-(3) for a user harmed by tax software calculation errors, element (4) presents the fatal gap: the causal chain runs through the software vendor's error, not directly through the user's violation of the tax code. The user's penalty is caused by the software error, not by the user's own statutory violation.</p>
+
+<p>The only related case law found concerns whether reliance on tax preparation software constitutes &quot;reasonable cause&quot; for IRS penalty abatement under IRC 6662 -- a defensive theory for the taxpayer, not an offensive negligence per se claim against the software vendor. The IRS has taken the position that reliance on software alone does not establish reasonable cause (see Huang v. Commissioner, pending). No court has addressed whether a software vendor could face negligence per se liability for producing non-compliant output.</p>
+
+<h3 id="udap">UDAP/Consumer Protection Applied to Software Calculation Errors</h3>
+
+<div class="no-cases">
+  <p>NO CASES FOUND: No reported judicial opinion was identified that applies a state UDAP, consumer fraud act, or unfair trade practices statute specifically to software calculation errors causing financial loss. Searches across NJ CFA, MA Chapter 93A, CA UCL, CUTPA, and general UDAP formulations returned no software calculation error cases.</p>
+</div>
+
+<p>Prior research in the tax-software-liability report explicitly noted: &quot;State consumer protection statutes could theoretically provide a cause of action, but no such case has been reported&quot; regarding tax software calculation errors. This deep research confirms and extends that finding: the gap is not limited to tax software but appears to be a complete void across all software types and all state UDAP statutes.</p>
+
+<h3 id="udap-existing">Existing UDAP Cases Against Tax Software Companies (Deceptive Advertising Only)</h3>
+<p>State consumer protection statutes have been applied to tax software companies, but exclusively for <strong>deceptive advertising and marketing practices</strong>, never for calculation errors:</p>
+
+<table>
+  <tr>
+    <th>Case/Action</th>
+    <th>Statute</th>
+    <th>Conduct</th>
+    <th>Outcome</th>
+    <th>Calculation Error?</th>
+  </tr>
+  <tr>
+    <td>Multistate AG Settlement v. Intuit (2022)</td>
+    <td>Multiple state UDAPs</td>
+    <td>Deceptive &quot;free filing&quot; advertising</td>
+    <td>$141 million settlement</td>
+    <td style="color:var(--danger)">No</td>
+  </tr>
+  <tr>
+    <td>FTC v. H&amp;R Block (2025)</td>
+    <td>FTC Act Section 5</td>
+    <td>Dark patterns, deceptive advertising</td>
+    <td>$7 million final order</td>
+    <td style="color:var(--danger)">No</td>
+  </tr>
+  <tr>
+    <td>Los Angeles City Attorney v. Intuit (2019-2022)</td>
+    <td>CA UCL + FAL</td>
+    <td>Deceptive practices targeting low-income taxpayers</td>
+    <td>Part of $141M multistate settlement</td>
+    <td style="color:var(--danger)">No</td>
+  </tr>
+  <tr>
+    <td>Los Angeles City Attorney v. H&amp;R Block (2019-2024)</td>
+    <td>CA UCL + FAL</td>
+    <td>Fraudulent, unfair, deceptive business practices</td>
+    <td>$1.6 million settlement</td>
+    <td style="color:var(--danger)">No</td>
+  </tr>
+</table>
+
+<p>The NJ Consumer Fraud Act has been applied to software in one identified context: N.J.S.A. 56:8-165 classifies willful, knowing, or reckless violation of NJ breach notification requirements (N.J.S.A. 56:8-161 through 164) as a CFA violation. This is a data security/breach notification application, not a calculation error application.</p>
+
+<div class="key-insight">
+  <strong>Key Insight:</strong> The complete absence of UDAP cases for software calculation errors is striking given that these statutes are broadly worded (e.g., NJ CFA covers &quot;any unconscionable commercial practice, deception, fraud, false pretense, false promise, misrepresentation&quot;; MA Ch. 93A covers &quot;unfair methods of competition and unfair or deceptive acts or practices&quot;). Possible explanations: (1) EULA forum selection clauses and arbitration provisions channel disputes away from state courts where UDAP claims would be brought; (2) ELD and disclaimer analysis provides a simpler, earlier disposition mechanism; (3) the causal chain for calculation errors (software error -&gt; incorrect output -&gt; user penalty) may not satisfy the &quot;ascertainable loss&quot; requirement in some UDAP statutes; (4) software vendors may settle any such claims before they produce published opinions.
+</div>
+
+<h2>Research Methodology and Limitations</h2>
+<ul>
+  <li>All case citations verified against source documents accessed during research</li>
+  <li>Full-text opinions were sought but several sources (Justia, CaseMine, NCLC) blocked access via JavaScript requirements or 403 errors; analysis relied on accessible summaries and secondary source commentary where full opinions were unavailable</li>
+  <li>UCC 2-318 state adoption table requires proprietary database access (Thomson Reuters, LexisNexis) -- only Mississippi (Alt A) confirmed from open sources</li>
+  <li>Budgetel Inns final disposition after Budgetel II could not be determined from open sources</li>
+  <li>SensorTower v. Similarweb (2025) is a trial court decision (N.Y. Sup. Ct.) with no reporter citation -- it is persuasive but not binding precedent</li>
+  <li>&quot;No cases found&quot; notations represent genuine gaps in accessible case law, not conclusions of non-existence</li>
+</ul>
+
+</body>
+</html>

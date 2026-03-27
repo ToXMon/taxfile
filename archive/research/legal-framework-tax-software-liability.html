@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Framework for Tax Software Liability: Research Memorandum</title>
+<style>
+:root { --bg: #0d1117; --surface: #161b22; --border: #30363d; --text: #c9d1d9; --heading: #f0f6fc; --accent: #58a6ff; --red: #f85149; --green: #3fb950; --yellow: #d29922; --purple: #bc8cff; --orange: #f0883e; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; margin: 0; padding: 2rem; max-width: 1100px; margin: auto; }
+h1 { color: var(--heading); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; font-size: 1.9rem; margin-top: 0; }
+h2 { color: var(--accent); margin-top: 2.5rem; font-size: 1.35rem; border-left: 4px solid var(--accent); padding-left: 0.75rem; }
+h3 { color: var(--purple); margin-top: 1.5rem; font-size: 1.1rem; }
+h4 { color: var(--yellow); margin-top: 1.2rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin: 1rem 0; }
+.card-green { border-left: 4px solid var(--green); }
+.card-red { border-left: 4px solid var(--red); }
+.card-yellow { border-left: 4px solid var(--yellow); }
+.card-purple { border-left: 4px solid var(--purple); }
+.card-orange { border-left: 4px solid var(--orange); }
+.label { font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+.label-green { color: var(--green); }
+.label-red { color: var(--red); }
+.label-yellow { color: var(--yellow); }
+.label-purple { color: var(--purple); }
+.label-orange { color: var(--orange); }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+th { background: var(--surface); color: var(--heading); text-align: left; padding: 0.6rem; border: 1px solid var(--border); font-size: 0.82rem; }
+td { padding: 0.6rem; border: 1px solid var(--border); vertical-align: top; }
+cite { color: var(--accent); font-style: normal; }
+blockquote { border-left: 3px solid var(--purple); padding: 0.5rem 1rem; margin: 1rem 0; background: #1c2333; color: #adbac7; font-size: 0.92rem; }
+blockquote cite { display: block; font-size: 0.88rem; color: var(--accent); margin-top: 0.5rem; }
+.toc { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+.toc a { color: var(--accent); text-decoration: none; font-size: 0.92rem; }
+.toc a:hover { text-decoration: underline; }
+.toc ol { margin: 0; padding-left: 1.5rem; }
+.toc li { margin: 0.3rem 0; }
+.exec { background: linear-gradient(135deg, #161b22 0%, #1c2333 100%); border: 2px solid var(--accent); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+.warning { background: #3d1f1f; border: 1px solid var(--red); border-radius: 8px; padding: 1rem; margin: 1rem 0; color: #ffa198; }
+ul, ol { padding-left: 1.5rem; }
+li { margin: 0.25rem 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+.juris { background: #1c2333; border-left: 4px solid var(--orange); padding: 0.75rem 1rem; margin: 0.75rem 0; font-size: 0.9rem; }
+.minority { background: #2d1b2e; border-left: 4px solid #c62828; padding: 0.75rem 1rem; margin: 0.75rem 0; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+
+<h1>Legal Framework for Tax Software Liability</h1>
+<p style="color:var(--text);opacity:0.6;font-size:0.85rem;">Research Memorandum | March 26, 2026 | U.S. Federal Law, Tax Court, Federal District Courts, State Law Variations</p>
+
+<div class="exec">
+<h2 style="border:none;padding:0;margin-top:0;color:var(--accent);">Executive Summary</h2>
+<p>This memorandum addresses the complete legal framework governing liability when tax preparation software produces incorrect calculations. The research synthesizes findings from 25+ web searches, full-text analysis of judicial opinions, Treasury Regulations, IRS publications, and legal scholarship across eight subtopics.</p>
+<p>The most significant finding is the <strong>complete absence of any reported case</strong> where a taxpayer successfully sued a tax software company (TurboTax, H&amp;R Block, TaxAct) for a calculation error. All major lawsuits against these companies concern deceptive advertising or data privacy, never computational accuracy. Settled law places ultimate liability on the taxpayer for the underlying tax. Tort claims are barred by the economic loss doctrine. Contractual claims are extinguished by EULA disclaimers. The only viable recovery path is the contractual accuracy guarantee, which caps damages at penalties and interest only. The 2025 <cite>Huang v. United States</cite> decision signals an emerging shift at the penalty-abatement level but does not create direct liability against developers.</p>
+</div>
+
+<div class="toc">
+<strong style="color:var(--heading);">Table of Contents</strong>
+<ol>
+<li><a href="#s1">I. Liability Allocation: Developer vs. User</a></li>
+<li><a href="#s2">II. Type of Liability: Contractual, Tort, or Statutory</a></li>
+<li><a href="#s3">III. Legal Theories for Suing Tax Software Developers</a></li>
+<li><a href="#s4">IV. UCC Framework: Good or Service</a></li>
+<li><a href="#s5">V. Tort Theories: Negligent Misrepresentation, Fraud, Negligence Per Se</a></li>
+<li><a href="#s6">VI. Contractual Theories: Implied Warranties</a></li>
+<li><a href="#s7">VII. Economic Loss Doctrine</a></li>
+<li><a href="#s8">VIII. Privity Requirements and Third-Party Liability</a></li>
+<li><a href="#master">IX. Master Citation Table</a></li>
+<li><a href="#conclusions">X. Conclusions</a></li>
+</ol>
+</div>
+
+<hr>
+
+<h2 id="s1">I. Liability Allocation: What Happens When Tax Software Calculates Incorrectly?</h2>
+
+<h4>SETTLED LAW</h4>
+
+<div class="card card-green">
+<div class="label label-green">Established Principle #1: Taxpayer Bears Ultimate Responsibility for the Tax</div>
+<p>The taxpayer who signs a tax return is legally responsible for its accuracy regardless of who or what prepared it:</p>
+<ul>
+<li><strong>IRC Section 6011</strong>: Requires every taxpayer to file a return showing accurate tax liability.</li>
+<li><strong>IRC Section 6065</strong>: Returns must be signed under penalties of perjury, creating personal accountability that cannot be delegated.</li>
+<li><strong>IRS Publication 17</strong>: &ldquo;As with a paper return, <strong>you are responsible for making sure your return contains accurate information and is filed on time.</strong>&rdquo;</li>
+<li><strong>Bunney v. Commissioner</strong>, <cite>114 T.C. 259, 267 (2000)</cite>: &ldquo;<strong>Tax preparation software is only as good as the information one inputs into it.</strong>&rdquo;</li>
+<li><strong>United States v. Boyle</strong>, <cite>469 U.S. 241 (1985)</cite>: Reliance on an agent does not excuse the taxpayer’s obligations.</li>
+</ul>
+</div>
+
+<div class="card card-green">
+<div class="label label-green">Established Principle #2: Software Is Not Professional Advice (Traditional Rule)</div>
+<ul>
+<li><strong>Bunney v. Commissioner</strong>, <cite>114 T.C. 259 (2000)</cite>: Rejected software reliance as reasonable cause.</li>
+<li><strong>Lam (Au) v. Commissioner</strong>, <cite>T.C. Memo. 2010-82 (2010)</cite>: Rejected the &ldquo;Geithner defense&rdquo;&mdash;blaming TurboTax for errors did not excuse accuracy-related penalties.</li>
+</ul>
+</div>
+
+<div class="card card-green">
+<div class="label label-green">Established Principle #3: Developer Liability Is Contractually Capped at Penalties/Interest</div>
+<ul>
+<li><strong>TurboTax 100% Accurate Calculations Guarantee</strong>: Covers only penalties and interest&mdash;NOT the underlying tax. Requires claim within 30 days.</li>
+<li><strong>TaxAct 100% Expert Accuracy Guarantee</strong>: Covers penalties/interest from a TaxAct Expert’s error only. &ldquo;Any actual difference between final tax liability and amounts previously paid remains the taxpayer’s responsibility.&rdquo;</li>
+</ul>
+</div>
+
+<h4>GRAY AREA</h4>
+
+<div class="card card-yellow">
+<div class="label label-yellow">Emerging Shift: Software Reliance as Reasonable Cause (Post-Huang)</div>
+<ul>
+<li><strong>Huang v. United States</strong>, No. 3:24-cv-062998-RS (<cite>N.D. Cal. May 28, 2025</cite>): Federal district court denied IRS motion to dismiss, treating TurboTax’s guidance as <em>akin to professional advice</em>. <strong>Motion-to-dismiss ruling only&mdash;not a merits decision.</strong></li>
+<li><strong>Olsen v. Commissioner</strong>, <cite>T.C. Summ. Op. 2011-131 (2011)</cite>: Penalty abated where good-faith software reliance contributed to isolated K-1 error.</li>
+<li><strong>Dealers Auto Auction v. Commissioner</strong>, <cite>T.C. Memo. 2025-38 (2025)</cite>: Tax Court &ldquo;open to the possibility&rdquo; of software failure as reasonable cause but rejected on facts.</li>
+</ul>
+</div>
+
+<h4>ACTUAL LEGAL STANDARD</h4>
+
+<div class="card card-purple">
+<div class="label label-purple">Three-Prong Test for Reliance-Based Reasonable Cause</div>
+<p>From <cite>United States v. Boyle</cite>, 469 U.S. 241 (1985); <cite>Neonatology Associates v. Commissioner</cite>, 115 T.C. 43 (2000); codified in <strong>Treasury Regulation Section 1.6664-4(c)</strong>:</p>
+<ol>
+<li><strong>Competent Advisor</strong>: Taxpayer relied on a competent professional. <em>Open question post-Huang: Does tax software meet this threshold?</em></li>
+<li><strong>Complete Information</strong>: Taxpayer supplied all necessary and accurate information.</li>
+<li><strong>Actual Good-Faith Reliance</strong>: Taxpayer actually relied on the advice in good faith.</li>
+</ol>
+</div>
+
+<hr>
+
+<h2 id="s2">II. Type of Liability: Contractual, Tort, or Statutory?</h2>
+
+<h4>SETTLED LAW</h4>
+
+<div class="card card-green">
+<div class="label label-green">Statutory Liability (Tax Law) Is Primary and Non-Delegable</div>
+<ul>
+<li><strong>IRC Section 6662(a)</strong>: 20% accuracy-related penalty on underpayments.</li>
+<li><strong>IRC Section 6651(a)(2)</strong>: Failure-to-pay penalty (0.5% per month, up to 25%).</li>
+<li><strong>IRC Section 6065</strong>: Perjury declaration creates personal liability.</li>
+<li><strong>IRC Section 6694</strong>: Tax preparer penalties&mdash;but preparer penalties &ldquo;don’t remove your [taxpayer’s] liability.&rdquo;</li>
+</ul>
+<p>These statutes create liability from IRS to taxpayer. They do not create a cause of action for the taxpayer against the software developer.</p>
+</div>
+
+<div class="card card-green">
+<div class="label label-green">Contractual Liability Is Bounded by EULA Terms</div>
+<p>EULAs disclaim all warranties, limit consequential damages, provide accuracy guarantees covering penalties/interest only, and mandate arbitration.</p>
+</div>
+
+<div class="card card-green">
+<div class="label label-green">Tort Liability Is Barred by the Economic Loss Doctrine</div>
+<p>When software defects cause purely economic loss (no physical injury or property damage), ELD bars tort recovery. See Section VII below.</p>
+</div>
+
+<h4>GRAY AREA</h4>
+
+<div class="card card-yellow">
+<div class="label label-yellow">The Huang Paradox</div>
+<p><cite>Huang</cite> treated TurboTax advice as &ldquo;akin to professional advice&rdquo; for penalty abatement, but this does not translate into direct liability against Intuit. The IRS, not Intuit, would bear the cost of any penalty abatement. No court has held that treating software as professional advice for penalty purposes creates tort or contractual liability against the developer.</p>
+</div>
+
+<div class="card card-yellow">
+<div class="label label-yellow">No Direct Statutory Cause of Action Against Software Developers</div>
+<p>No federal statute creates a direct cause of action for a taxpayer to sue a software developer for calculation errors. State UDAP statutes have been applied to tax software companies, but only for deceptive advertising&mdash;never for calculation defects.</p>
+</div>
+
+<hr>
+
+<h2 id="s3">III. Legal Theories for Suing Tax Software Developers</h2>
+
+<div class="warning">
+<strong>Critical Finding:</strong> After exhaustive research across 25+ search queries, <strong>no reported case exists</strong> where a taxpayer sued a tax software company for a calculation error and obtained a judicial ruling on the merits. This absence is itself legally significant. All major litigation involves deceptive advertising or data privacy&mdash;never computational accuracy.
+</div>
+
+<h4>AVAILABLE THEORIES (Theoretical, Never Successfully Litigated for Tax Software)</h4>
+
+<table>
+<tr><th>Theory</th><th>Legal Basis</th><th>Primary Barrier</th><th>Status</th></tr>
+<tr><td>Breach of implied warranty of merchantability</td><td>UCC Section 2-314</td><td>EULA disclaimer; ELD</td><td><span style="color:var(--red)">Never litigated</span></td></tr>
+<tr><td>Breach of implied warranty of fitness</td><td>UCC Section 2-315</td><td>EULA disclaimer; ELD</td><td><span style="color:var(--red)">Never litigated</span></td></tr>
+<tr><td>Negligence</td><td>Common law</td><td>ELD bars economic loss</td><td><span style="color:var(--red)">Barred</span></td></tr>
+<tr><td>Negligent misrepresentation</td><td>Restatement (Second) of Torts Section 552</td><td>Software dev not &ldquo;information supplier&rdquo;</td><td><span style="color:var(--red)">Structurally unavailable</span></td></tr>
+<tr><td>Fraud / Fraudulent inducement</td><td>Common law</td><td>Specific anti-reliance clauses in EULA</td><td><span style="color:var(--yellow)">Theoretically possible; no case found</span></td></tr>
+<tr><td>Negligence per se</td><td>Violation of statute</td><td>ELD; no duty; causal chain</td><td><span style="color:var(--red)">Never litigated</span></td></tr>
+<tr><td>Strict products liability</td><td>Restatement Section 402A</td><td>Software not a &ldquo;product&rdquo;; ELD</td><td><span style="color:var(--red)">Rejected by most courts</span></td></tr>
+<tr><td>UDAP / Consumer fraud</td><td>State statutes</td><td>Never applied to calculation errors</td><td><span style="color:var(--red)">Never litigated for calc. defects</span></td></tr>
+<tr><td>Breach of accuracy guarantee</td><td>EULA terms</td><td>Limited to penalties/interest; 30-day window</td><td><span style="color:var(--green)">Only viable path (bounded)</span></td></tr>
+</table>
+
+<h4>ACTUAL LAWSUITS AGAINST TAX SOFTWARE COMPANIES (Non-Calculation-Error)</h4>
+
+<table>
+<tr><th>Case/Action</th><th>Year</th><th>Theory</th><th>Outcome</th><th>Amount</th></tr>
+<tr><td>Multistate AG Settlement v. Intuit</td><td>2022</td><td>Deceptive &ldquo;free filing&rdquo; advertising</td><td>Settlement; 4.4M consumers paid</td><td>$141 million</td></tr>
+<tr><td>FTC v. H&amp;R Block</td><td>2025</td><td>FTC Act: dark patterns</td><td>Final order</td><td>$7 million</td></tr>
+<tr><td>Smith v. TaxAct</td><td>2024</td><td>Data privacy violations</td><td>Settlement approved</td><td>$14.95 million</td></tr>
+<tr><td>LA City Attorney v. H&amp;R Block</td><td>2024</td><td>Steering to paid products</td><td>Settlement</td><td>$1.6 million</td></tr>
+<tr><td>TurboTax Data Breach Class Action</td><td>2024-25</td><td>Negligence in data security</td><td>Active litigation</td><td>Up to $2,500/person</td></tr>
+</table>
+
+<hr>
+
+<h2 id="s4">IV. UCC Framework: Is Tax Software a &ldquo;Good&rdquo; or a &ldquo;Service&rdquo;?</h2>
+
+<h3>A. The Predominant Purpose Test</h3>
+
+<div class="card card-purple">
+<div class="label label-purple">Actual Legal Standard</div>
+<p>When a contract involves both goods and services, most courts apply the <strong>predominant purpose test</strong>. Factors: contract language, nature of supplier’s business, relative values, compensation structure, and whether goods or services are the &ldquo;essence&rdquo; of the transaction.</p>
+<p><strong>Source:</strong> UCC Section 2-102 Official Comments; <cite>Bonebrake v. Cox</cite>, 499 F.2d 951 (8th Cir. 1974).</p>
+</div>
+
+<h3>B. Key Cases: Software as a &ldquo;Good&rdquo;</h3>
+
+<div class="card card-green">
+<div class="label label-green">Advent Systems Ltd. v. Unisys Corp., 925 F.2d 670 (3d Cir. 1991)</div>
+<p><strong>Holding:</strong> Computer software is a &ldquo;good&rdquo; under UCC Article 2. Once software is &ldquo;implanted in a medium,&rdquo; it becomes tangible, moveable, and merchantable&mdash;analogous to a CD recording or a transcribed book. Copyrightability does not alter its status. For mixed transactions, the predominant purpose test governs. <strong>Leading federal appellate case.</strong></p>
+</div>
+
+<div class="card card-green">
+<div class="label label-green">RRX Industries, Inc. v. Lab-Con, Inc., 772 F.2d 543 (9th Cir. 1985)</div>
+<p><strong>Holding:</strong> Software is a good under UCC Article 2. Applied California UCC Section 2105(1). Upheld consequential damages limitation under UCC Section 2-719.</p>
+</div>
+
+<div class="card card-green">
+<div class="label label-green">Additional Cases</div>
+<ul>
+<li><cite>A&amp;B Duplicators v. Sea</cite>, 468 F.2d 695 (2d Cir. 1972): Early UCC application to software.</li>
+<li><cite>Accusoft Inc. v. Peat</cite>, No. 93-2081 (E.D. Pa. 1994): Applied UCC Article 2 to software license.</li>
+</ul>
+</div>
+
+<h3>C. Cases Holding Software Is a &ldquo;Service&rdquo;</h3>
+
+<div class="card card-yellow">
+<div class="label label-yellow">Custom Software Tends Toward &ldquo;Service&rdquo; Classification</div>
+<ul>
+<li><cite>Questar Assessment v. Utah State Board of Education</cite>: Specialized software = service contract; UCC did not apply.</li>
+<li><cite>Systems Am. v. Rockwell Software</cite> (Cal.): Custom software compared to professor’s lecture; programmer’s knowledge was the essence.</li>
+<li><cite>TK Power v. Textron</cite> (Cal.): Contract for &ldquo;knowledge, skill, and ability.&rdquo;</li>
+<li><cite>Wharton Mgmt. v. Sigma Consultants</cite> (Del.): Programmer’s knowledge at heart of transaction.</li>
+</ul>
+</div>
+
+<h3>D. Virtual Maintenance Inc. v. Prime Computer, Inc.</h3>
+<div class="card card-yellow">
+<div class="label label-yellow">Not a UCC Classification Case</div>
+<p><cite>Virtual Maintenance v. Prime Computer</cite>, 11 F.3d 660 (6th Cir. 1993) is <strong>primarily an antitrust tying case</strong> under Section 1 of the Sherman Act, not a UCC Article 2 classification case. Does not provide authority on goods vs. services under the UCC.</p>
+</div>
+
+<h3>E. Shrink-Wrap / License vs. Sale</h3>
+
+<div class="card card-green">
+<div class="label label-green">ProCD, Inc. v. Zeidenberg, 86 F.3d 1447 (7th Cir. 1996)</div>
+<p>Shrink-wrap licenses are enforceable under UCC Sections 2-204, 2-206, 2-207. No case found requiring &ldquo;special prominence&rdquo; for shrinkwrap terms.</p>
+</div>
+
+<div class="card card-green">
+<div class="label label-green">Specht v. Netscape Communications Corp., 306 F.3d 17 (2d Cir. 2002)</div>
+<p>Browse-wrap agreements are NOT enforceable without conspicuous manifestation of assent.</p>
+</div>
+
+<h3>F. UCC Article 2B and UCITA &mdash; Failed Reform</h3>
+<div class="card card-purple">
+<div class="label label-purple">Historical Summary</div>
+<ul>
+<li><strong>1999</strong>: ALI withdrew from Article 2B (unprecedented).</li>
+<li><strong>2000</strong>: Renamed UCITA; only Virginia and Maryland adopted.</li>
+<li><strong>2000-2003</strong>: 5+ states passed &ldquo;bomb-shelter&rdquo; laws.</li>
+<li><strong>2003</strong>: ABA resolution withdrawn; UCITA effectively dead.</li>
+</ul>
+<p><strong>Why it failed:</strong> Pro-vendor bias; license recharacterization eliminating first-sale rights; dangerous self-help provisions (remote disablement); asymmetric liability.</p>
+</div>
+
+<div class="card card-orange">
+<div class="label label-orange">ALI Principles of Software Contracts (2009) &mdash; Non-Binding Soft Law</div>
+<p>Creates a non-disclaimable implied warranty that software contains no material hidden defects of which the transferring party was aware. Not law in any jurisdiction unless adopted by a court.</p>
+</div>
+
+<h4>APPLICATION TO TAX SOFTWARE</h4>
+<div class="card card-green">
+<div class="label label-green">Settled Law</div>
+<p>Off-the-shelf tax software (TurboTax, H&amp;R Block, TaxAct) would <strong>almost certainly be classified as a &ldquo;good&rdquo;</strong> under <cite>Advent Systems</cite>. UCC Article 2 governs&mdash;but EULA disclaimers of implied warranties are enforceable under UCC Section 2-316 and <cite>ProCD</cite>.</p>
+</div>
+
+<hr>
+
+<h2 id="s5">V. Tort Theories: Negligent Misrepresentation, Fraud, Negligence Per Se</h2>
+
+<h3>A. Negligent Misrepresentation &mdash; Restatement (Second) of Torts Section 552</h3>
+
+<div class="card card-purple">
+<div class="label label-purple">Actual Legal Standard &mdash; Elements of Section 552(2)</div>
+<p>As applied in <cite>Bily v. Arthur Young</cite>, 3 Cal.4th 370, 834 P.2d 745 (1992):</p>
+<ol>
+<li>Defendant, <strong>in the course of business with pecuniary interest</strong>, supplies false information for guidance of others;</li>
+<li>Defendant <strong>failed to exercise reasonable care</strong> in obtaining or communicating the information;</li>
+<li>Plaintiff suffered <strong>pecuniary loss by justifiable reliance</strong>;</li>
+<li><strong>Scope limitation (Section 552(2)(a)):</strong> Loss by a person or limited group <strong>for whose benefit defendant intended to supply the information</strong>;</li>
+<li><strong>Transaction limitation (Section 552(2)(b)):</strong> Loss through reliance in a transaction defendant intended to influence.</li>
+</ol>
+<p>Elements (4) and (5) = <strong>&ldquo;near-privity&rdquo; limitations</strong>. Foreseeability alone insufficient.</p>
+</div>
+
+<div class="card card-red">
+<div class="label label-red">Dead End for Software: Publications Int’l v. Mindtree (N.D. Ill. 2014)</div>
+<p>Court <strong>explicitly rejected</strong> Section 552 for software: developer is NOT an &ldquo;information provider&rdquo; under the ELD exception. Software is a product, not information. <strong>No court has ever applied Section 552 to software defects.</strong></p>
+</div>
+
+<div class="card card-green">
+<div class="label label-green">Jurisdictional Variations on Section 552 as ELD Exception</div>
+<table>
+<tr><th>Jurisdiction</th><th>Approach</th><th>Key Case</th></tr>
+<tr><td>Pennsylvania</td><td>Categorical exception&mdash;ELD never applies to Section 552</td><td><cite>Bilt-Rite v. Architectural Studio</cite>, 581 Pa. 545, 866 A.2d 312 (2005)</td></tr>
+<tr><td>Illinois</td><td>Section 552 as one of three ELD exceptions</td><td><cite>Moorman v. National Tank</cite>, 91 Ill.2d 69, 435 N.E.2d 443 (1982)</td></tr>
+<tr><td>California</td><td>Section 552 available but severely limited by near-privity</td><td><cite>Bily v. Arthur Young</cite>, 3 Cal.4th 370 (1992)</td></tr>
+</table>
+</div>
+
+<div class="card card-yellow">
+<div class="label label-yellow">Gray Area</div>
+<p>Even in Pennsylvania (categorical Section 552 exception), the threshold question remains: <strong>Is a software developer an &ldquo;information supplier&rdquo;?</strong> <cite>Mindtree</cite> says no. No court has said yes. The exception may be structurally unavailable for software regardless of jurisdiction.</p>
+</div>
+
+<h3>B. Fraud</h3>
+
+<div class="card card-green">
+<div class="label label-green">Fraud Survives ELD &mdash; But Specific Anti-Reliance Clauses Bar It</div>
+<ul>
+<li><strong>IBM v. Lufkin Industries</strong>, No. 17-0666 (<cite>Tex. Sup. Ct. Mar. 15, 2019</cite>): <strong>Highest authority.</strong> Specific anti-reliance clauses enumerating disclaimed representations bar fraudulent inducement. Generic merger clauses do NOT.</li>
+<li><strong>Budgetel Inns v. Micros Systems</strong>, 8 F.Supp.2d 1137 (E.D. Wis. 1998): Pre-formation fraud survived ELD; post-formation barred.</li>
+<li><strong>SensorTower v. Similarweb</strong>, 2025 NY Slip Op. 32998(U): Specific disclaimer coupled with &ldquo;as is&rdquo; barred fraud counterclaim.</li>
+</ul>
+<p><strong>No case found where fraud survived a specific, targeted disclaimer in a software agreement.</strong></p>
+</div>
+
+<div class="card card-green">
+<div class="label label-green">Actual Legal Standard</div>
+<p>Generic merger clauses alone will NOT bar fraud. But <strong>specific anti-reliance clauses enumerating precise representations WILL bar fraud</strong>&mdash;even fraudulent inducement. Test from <cite>IBM v. Lufkin</cite>: Does the disclaimer specifically address the subject matter of the alleged fraud?</p>
+</div>
+
+<h3>C. Negligence Per Se</h3>
+<div class="card card-red">
+<div class="label label-red">No Reported Case Applies Negligence Per Se to Software Errors</div>
+<p>Barriers: (1) IRS regulations govern preparers/taxpayers, not developers; (2) ELD disposes before reaching analysis; (3) No recognized duty of care for calculation accuracy; (4) Arbitration clauses keep claims out of courts.</p>
+</div>
+
+<h3>D. Consumer Protection Statutes (UDAP)</h3>
+<div class="card card-red">
+<div class="label label-red">No Reported Case Applies UDAP to Software Calculation Errors</div>
+<p>All UDAP actions against tax software companies involve deceptive advertising ONLY: Intuit $141M (2022), H&amp;R Block $7M (2025), H&amp;R Block $1.6M (2024). UDAP pathway for calculation errors remains entirely unlitigated.</p>
+</div>
+
+<hr>
+
+<h2 id="s6">VI. Contractual Theories: Implied Warranties</h2>
+
+<h3>A. Implied Warranty of Merchantability &mdash; UCC Section 2-314</h3>
+
+<div class="card card-purple">
+<div class="label label-purple">Actual Legal Standard</div>
+<p>UCC Section 2-314(2): Goods must be &ldquo;fit for the ordinary purposes for which such goods are used.&rdquo; For tax software: must calculate taxes correctly for standard inputs. Section 2-314(3): warranty &ldquo;runs with the goods&rdquo; to any person in the commercial chain.</p>
+</div>
+
+<div class="card card-green">
+<div class="label label-green">Applicability to Software: Settled</div>
+<p>Off-the-shelf tax software is a &ldquo;good&rdquo; under UCC Article 2, so Section 2-314 <strong>technically applies</strong>&mdash;arises automatically by operation of law.</p>
+</div>
+
+<div class="card card-red">
+<div class="label label-red">Disclaimer Under UCC Section 2-316: Effectively Fatal</div>
+<p>UCC Section 2-316(2) allows exclusion by: (a) &ldquo;as is&rdquo; or &ldquo;with all faults&rdquo; language; (b) buyer examination; (c) <strong>writing mentioning merchantability that is conspicuous</strong>.</p>
+<p><strong>Diedrich v. Wolters Kluwer</strong>, 2024 WL 291156 (S.D.N.Y. Jan. 25, 2024): <strong>Most on-point case.</strong> Tax/accounting software. Court enforced: &ldquo;THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PRODUCT(S), INCLUDING ELECTRONIC FILING&rdquo; and disclaimer that use &ldquo;will not satisfy any statutory or regulatory obligations.&rdquo; <strong>Caveat:</strong> Only breach of contract claims pleaded&mdash;no fraud/warranty claims at issue.</p>
+</div>
+
+<h3>B. Implied Warranty of Fitness for a Particular Purpose &mdash; UCC Section 2-315</h3>
+
+<div class="card card-purple">
+<div class="label label-purple">Actual Legal Standard</div>
+<p>Elements: (1) Seller has reason to know buyer’s particular purpose; (2) Buyer relies on seller’s skill/judgment; (3) Seller has reason to know of reliance.</p>
+</div>
+
+<div class="card card-yellow">
+<div class="label label-yellow">Gray Area for Tax Software</div>
+<p>Harder to assert: (1) &ldquo;Particular purpose&rdquo; is generic (preparing taxes); (2) Buyer doesn’t rely on seller’s skill to select goods; (3) Disclaimable under Section 2-316(2). <strong>No case found</strong> asserting Section 2-315 against tax software.</p>
+</div>
+
+<h3>C. Consequential Damages Limitation &mdash; UCC Section 2-719</h3>
+<div class="card card-green">
+<div class="label label-green">Settled Law</div>
+<p>Section 2-719(3): Consequential damages may be limited unless &ldquo;unconscionable.&rdquo; <cite>RRX Industries</cite>, 772 F.2d 543: Upheld limitation in software contract. Courts have not found tax software EULA limitations unconscionable.</p>
+</div>
+
+<hr>
+
+<h2 id="s7">VII. Economic Loss Doctrine</h2>
+
+<h3>A. Foundational Cases</h3>
+
+<div class="card card-green">
+<div class="label label-green">Seely v. White Motor Co., 63 Cal.2d 9, 403 P.2d 145 (1965) &mdash; Origin</div>
+<blockquote>&ldquo;Even in actions for negligence, a manufacturer’s liability is limited to damages for physical injuries and there is no recovery for economic loss alone.&rdquo;<cite>63 Cal.2d at 17, 403 P.2d at 151</cite></blockquote>
+<blockquote>&ldquo;The distinction that the law has drawn between tort recovery for physical injuries and warranty recovery for economic loss is not arbitrary and does not rest on the &lsquo;luck’ of one plaintiff in having an accident causing physical injury.&rdquo;<cite>63 Cal.2d at 17</cite></blockquote>
+<p><strong>Policy:</strong> (1) Tort addresses safety risks; economic expectations are different. (2) Risk-spreading for personal injury does not extend to business losses. (3) UCC itself recognizes this distinction.</p>
+</div>
+
+<div class="card card-green">
+<div class="label label-green">East River Steamship v. Transamerica Delaval, 476 U.S. 858 (1986) &mdash; SCOTUS Adoption</div>
+<blockquote>&ldquo;[W]e adopt an approach similar to Seely and hold that a manufacturer in a commercial relationship has no duty under either a negligence or strict products-liability theory to prevent a product from injuring itself.&rdquo;<cite>476 U.S. at 871</cite></blockquote>
+<blockquote>&ldquo;When a product injures only itself the reasons for imposing a tort duty are weak and those for leaving the party to its contractual remedies are strong.&rdquo;<cite>476 U.S. at 871</cite></blockquote>
+<p><strong>Binary test:</strong> Physical injury to person/other property = tort available. Product injures only itself = tort barred. <strong>Expressly rejected</strong> intermediate &ldquo;degree of risk&rdquo; tests. <strong>Integrated system theory:</strong> Component parts damaging the whole != &ldquo;other property.&rdquo;</p>
+<p>&ldquo;It is clear, however, that if this development were allowed to progress too far, contract law would drown in a sea of tort.&rdquo; (476 U.S. at 866)</p>
+</div>
+
+<div class="minority">
+<div class="label" style="color:#c62828;">Minority View &mdash; Justice Peters Dissent in Seely</div>
+<p>Argued the entire tort/economic-loss distinction was <strong>dicta</strong> because case was decided on warranty grounds alone. Virtually every subsequent court treated it as the foundational holding anyway.</p>
+</div>
+
+<h3>B. Software-Specific Applications</h3>
+
+<div class="card card-green">
+<div class="label label-green">Cases Where ELD WAS Applied to Software</div>
+<ul>
+<li><strong>Rockport Pharmacy v. Digital Simplistics</strong>, 53 F.3d 195 (8th Cir. 1995): ELD barred tort claims. <strong>Rejected software-as-service argument.</strong> Nature of damages determined ELD applicability.</li>
+<li><strong>RRX Industries v. Lab-Con</strong>, 772 F.2d 543 (9th Cir. 1985): ELD barred tort recovery for defective software.</li>
+<li><strong>Travelers Indemnity v. Heller Financial</strong>, 2002 WL 31896557 (N.D. Ill. 2002): ELD barred tort claims in software licensing.</li>
+</ul>
+</div>
+
+<div class="card card-yellow">
+<div class="label label-yellow">Cases Where Courts REFUSED to Apply ELD</div>
+<ul>
+<li><strong>Spear Mfg. v. Liberty Insurance</strong>, 31 F.Supp.2d 734 (E.D. Mich. 1999): Software not a &ldquo;product&rdquo;; ELD not applied. <strong>Did not hold tort claims available</strong>&mdash;only that ELD framework didn’t fit.</li>
+<li><strong>Hughes v. Lord</strong>, 1994 WL 713794 (E.D. Pa. 1994): Software not a UCC &ldquo;good&rdquo;; tort potentially available.</li>
+</ul>
+</div>
+
+<h3>C. Application to Tax Software</h3>
+<div class="card card-green">
+<div class="label label-green">Settled Law</div>
+<p>Tax software errors produce <strong>purely economic</strong> damages: additional tax, penalties, interest, professional fees. No physical injury to person or &ldquo;other property.&rdquo; Under <cite>East River</cite>’s binary test, ELD <strong>bars all tort claims</strong>.</p>
+</div>
+
+<div class="juris">
+<strong>Jurisdictional Variations:</strong>
+<ul>
+<li><strong>Michigan</strong>: Software not a &ldquo;product&rdquo; (Spear Mfg.); ELD may not apply.</li>
+<li><strong>Missouri</strong>: ELD applies regardless of software tangibility (Rockport Pharmacy).</li>
+<li><strong>Pennsylvania</strong>: ELD does not apply to service contracts.</li>
+<li><strong>Tennessee</strong>: (2023) Declined to extend ELD beyond products liability.</li>
+</ul>
+</div>
+
+<div class="card card-yellow">
+<div class="label label-yellow">Gray Area</div>
+<p>If software is not a &ldquo;product,&rdquo; ELD may not apply by its own terms. But most courts reach ELD without resolving this threshold question. <strong>No &ldquo;sudden and accidental&rdquo; exception applied to software.</strong></p>
+</div>
+
+<hr>
+
+<h2 id="s8">VIII. Privity Requirements and Third-Party Liability</h2>
+
+<h3>A. Can Government Agencies Sue the Developer?</h3>
+<div class="card card-green">
+<div class="label label-green">Settled Law: No</div>
+<p>Government agencies have no tort or contract claim against a software developer for calculation errors. Recourse is against the <em>taxpayer</em>. <strong>No reported case found where any government agency sued a software developer for calculation errors.</strong></p>
+</div>
+
+<h3>B. UCC Section 2-318: Third-Party Beneficiaries</h3>
+
+<div class="card card-purple">
+<div class="label label-purple">The Three Alternatives</div>
+<table>
+<tr><th>Alternative</th><th>Scope</th><th>Damages</th><th>Waivable?</th></tr>
+<tr><td><strong>A (Narrowest)</strong></td><td>Household member/guest</td><td>Personal injury ONLY</td><td>No</td></tr>
+<tr><td><strong>B (Intermediate)</strong></td><td>Any natural person</td><td>Personal injury ONLY</td><td>No</td></tr>
+<tr><td><strong>C (Broadest)</strong></td><td>Any person</td><td>PI OR property damage</td><td>Non-waivable for PI</td></tr>
+</table>
+</div>
+
+<div class="card card-red">
+<div class="label label-red">Critical Structural Limitation</div>
+<p><strong>None of the three alternatives creates a non-waivable right for pure economic loss</strong>&mdash;the exclusive damage type in software cases. UCC Section 2-318 is <strong>effectively inapplicable</strong> to software warranty privity for economic loss. <strong>No case found applying Section 2-318 to software.</strong></p>
+</div>
+
+<h3>C. Third-Party Beneficiary Theory</h3>
+<div class="card card-green">
+<div class="label label-green">Settled Law</div>
+<p>Requires <strong>intended</strong> (not incidental) beneficiary status with intent apparent from the contract face. <strong>No case found where a software user successfully established third-party beneficiary status.</strong> Typical EULA structure makes this extremely difficult.</p>
+</div>
+
+<div class="card card-yellow">
+<div class="label label-yellow">Distinguishing Case: SFC v. Vizio (C.D. Cal. 2024)</div>
+<p>GPL third-party beneficiary claim survived summary judgment. <strong>Fundamentally distinguishable</strong>: open-source licenses benefit the public; commercial EULAs limit liability.</p>
+</div>
+
+<h3>D. Privity as Practical Reality</h3>
+<div class="card card-green">
+<div class="label label-green">Settled Law: Privity Is Rarely Dispositive</div>
+<p>Other defenses dispose of claims first: (1) ELD bars tort regardless of privity; (2) EULA disclaimers eliminate warranties; (3) Arbitration clauses keep claims out of courts; (4) No recognized duty of care. <strong>No case found dismissing a software warranty claim solely on privity grounds.</strong></p>
+</div>
+
+<h4>PRIVITY SUMMARY TABLE</h4>
+<table>
+<tr><th>Claim Type</th><th>Privity Required?</th><th>Third-Party Theory?</th><th>Actual Bar in Software</th></tr>
+<tr><td>Breach of warranty (UCC)</td><td>Generally yes</td><td>Section 2-318 does not reach economic loss</td><td>EULA disclaimers</td></tr>
+<tr><td>Negligence</td><td>No</td><td>N/A</td><td>ELD; no duty</td></tr>
+<tr><td>Strict liability</td><td>No</td><td>N/A</td><td>Not a &ldquo;product&rdquo;; ELD</td></tr>
+<tr><td>Fraud</td><td>No</td><td>N/A</td><td>Anti-reliance disclaimers</td></tr>
+<tr><td>Negligent misrep. (Section 552)</td><td>Effectively yes</td><td>N/A</td><td>Not &ldquo;information supplier&rdquo;</td></tr>
+<tr><td>Third-party beneficiary</td><td>N/A</td><td>No software EULA success</td><td>EULAs lack intent to benefit third parties</td></tr>
+<tr><td>Government agency suit</td><td>N/A</td><td>No viable theory</td><td>No duty; no causal chain</td></tr>
+</table>
+
+<hr>
+
+<h2 id="master">IX. Master Citation Table</h2>
+
+<table>
+<tr><th>Citation</th><th>Court</th><th>Year</th><th>Relevance</th></tr>
+<tr><td><cite>Seely v. White Motor Co.</cite>, 63 Cal.2d 9, 403 P.2d 145</td><td>Cal. Supreme Court</td><td>1965</td><td>Origin of ELD</td></tr>
+<tr><td><cite>East River Steamship v. Transamerica Delaval</cite>, 476 U.S. 858</td><td>U.S. Supreme Court</td><td>1986</td><td>SCOTUS adoption; binary test</td></tr>
+<tr><td><cite>United States v. Boyle</cite>, 469 U.S. 241</td><td>U.S. Supreme Court</td><td>1985</td><td>Taxpayer duty non-delegable</td></tr>
+<tr><td><cite>A&amp;B Duplicators v. Sea</cite>, 468 F.2d 695</td><td>2d Cir.</td><td>1972</td><td>Early UCC + software</td></tr>
+<tr><td><cite>Bonebrake v. Cox</cite>, 499 F.2d 951</td><td>8th Cir.</td><td>1974</td><td>Predominant purpose test</td></tr>
+<tr><td><cite>RRX Industries v. Lab-Con</cite>, 772 F.2d 543</td><td>9th Cir.</td><td>1985</td><td>Software = good; ELD; consequential damages</td></tr>
+<tr><td><cite>Moorman Mfg. v. National Tank</cite>, 91 Ill.2d 69, 435 N.E.2d 443</td><td>Illinois Supreme Court</td><td>1982</td><td>Illinois ELD; three exceptions</td></tr>
+<tr><td><cite>Bily v. Arthur Young</cite>, 3 Cal.4th 370, 834 P.2d 745</td><td>Cal. Supreme Court</td><td>1992</td><td>Section 552 near-privity limits</td></tr>
+<tr><td><cite>Advent Systems v. Unisys</cite>, 925 F.2d 670</td><td>3d Cir.</td><td>1991</td><td>Software = good (leading case)</td></tr>
+<tr><td><cite>Virtual Maintenance v. Prime Computer</cite>, 11 F.3d 660</td><td>6th Cir.</td><td>1993</td><td>Antitrust tying (NOT UCC case)</td></tr>
+<tr><td><cite>ProCD v. Zeidenberg</cite>, 86 F.3d 1447</td><td>7th Cir.</td><td>1996</td><td>Shrink-wrap enforceable</td></tr>
+<tr><td><cite>Specht v. Netscape</cite>, 306 F.3d 17</td><td>2d Cir.</td><td>2002</td><td>Browse-wrap requires assent</td></tr>
+<tr><td><cite>Rockport Pharmacy v. Digital Simplistics</cite>, 53 F.3d 195</td><td>8th Cir.</td><td>1995</td><td>ELD applied to software</td></tr>
+<tr><td><cite>Spear Mfg. v. Liberty Insurance</cite>, 31 F.Supp.2d 734</td><td>E.D. Mich.</td><td>1999</td><td>Software not &ldquo;product&rdquo;</td></tr>
+<tr><td><cite>Bunney v. Commissioner</cite>, 114 T.C. 259</td><td>Tax Court</td><td>2000</td><td>Software != professional advice</td></tr>
+<tr><td><cite>Neonatology Associates v. Commissioner</cite>, 115 T.C. 43</td><td>Tax Court</td><td>2000</td><td>Reasonable cause standards</td></tr>
+<tr><td><cite>Bilt-Rite v. Architectural Studio</cite>, 581 Pa. 545, 866 A.2d 312</td><td>Pa. Supreme Court</td><td>2005</td><td>Categorical Section 552 exception</td></tr>
+<tr><td><cite>Budgetel Inns v. Micros Systems</cite>, 8 F.Supp.2d 1137</td><td>E.D. Wis.</td><td>1998</td><td>Pre-formation fraud survives ELD</td></tr>
+<tr><td><cite>Lam v. Commissioner</cite>, T.C. Memo. 2010-82</td><td>Tax Court</td><td>2010</td><td>&ldquo;Geithner defense&rdquo; rejected</td></tr>
+<tr><td><cite>Olsen v. Commissioner</cite>, T.C. Summ. Op. 2011-131</td><td>Tax Court</td><td>2011</td><td>Software can support reasonable cause</td></tr>
+<tr><td><cite>Publications Int’l v. Mindtree</cite> (N.D. Ill. 2014)</td><td>N.D. Illinois</td><td>2014</td><td>Section 552 inapplicable to software</td></tr>
+<tr><td><cite>Spottiswood v. United States</cite>, No. 3:17-cv-00209</td><td>N.D. Cal.</td><td>2018</td><td>TurboTax; penalty upheld</td></tr>
+<tr><td><cite>IBM v. Lufkin Industries</cite>, No. 17-0666</td><td>Texas Supreme Court</td><td>2019</td><td>Anti-reliance clauses bar fraud</td></tr>
+<tr><td><cite>Diedrich v. Wolters Kluwer</cite>, 2024 WL 291156</td><td>S.D.N.Y.</td><td>2024</td><td>Tax software disclaimers enforced</td></tr>
+<tr><td><cite>Dealers Auto Auction v. Commissioner</cite>, T.C. Memo. 2025-38</td><td>Tax Court</td><td>2025</td><td>Software failure possible; failed on facts</td></tr>
+<tr><td><cite>Huang v. United States</cite>, No. 3:24-cv-062998-RS</td><td>N.D. Cal.</td><td>2025</td><td>TurboTax as professional advice; survived MTD</td></tr>
+<tr><td><cite>SensorTower v. Similarweb</cite>, 2025 NY Slip Op. 32998(U)</td><td>N.Y. Sup. Ct.</td><td>2025</td><td>Disclaimer barred fraud counterclaim</td></tr>
+<tr><td><cite>SFC v. Vizio</cite>, No. 21-cv-00299</td><td>C.D. Cal.</td><td>2024</td><td>Open-source third-party beneficiary</td></tr>
+</table>
+
+<h4>STATUTORY CITATIONS</h4>
+<table>
+<tr><th>Statute</th><th>Relevance</th></tr>
+<tr><td>IRC Section 6011</td><td>Duty to file accurate return</td></tr>
+<tr><td>IRC Section 6065</td><td>Perjury declaration; non-delegable liability</td></tr>
+<tr><td>IRC Section 6662(a)</td><td>20% accuracy-related penalty</td></tr>
+<tr><td>IRC Section 6664(c)</td><td>Reasonable cause exception</td></tr>
+<tr><td>IRC Section 6651(a)(2)</td><td>Failure-to-pay penalty</td></tr>
+<tr><td>IRC Section 6694</td><td>Tax preparer penalties</td></tr>
+<tr><td>Treas. Reg. Section 1.6664-4</td><td>Reasonable cause standard</td></tr>
+<tr><td>Treas. Reg. Section 301.6724-1</td><td>Information return penalty reasonable cause</td></tr>
+<tr><td>UCC Section 2-105(1)</td><td>Definition of &ldquo;goods&rdquo;</td></tr>
+<tr><td>UCC Section 2-314</td><td>Implied warranty of merchantability</td></tr>
+<tr><td>UCC Section 2-315</td><td>Implied warranty of fitness for particular purpose</td></tr>
+<tr><td>UCC Section 2-316</td><td>Disclaimer of warranties</td></tr>
+<tr><td>UCC Section 2-318</td><td>Third-party beneficiary warranties</td></tr>
+<tr><td>UCC Section 2-719</td><td>Limitation of remedies; consequential damages</td></tr>
+<tr><td>Restatement (Second) of Torts Section 552</td><td>Negligent misrepresentation</td></tr>
+<tr><td>Restatement (Second) of Torts Section 402A</td><td>Strict products liability</td></tr>
+</table>
+
+<hr>
+
+<h2 id="conclusions">X. Conclusions</h2>
+
+<div class="card card-red">
+<div class="label label-red">Finding #1: The Legal Landscape Is Nearly Impenetrable for Plaintiffs</div>
+<ol>
+<li><strong>ELD bars negligence and strict liability</strong> for purely economic loss</li>
+<li><strong>Section 552 is structurally unavailable</strong> (software devs are not &ldquo;information suppliers&rdquo;)</li>
+<li><strong>Fraud is the only tort surviving ELD</strong>, but specific anti-reliance clauses bar it</li>
+<li><strong>Negligence per se and UDAP are entirely unlitigated</strong> for software calculation errors</li>
+<li><strong>UCC implied warranties technically apply</strong> but are disclaimed by enforceable EULAs</li>
+<li><strong>UCC Section 2-318 does not reach economic loss</strong></li>
+<li><strong>Third-party beneficiary theory has never succeeded</strong> for commercial software EULAs</li>
+<li><strong>Government agencies have no viable claim</strong></li>
+<li><strong>The underlying tax is always the taxpayer’s responsibility</strong></li>
+</ol>
+</div>
+
+<div class="card card-green">
+<div class="label label-green">Finding #2: The Only Viable Recovery Path Is Contractual</div>
+<p>Accuracy guarantee: penalties and interest only, within 30 days, subject to arbitration. Not a legal theory&mdash;a bounded contractual remedy.</p>
+</div>
+
+<div class="card card-yellow">
+<div class="label label-yellow">Finding #3: Huang Signals Change&mdash;But Only at the Margin</div>
+<p><cite>Bunney</cite> (2000) to <cite>Olsen</cite> (2011) to <cite>Huang</cite> (2025) shows a trend toward treating software reliance as potentially reasonable for penalty abatement. But <cite>Huang</cite> is a motion-to-dismiss ruling in a single district court. It does not create direct liability against developers.</p>
+</div>
+
+<div class="card card-purple">
+<div class="label label-purple">Finding #4: The IRS Paradox Remains Unresolved</div>
+<p>IRS recommends software on usa.gov, partners for Free File, accepts e-filed returns&mdash;yet Treas. Reg. 1.6664-4 recognizes only human professional reliance. The IRS Practice Unit on reasonable cause does not mention software. <cite>Huang</cite> directly confronts this but does not resolve it.</p>
+</div>
+
+<div class="card card-orange">
+<div class="label label-orange">Finding #5: Scholarly Critique vs. Judicial Reality</div>
+<p><strong>Scholars argue:</strong> EULA limitations may be unconscionable given government endorsement; ELD should not apply to software; information asymmetry far exceeds traditional commerce. <strong>Courts have not adopted any of these views.</strong></p>
+</div>
+
+<hr>
+
+<p style="font-size:0.8rem;color:var(--text);opacity:0.5;"><strong>Research methodology:</strong> 25+ web searches, full-text analysis of judicial opinions, Treasury Regulations, IRS publications, legal commentary. All citations verified as of March 26, 2026. &ldquo;No case found&rdquo; reflects current accessible authority. Holdings distinguished from dicta throughout.</p>
+
+</body>
+</html>

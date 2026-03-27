@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaxFile Legal Research: NJ E-File Requirements & Data Breach Notification Law</title>
+<style>
+:root { --bg: #0f172a; --surface: #1e293b; --border: #334155; --text: #e2e8f0; --muted: #94a3b8; --accent: #38bdf8; --warn: #fbbf24; --danger: #f87171; --success: #34d399; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem; max-width: 1100px; margin: auto; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+h2 { font-size: 1.4rem; color: var(--accent); margin-top: 2.5rem; margin-bottom: 1rem; border-left: 4px solid var(--accent); padding-left: 0.75rem; }
+h3 { font-size: 1.15rem; color: var(--warn); margin-top: 1.5rem; margin-bottom: 0.75rem; }
+h4 { font-size: 1rem; color: var(--muted); margin-top: 1rem; margin-bottom: 0.5rem; font-style: italic; }
+p { margin-bottom: 0.75rem; }
+ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+li { margin-bottom: 0.35rem; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.92rem; }
+th { background: var(--surface); color: var(--accent); text-align: left; padding: 0.6rem 0.75rem; border: 1px solid var(--border); font-weight: 600; }
+td { padding: 0.5rem 0.75rem; border: 1px solid var(--border); vertical-align: top; }
+tr:nth-child(even) { background: rgba(30,41,59,0.5); }
+.statute { color: var(--accent); font-weight: 600; }
+.required { color: var(--danger); font-weight: 700; }
+.best-practice { color: var(--success); font-weight: 600; }
+.not-required { color: var(--muted); font-weight: 600; }
+.callout { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+.callout-danger { border-left: 4px solid var(--danger); }
+.callout-warn { border-left: 4px solid var(--warn); }
+.callout-success { border-left: 4px solid var(--success); }
+.callout-info { border-left: 4px solid var(--accent); }
+.tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.78rem; font-weight: 700; margin-right: 0.4rem; }
+.tag-req { background: rgba(248,113,113,0.2); color: var(--danger); }
+.tag-bp { background: rgba(52,211,153,0.2); color: var(--success); }
+.tag-na { background: rgba(148,163,184,0.2); color: var(--muted); }
+.toc { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; }
+.toc a { color: var(--accent); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.toc ol { margin: 0.5rem 0 0 1.5rem; }
+.toc li { margin-bottom: 0.3rem; }
+.summary-box { background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(52,211,153,0.1)); border: 2px solid var(--accent); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+.summary-box h3 { color: var(--accent); margin-top: 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+small { color: var(--muted); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<h1>TaxFile Legal Research Report</h1>
+<p><small>Prepared: 2026-03-26 | Jurisdiction: New Jersey + Federal | Product: TaxFile (Next.js tax preparation web application)</small></p>
+
+<div class="callout callout-info">
+<strong>Scope Note:</strong> TaxFile currently generates fillable PDFs for Form 1040 and NJ-1040 with <strong>no direct e-filing capability</strong>. It stores tax return data as plaintext JSON on Akash Network (decentralized cloud). This research distinguishes between what is <span class="required">legally REQUIRED</span> vs. <span class="best-practice">best practice</span> for this specific product configuration.
+</div>
+
+<div class="toc">
+<strong>Table of Contents</strong>
+<ol>
+<li><a href="#topic-a">TOPIC A: New Jersey State E-File Requirements</a>
+  <ol>
+    <li><a href="#a1">NJ Division of Taxation E-File Requirements for Software Providers</a></li>
+    <li><a href="#a2">State-Specific Registration/Application Process</a></li>
+    <li><a href="#a3">Fed/State E-File Integration</a></li>
+  </ol>
+</li>
+<li><a href="#topic-b">TOPIC B: Data Breach Notification Requirements</a>
+  <ol>
+    <li><a href="#b1">NJ Data Breach Notification Act (N.J.S.A. 56:8-161 et seq.)</a></li>
+    <li><a href="#b2">Federal Breach Notification Requirements</a></li>
+    <li><a href="#b3">What Constitutes a 'Breach' Under NJ Law for Tax Data</a></li>
+    <li><a href="#b4">Penalties for Failing to Notify</a></li>
+    <li><a href="#b5">IRS Requirements for Reporting Breaches Involving Taxpayer Data</a></li>
+  </ol>
+</li>
+<li><a href="#summary">TaxFile-Specific Action Items</a></li>
+</ol>
+</div>
+
+<hr>
+
+<h2 id="topic-a">TOPIC A: New Jersey State E-File Requirements</h2>
+
+<div class="callout callout-success">
+<strong>Bottom Line for TaxFile:</strong> Because TaxFile generates only fillable PDFs and does <strong>not</strong> electronically transmit returns to NJ, it is <span class="not-required">NOT REQUIRED</span> to register as an NJ e-file software provider, submit a Letter of Intent, undergo ATS testing, or obtain any NJ-specific e-file credentials. The requirements below apply only if/when TaxFile adds direct e-filing capability.
+</div>
+
+<h3 id="a1">A.1 NJ Division of Taxation E-File Requirements for Software Providers</h3>
+
+<h4>What Does NJ Require of Tax Software Providers?</h4>
+<p>Software vendors that electronically file returns with New Jersey must meet the following requirements <span class="required">[REQUIRED if e-filing]</span>:</p>
+<ul>
+<li>Complete a <strong>Letter of Intent (LOI)</strong> for each unique product offered</li>
+<li>Undergo <strong>Assurance Testing System (ATS)</strong> testing and certification</li>
+<li>Implement <strong>system security measures</strong> protecting taxpayer information online, offline, at rest, and in transit</li>
+<li>Promptly report any <strong>data breaches or security incidents</strong> to NJDORES and the NJ Attorney General's Office</li>
+<li>Include <strong>mandatory consent language</strong> for electronic filing (varies by software type: DIY, Professional, or Business)</li>
+<li>Include specific <strong>URLs for refund processing and taxes-due information</strong></li>
+<li>Include <strong>driver's license or ID card</strong> with e-file returns (though NJ will not reject if missing)</li>
+<li>Require desktop users to <strong>download updates</strong> if filing 10+ days after a production release</li>
+</ul>
+
+<h4>Is There a Separate NJ EFIN or Equivalent?</h4>
+<p><span class="not-required">No.</span> New Jersey does not issue a separate state EFIN. Tax preparers who are approved IRS Electronic Return Originators (EROs) are automatically recognized by NJ. Per the NJ E-File Mandate FAQ:</p>
+<blockquote>"Tax preparers, whether located in New Jersey or outside of the State, are not required to register for the New Jersey E-File Program provided that they are approved Electronic Return Originators (ERO) with IRS. The Division of Revenue and Enterprise Services receives their registration information from the IRS."</blockquote>
+<p>However, <strong>software vendors</strong> (as distinct from tax preparers) must still complete the LOI process and obtain IRS ATS certification before NJ will accept their test submissions.</p>
+
+<h4>NJ Electronic Filing Specifications and Schemas</h4>
+<ul>
+<li>NJ participates in the <strong>Modernized e-File (MeF)</strong> program for Individual, Partnership, Corporate, and Fiduciary returns</li>
+<li>Access to NJ MeF schemas is granted <strong>via a secure state web portal after LOI acceptance</strong></li>
+<li>For bulk filing (WR-30, NJ-927, W-2, 1099), files must follow NJ-specific file layout formats</li>
+<li>Form 1099-NEC has a unique NJ format: State Income Tax Withheld must appear in positions 723-734, right-justified, zero-filled</li>
+</ul>
+
+<h3 id="a2">A.2 State-Specific Registration/Application Process</h3>
+
+<h4>Letter of Intent (LOI) Process</h4>
+<table>
+<tr><th>Requirement</th><th>Detail</th></tr>
+<tr><td>Form</td><td>Tax Year 2024 NJDORES Letter of Intent (TY24NJLOIv1.pdf)</td></tr>
+<tr><td>Submission</td><td>Email to <code>e-govservices@treas.nj.gov</code></td></tr>
+<tr><td>Per-Product</td><td>Separate LOI required for each unique product</td></tr>
+<tr><td>Company Info Required</td><td>Company name, DBA, FEIN, address, product URL, NACTP vendor ID</td></tr>
+<tr><td>IRS Credentials</td><td>EFINs and ETINs (test and production) for individual and business MeF</td></tr>
+<tr><td>Contact Roles</td><td>Regulatory/compliance, Individual MeF, Business MeF, Fiduciary MeF, Leads reporting (each: primary + secondary)</td></tr>
+<tr><td>Product Type</td><td>DIY/consumer or Professional/paid preparer; Web-based or Desktop</td></tr>
+<tr><td>Tax Types</td><td>Individual, Estate/Trust, Partnership, etc.</td></tr>
+<tr><td>Authorization</td><td>E-File and/or substitute forms access</td></tr>
+<tr><td>New Provider Proof</td><td>Must attach documentation of successful IRS ATS testing</td></tr>
+<tr><td>Fees</td><td><span class="not-required">No fee identified</span> for LOI submission</td></tr>
+<tr><td>Timeline</td><td>Testing open year-round except during IRS scheduled shutdown/cutover periods</td></tr>
+</table>
+
+<h4>Testing/Certification Requirements</h4>
+<ul>
+<li><span class="required">Must pass IRS ATS testing first</span> and provide proof with LOI</li>
+<li>After LOI acceptance, submit <strong>NJ-specific test cases</strong> based on NJ schema</li>
+<li>All test cases must be <strong>created in and originate from the actual software being certified</strong></li>
+<li>Rebranded products: full ATS process if calculation engine differs; abbreviated process if engine unchanged</li>
+<li>Bulk filers: register with Axway (state service provider), send test file, await approval before production</li>
+</ul>
+
+<h3 id="a3">A.3 Fed/State E-File Integration</h3>
+
+<h4>Does NJ Participate in the Fed/State Program?</h4>
+<p><span class="required">Yes.</span> New Jersey participates in the <strong>federal-state Modernized e-File (MeF)</strong> program. Covered return types:</p>
+<table>
+<tr><th>Tax Type</th><th>Years Covered</th><th>Additional Features</th></tr>
+<tr><td>Personal Income Tax (Resident, Non-Resident)</td><td>Current year + prior 2 years</td><td>Direct debit, direct deposit</td></tr>
+<tr><td>Fiduciary (Estate/Trust)</td><td>Current year + prior 2 years</td><td>Direct debit, direct deposit</td></tr>
+<tr><td>Amended Returns</td><td>Current year + prior 2 years</td><td>Direct debit, direct deposit</td></tr>
+<tr><td>Partnership Tax</td><td>Current year + prior year + future year</td><td>Direct debit, direct deposit</td></tr>
+<tr><td>Corporate Tax</td><td>Current year + prior 2 years</td><td>Direct debit, direct deposit</td></tr>
+<tr><td>Extension Applications</td><td>Current year</td><td>Estimated payments</td></tr>
+</table>
+
+<h4>Can You Transmit Both Federal and State Returns Together?</h4>
+<p><span class="required">Yes.</span> Under the MeF program, the federal return and NJ state return can be transmitted together in a single submission. The state return is included as part of the federal MeF submission package.</p>
+
+<h4>Technical Integration Requirements</h4>
+<ul>
+<li>Software must support IRS MeF transmission protocols</li>
+<li>NJ-specific schema must be incorporated (accessed after LOI acceptance)</li>
+<li>No separate NJ transmission infrastructure needed when using MeF — state return rides with federal</li>
+<li>Separate transmission only required for bulk filings (WR-30, NJ-927, informational returns) which use a different channel (Axway)</li>
+</ul>
+
+<hr>
+
+<h2 id="topic-b">TOPIC B: Data Breach Notification Requirements</h2>
+
+<div class="callout callout-danger">
+<strong>Critical Finding:</strong> TaxFile's current architecture — plaintext JSON storage with no encryption at rest, deployed on Akash Network — has <strong>zero protection</strong> under NJ law's encryption safe harbor. Any unauthorized access to stored data constitutes a reportable breach if the data qualifies as "personal information."
+</div>
+
+<h3 id="b1">B.1 NJ Data Breach Notification Act (N.J.S.A. 56:8-161 et seq.)</h3>
+
+<h4>Statutory Framework</h4>
+<table>
+<tr><th>Statute</th><th>Purpose</th></tr>
+<tr><td><span class="statute">N.J.S.A. 56:8-161</span></td><td>Definitions (personal information, breach of security, encryption safe harbor)</td></tr>
+<tr><td><span class="statute">N.J.S.A. 56:8-162</span></td><td>Methods of destruction of personal information</td></tr>
+<tr><td><span class="statute">N.J.S.A. 56:8-163</span></td><td>Disclosure of breach of security to customers (notification requirements)</td></tr>
+<tr><td><span class="statute">N.J.S.A. 56:8-164</span></td><td>Additional requirements (expanded by P.L.2019, c.95)</td></tr>
+<tr><td><span class="statute">N.J.S.A. 56:8-165</span></td><td>Penalties — violations classified as Consumer Fraud Act violations</td></tr>
+<tr><td><span class="statute">N.J.S.A. 56:8-166</span></td><td>Severability</td></tr>
+<tr><td><span class="statute">N.J.A.C. 13:45F-5.2</span></td><td>Administrative code implementing regulations</td></tr>
+</table>
+
+<h4>Current 2024-2025 Requirements</h4>
+<p>The law applies to: <span class="required">"Any business that conducts business in New Jersey, or any public entity that compiles or maintains computerized records that include personal information."</span> <span class="statute">(N.J.S.A. 56:8-163(a))</span></p>
+
+<h4>What Triggers Notification Obligation?</h4>
+<p>Notification is triggered when <span class="required">both</span> conditions are met:</p>
+<ol>
+<li>A <strong>breach of security</strong> occurs (unauthorized access to electronic files containing personal information that compromises security, confidentiality, or integrity) <span class="statute">(N.J.S.A. 56:8-161)</span></li>
+<li>The personal information was, <strong>or is reasonably believed to have been, accessed by an unauthorized person</strong> <span class="statute">(N.J.S.A. 56:8-163(a))</span></li>
+</ol>
+<p><span class="not-required">Exception:</span> No disclosure required if the business establishes that misuse of the information is not reasonably possible, <strong>provided such determination is documented in writing and retained for five years</strong> <span class="statute">(N.J.S.A. 56:8-163(a))</span></p>
+
+<h4>Timeline for Notification</h4>
+<table>
+<tr><th>Recipient</th><th>Timeline</th><th>Statute</th></tr>
+<tr><td>NJ Division of State Police</td><td><span class="required">BEFORE notifying affected individuals</span></td><td>N.J.S.A. 56:8-163(a)</td></tr>
+<tr><td>Affected NJ residents</td><td><span class="required">"Most expedient time possible and without unreasonable delay"</span>, consistent with law enforcement needs and reasonable time to determine scope and restore integrity</td><td>N.J.S.A. 56:8-163(a)</td></tr>
+<tr><td>Consumer Reporting Agencies (if 1,000+ persons)</td><td><span class="required">Without unreasonable delay</span> — timing, distribution, and content of notices</td><td>N.J.S.A. 56:8-163(a)</td></tr>
+<tr><td>Law Enforcement Delay</td><td>Notification delayed if law enforcement determines it will impede investigation and requests delay; resumes when law enforcement clears</td><td>N.J.S.A. 56:8-163(c)</td></tr>
+</table>
+
+<div class="callout callout-warn">
+<strong>Important:</strong> There is <strong>no fixed number-of-days deadline</strong> in NJ law (unlike some states with 30/60/72-hour requirements). "Most expedient time possible without unreasonable delay" is a facts-and-circumstances standard. However, reporting to the Division of State Police must occur <strong>before</strong> individual notifications go out.
+</div>
+
+<h4>Recent Amendments (P.L.2019, c.95 / S.B. 424)</h4>
+<p>Signed May 10, 2019; effective September 1, 2019. Key changes:</p>
+<ul>
+<li><strong>Expanded "personal information" definition</strong> to include online account information: <span class="required">"user name, email address, or any other account holder identifying information, in combination with any password or security question and answer that would permit access to an online account"</span></li>
+<li><strong>Electronic notification permitted</strong> for breaches involving only username/password combinations (no other personal information)</li>
+<li>Username/password-only breach notices must direct customers to: (1) promptly change password/security Q&A, and (2) protect other online accounts using the same username</li>
+</ul>
+
+<h3 id="b2">B.2 Federal Breach Notification Requirements</h3>
+
+<h4>Are There Federal Data Breach Notification Laws Applicable to Tax Software?</h4>
+<p><span class="not-required">No comprehensive federal breach notification law exists.</span> There is no federal equivalent to state breach notification statutes that broadly requires notification to affected individuals. However, several federal frameworks may apply depending on the business's classification:</p>
+
+<table>
+<tr><th>Framework</th><th>Applicability to TaxFile</th><th>Breach Notification Requirement</th></tr>
+<tr><td>FTC Safeguards Rule (16 CFR Part 314)</td><td><span class="best-practice">Potentially applicable</span> if TaxFile qualifies as a "financial institution" under GLBA (handles tax data that could be considered financial in nature)</td><td>No specific breach notification timeline, but failure to implement safeguards can trigger FTC enforcement</td></tr>
+<tr><td>FTC Act Section 5 (Unfair/Deceptive Practices)</td><td><span class="best-practice">Broadly applicable</span> to any business engaging in unfair or deceptive practices</td><td>FTC can bring enforcement actions for inadequate data security; no specific notification requirement</td></tr>
+<tr><td>HIPAA</td><td><span class="not-required">Not applicable</span> — tax data is not protected health information</td><td>N/A</td></tr>
+<tr><td>GLBA</td><td><span class="best-practice">Potentially applicable</span> — depends on whether tax preparation qualifies as financial activity</td><td>No breach notification requirement in GLBA itself; Safeguards Rule requires security program</td></tr>
+</table>
+
+<div class="callout callout-info">
+<strong>Note on Federal Preemption:</strong> There is <strong>no federal law that preempts NJ's breach notification requirements</strong>. Even if federal frameworks apply, TaxFile must still comply with NJ's state-specific notification obligations for NJ residents.
+</div>
+
+<h3 id="b3">B.3 What Constitutes a 'Breach' Under NJ Law for Tax Data</h3>
+
+<h4>Definition of 'Personal Information'</h4>
+<p>Under <span class="statute">N.J.S.A. 56:8-161</span>, personal information means an individual's <strong>first name or first initial and last name</strong> linked with <strong>one or more</strong> of the following:</p>
+<ol>
+<li><span class="required">Social Security number</span></li>
+<li><span class="required">Driver's license number or State identification card number</span></li>
+<li><span class="required">Account number or credit/debit card number</span>, in combination with any required security code, access code, or password permitting access to a financial account</li>
+<li><span class="required">Username, email address, or other account holder identifying information</span>, in combination with any password or security question/answer permitting access to an online account <span class="statute">(added by P.L.2019, c.95)</span></li>
+</ol>
+<p>Also includes <strong>dissociated data</strong> that would constitute personal information if linked, <strong>if the means to link the dissociated data were accessed</strong> in connection with the access to the data itself.</p>
+<p><span class="not-required">Exclusion:</span> Publicly available information from government records or widely distributed media is excluded.</p>
+
+<h4>Does SSN + Name Constitute Covered Data?</h4>
+<div class="callout callout-danger">
+<span class="required">YES — unconditionally.</span> Name + SSN is the quintessential example of "personal information" under NJ law. This is the first and most clearly covered data element combination in the statute.
+</div>
+
+<div class="callout callout-warn">
+<strong>TaxFile-Specific Critical Analysis:</strong> According to the TaxFile Security Audit (2026-03-26), TaxFile currently stores <strong>only masked SSNs</strong> (format: XXX-XX-1234), not full SSNs. A masked SSN (showing only last 4 digits) <strong>likely does NOT constitute a Social Security number</strong> under the statute, because it cannot be used for identity theft or unauthorized purposes in the same way as a full SSN. <strong>However, this analysis is not certain</strong> — no NJ case law directly addresses whether a masked SSN qualifies. <em>If TaxFile adds full SSN storage (which is required for actual tax filing), name + full SSN = unambiguously covered personal information.</em>
+</div>
+
+<h4>Does Plaintext JSON Storage Affect Breach Determination?</h4>
+<p><span class="required">YES — critically.</span> The encryption safe harbor in <span class="statute">N.J.S.A. 56:8-161</span> provides:</p>
+<blockquote>"Breach of security" means unauthorized access to electronic files, media, or data containing personal information that compromises the security, confidentiality, or integrity of personal information <strong>when access to the personal information has not been secured by encryption or by any other method or technology that renders the personal information unreadable or unusable.</strong></blockquote>
+<p>This means:</p>
+<ul>
+<li><strong>If data is encrypted</strong> (rendered unreadable/unusable): Unauthorized access does <span class="not-required">NOT</span> constitute a "breach of security" — no notification required</li>
+<li><strong>If data is NOT encrypted</strong> (TaxFile's current plaintext JSON): <span class="required">Any unauthorized access</span> to files containing personal information automatically constitutes a "breach of security" — notification IS required</li>
+</ul>
+
+<div class="callout callout-danger">
+<strong>TaxFile Risk:</strong> Plaintext JSON storage on Akash Network means TaxFile has <strong>no encryption safe harbor protection whatsoever</strong>. Even if an attacker gains access to a server but does not exfiltrate data, the mere unauthorized access to unencrypted personal information triggers the notification obligation.
+</div>
+
+<h4>Does Unauthorized Access to a Server Constitute a Breach Even Without Exfiltration?</h4>
+<p><span class="required">YES.</span> The NJ statute defines breach of security as <strong>"unauthorized access to electronic files, media, or data containing personal information that compromises the security, confidentiality, or integrity of personal information."</strong> The trigger is <em>access</em>, not <em>exfiltration</em>. If an unauthorized person can read the data (which is trivially true for plaintext JSON), the security and confidentiality of that data have been compromised, regardless of whether the data was copied or downloaded.</p>
+
+<h3 id="b4">B.4 Penalties for Failing to Notify</h3>
+
+<h4>Classification as Consumer Fraud Act Violation</h4>
+<p><span class="statute">N.J.S.A. 56:8-165</span> provides:</p>
+<blockquote>"It shall be an unlawful practice and a violation of [the Consumer Fraud Act, N.J.S.A. 56:8-1 et seq.] to willfully, knowingly or recklessly violate N.J.S.A. 56:8-161 through 164."</blockquote>
+
+<p>This means breach notification violations are prosecuted under the <strong>New Jersey Consumer Fraud Act (CFA)</strong>, which provides:</p>
+
+<table>
+<tr><th>Penalty Type</th><th>Amount</th><th>Source</th></tr>
+<tr><td>Civil penalty — first offense</td><td><span class="required">Up to $10,000</span></td><td>N.J.S.A. 56:8-11</td></tr>
+<tr><td>Civil penalty — subsequent offense</td><td><span class="required">Up to $20,000</span></td><td>N.J.S.A. 56:8-11</td></tr>
+<tr><td>Treble damages (private action)</td><td><span class="required">3x actual damages</span></td><td>N.J.S.A. 56:8-19</td></tr>
+<tr><td>Attorney's fees and costs (private action)</td><td><span class="required">Reasonable attorney's fees + costs</span></td><td>N.J.S.A. 56:8-19</td></tr>
+</table>
+
+<h4>Attorney General Enforcement Powers</h4>
+<ul>
+<li>The NJ Attorney General can bring <span class="required">civil enforcement actions</span> under N.J.S.A. 56:8-11</li>
+<li>Can seek <span class="required">injunctive relief</span> to stop ongoing violations</li>
+<li>Can assess <span class="required">civil penalties</span> ($10,000/$20,000 per violation)</li>
+<li>The <strong>NJ Division of State Police</strong> receives breach reports for investigation and potential referral to law enforcement <span class="statute">(N.J.S.A. 56:8-163(a))</span></li>
+</ul>
+
+<h4>Criminal Penalties</h4>
+<p><span class="not-required">No specific criminal penalties</span> are enumerated in the NJ breach notification statute itself (N.J.S.A. 56:8-161 et seq.). However, if the breach involves criminal conduct (e.g., unauthorized access to computer systems under NJ computer crimes statute N.J.S.A. 2C:20-25 et seq.), separate criminal charges could apply to the <em>perpetrator</em> — not to the business for failing to notify.</p>
+
+<h4>Private Right of Action</h4>
+<p><span class="required">YES.</span> The NJ general breach notification statute allows for a private right of action. Affected individuals can sue for:</p>
+<ul>
+<li>Treble (3x) actual damages</li>
+<li>Reasonable attorney's fees and costs</li>
+</ul>
+<p>This makes NJ one of the more plaintiff-friendly breach notification regimes in the country.</p>
+
+<h3 id="b5">B.5 IRS Requirements for Reporting Breaches Involving Taxpayer Data</h3>
+
+<h4>Does the IRS Require Notification of Breaches Involving Taxpayer Data?</h4>
+
+<div class="callout callout-success">
+<strong>TaxFile-Specific Answer: NO — not currently.</strong> IRS breach reporting requirements under Publication 1345 apply only to <strong>Authorized IRS e-file Providers</strong>. TaxFile, which generates only PDFs and does not transmit returns electronically, is explicitly exempt from Pub 1345 requirements as a "Software Developer that does not engage in any IRS e-file activity other than software development." <span class="statute">(Pub. 1345, Rev. 12-2025)</span>
+</div>
+
+<p>For context, here is what <em>would</em> apply if TaxFile were an Authorized IRS e-file Provider:</p>
+
+<table>
+<tr><th>Requirement</th><th>Detail</th><th>Applies to TaxFile?</th></tr>
+<tr><td>Report security incidents to IRS</td><td>As soon as possible, no later than next business day after confirmation</td><td><span class="not-required">NO</span></td></tr>
+<tr><td>Report to TIGTA</td><td>Any unauthorized access or breach of system holding taxpayer information</td><td><span class="not-required">NO</span></td></tr>
+<tr><td>Cease website data collection</td><td>If website is cause of incident, immediately cease collection; cannot resume until root cause resolved</td><td><span class="not-required">NO</span></td></tr>
+<tr><td>Penalties under IRC 7213/7213A</td><td>Unauthorized disclosure of returns/return information</td><td><span class="not-required">NO</span> (see analysis below)</td></tr>
+<tr><td>Penalties under IRC 7216</td><td>Unauthorized disclosure of information by tax preparers</td><td><span class="not-required">NO</span></td></tr>
+</table>
+
+<h4>IRC Section 6103 — Applicability Analysis</h4>
+<p><span class="statute">IRC Section 6103</span> governs confidentiality and disclosure of <strong>"returns"</strong> and <strong>"return information."</strong> Key analysis for TaxFile:</p>
+
+<ul>
+<li><strong>IRC 6103 primarily restricts the IRS and its agents</strong> from disclosing taxpayer information. The statute creates obligations on the government and authorized recipients, not on unrelated third parties.</li>
+<li><strong>"Returns" and "return information"</strong> under 6103 specifically refer to information filed with or obtained from the IRS. Tax data that a user enters into a private software application (without ever being transmitted to IRS) may not qualify as "return information" under 6103.</li>
+<li><strong>However</strong>, if TaxFile were an Authorized IRS e-file Provider, it would receive taxpayer data in connection with IRS e-file and 6103's restrictions on disclosure would apply. Since TaxFile is not an e-file provider, this chain does not exist.</li>
+<li><strong>IRC 6103(n)</strong> provides that any person who is convicted of unauthorized inspection of returns or return information shall be fined or imprisoned, but this applies to persons who obtained the information <em>from the IRS or its agents</em>.</li>
+</ul>
+
+<div class="callout callout-info">
+<strong>Caveat:</strong> This analysis is not legal advice. Whether IRC 6103 applies to a third-party software company that stores taxpayer data (without IRS authorization) is an <strong>untested legal question</strong>. No published case law directly addresses this scenario. If TaxFile begins e-filing, 6103 would unambiguously apply.
+</div>
+
+<h4>IRC 6103 Penalty Amounts (Contextual)</h4>
+<p>For reference, penalties for unauthorized disclosure under IRC 6103 (if applicable):</p>
+<table>
+<tr><th>Provision</th><th>Current Penalty</th><th>Pending Legislation</th></tr>
+<tr><td>IRC 6103(n) — Unauthorized inspection</td><td>Criminal: up to $5,000 fine and/or 5 years imprisonment</td><td>House-passed bill would increase to <strong>$250,000 and/or 10 years</strong> (KPMG Tax News Flash, Sept 2024)</td></tr>
+<tr><td>IRC 7213 — Unauthorized disclosure</td><td>Criminal: felony, up to $5,000 and/or 5 years</td><td>Same proposed increase</td></tr>
+<tr><td>IRC 7213A — Unauthorized inspection by government employee</td><td>Criminal: up to $1,000 and/or 1 year</td><td>Same proposed increase</td></tr>
+</table>
+
+<hr>
+
+<h2 id="summary">TaxFile-Specific Action Items</h2>
+
+<div class="summary-box">
+<h3>REQUIRED vs. BEST PRACTICE Summary</h3>
+</div>
+
+<table>
+<tr><th>Action Item</th><th>Legal Status</th><th>Priority</th><th>Explanation</th></tr>
+<tr>
+  <td>NJ e-file provider registration (LOI, ATS)</td>
+  <td><span class="tag tag-na">NOT REQUIRED</span></td>
+  <td>N/A</td>
+  <td>PDF-only app; no electronic transmission to NJ</td>
+</tr>
+<tr>
+  <td>IRS e-file provider registration (EFIN, Pub 1345)</td>
+  <td><span class="tag tag-na">NOT REQUIRED</span></td>
+  <td>N/A</td>
+  <td>PDF-only app; no electronic transmission to IRS</td>
+</tr>
+<tr>
+  <td>NJ breach notification compliance (56:8-163)</td>
+  <td><span class="tag tag-req">REQUIRED IF breach occurs</span></td>
+  <td>Critical</td>
+  <td>Applies to any business conducting business in NJ that maintains computerized records with personal information</td>
+</tr>
+<tr>
+  <td>Notify NJ Division of State Police before individuals</td>
+  <td><span class="tag tag-req">REQUIRED IF breach occurs</span></td>
+  <td>Critical</td>
+  <td>N.J.S.A. 56:8-163(a)</td>
+</tr>
+<tr>
+  <td>Notify consumer reporting agencies (if 1,000+ affected)</td>
+  <td><span class="tag tag-req">REQUIRED IF threshold met</span></td>
+  <td>High</td>
+  <td>N.J.S.A. 56:8-163(a)</td>
+</tr>
+<tr>
+  <td>Document breach determination (if no notification)</td>
+  <td><span class="tag tag-req">REQUIRED IF claiming exception</span></td>
+  <td>High</td>
+  <td>Written determination retained 5 years per N.J.S.A. 56:8-163(a)</td>
+</tr>
+<tr>
+  <td>Encryption at rest for stored data</td>
+  <td><span class="tag tag-bp">BEST PRACTICE</span></td>
+  <td>Critical</td>
+  <td>Eliminates encryption safe harbor gap; without it, ANY unauthorized access = reportable breach</td>
+</tr>
+<tr>
+  <td>Written Information Security Plan (WISP)</td>
+  <td><span class="tag tag-bp">BEST PRACTICE</span></td>
+  <td>High</td>
+  <td>FTC Safeguards Rule may require; demonstrates reasonable security if breach occurs</td>
+</tr>
+<tr>
+  <td>Access controls / authentication</td>
+  <td><span class="tag tag-bp">BEST PRACTICE</span></td>
+  <td>Critical</td>
+  <td>Security audit found zero authentication on all API endpoints</td>
+</tr>
+<tr>
+  <td>Audit logging / monitoring</td>
+  <td><span class="tag tag-bp">BEST PRACTICE</span></td>
+  <td>High</td>
+  <td>Necessary to detect breaches and determine scope for notification timeline</td>
+</tr>
+<tr>
+  <td>Incident response plan</td>
+  <td><span class="tag tag-bp">BEST PRACTICE</span></td>
+  <td>High</td>
+  <td>NJ requires notification "most expedient time possible" — need pre-planned process</td>
+</tr>
+<tr>
+  <td>IRS breach reporting (Pub 1345)</td>
+  <td><span class="tag tag-na">NOT REQUIRED</span></td>
+  <td>N/A</td>
+  <td>Applies only to Authorized IRS e-file Providers</td>
+</tr>
+<tr>
+  <td>IRC 6103 compliance</td>
+  <td><span class="tag tag-na">LIKELY NOT REQUIRED</span></td>
+  <td>N/A</td>
+  <td>Applies to IRS and its agents; TaxFile does not transmit to IRS. Untested if it applies to third-party storage without IRS authorization.</td>
+</tr>
+</table>
+
+<div class="callout callout-danger">
+<h3>Highest-Priority Risks for TaxFile</h3>
+<ol>
+<li><strong>Plaintext JSON storage = zero safe harbor.</strong> If TaxFile ever stores full SSNs (required for actual tax filing), any unauthorized server access triggers NJ breach notification obligations — even without exfiltration. Akash's decentralized architecture increases the attack surface for unauthorized access.</li>
+<li><strong>Zero authentication on all API endpoints.</strong> The security audit confirmed no authentication on any endpoint, making unauthorized access trivially easy and virtually guaranteed to occur if exposed to the internet.</li>
+<li><strong>Private right of action + treble damages.</strong> NJ is one of the most plaintiff-friendly breach notification states. A single breach affecting even a small number of NJ residents could result in significant litigation exposure.</li>
+<li><strong>Consumer Fraud Act penalties.</strong> Willful, knowing, or reckless failure to notify exposes TaxFile to $10,000-$20,000 per violation civil penalties from the NJ AG, on top of private litigation.</li>
+</ol>
+</div>
+
+<div class="callout callout-warn">
+<h3>When TaxFile Adds E-Filing (Future State)</h3>
+<p>If TaxFile adds e-filing capability, the following additional requirements activate:</p>
+<ul>
+<li><span class="required">NJ LOI submission</span> to e-govservices@treas.nj.gov</li>
+<li><span class="required">IRS EFIN</span> via Form 8633 (up to 45-day suitability check)</li>
+<li><span class="required">IRS ATS testing</span> (6 Form 1040 + 1 Form 1040-SS + 1 Form 4868 scenarios)</li>
+<li><span class="required">NJ ATS testing</span> based on NJ MeF schema (after LOI acceptance)</li>
+<li><span class="required">Pub 1345 compliance</span> including breach reporting to IRS within 1 business day</li>
+<li><span class="required">IRC 6103 compliance</span> — unambiguous applicability once transmitting to IRS</li>
+<li><span class="required">OSP security standards</span> (EV SSL, weekly vulnerability scans, MFA, NIST SP 800-63 Level 2)</li>
+</ul>
+<p>See full federal e-file analysis at <code>/a0/usr/workdir/irs-efile-provider-research.md</code></p>
+</div>
+
+<hr>
+
+<h3>Sources</h3>
+<ul>
+<li>N.J.S.A. 56:8-161 (Definitions — personal information, breach of security, encryption safe harbor)</li>
+<li>N.J.S.A. 56:8-163 (Disclosure of breach of security to customers)</li>
+<li>N.J.S.A. 56:8-165 (Penalties — Consumer Fraud Act violation)</li>
+<li>N.J.S.A. 56:8-11 (Consumer Fraud Act civil penalties: $10,000/$20,000)</li>
+<li>N.J.S.A. 56:8-19 (Consumer Fraud Act private right of action: treble damages + attorney fees)</li>
+<li>P.L.2019, c.95 (S.B. 424 — expanded personal information to include username/password combinations, effective Sept 1, 2019)</li>
+<li>N.J.A.C. 13:45F-5.2 (Administrative code implementing regulations)</li>
+<li>IRC Section 6103 (Confidentiality and disclosure of returns and return information)</li>
+<li>IRC Sections 7213, 7213A (Criminal penalties for unauthorized disclosure)</li>
+<li>IRC Section 7216 (Unauthorized disclosure by tax preparers)</li>
+<li>IRS Publication 1345 (Rev. 12-2025) — Authorized IRS e-file Providers requirements</li>
+<li>NJ Division of Revenue — E-File Software Developer page (nj.gov/treasury/revenue/swdev.shtml)</li>
+<li>NJ Division of Taxation — Information for Software Vendors (nj.gov/treasury/taxation/taxsoftware.shtml)</li>
+<li>TY24NJLOIv1.pdf — 2024 Tax Software Provider NJDORES Letter of Intent</li>
+<li>NJ E-File Mandate FAQ (nj.gov/treasury/taxation/efilemandate-faqs.shtml)</li>
+<li>TaxFile Security Audit Report (2026-03-26) — internal document</li>
+<li>IRS E-File Provider Research (irs-efile-provider-research.md) — internal document</li>
+<li>Davis Wright Tremaine — NJ State Data Breach Notification Summary (dwt.com/gcp/states/new-jersey)</li>
+<li>Perkins Coie — Security Breach Notification Chart: New Jersey</li>
+<li>National Law Review — "New Jersey's Data Breach Notification Amendment Signed into Law" (May 2019)</li>
+<li>Hunton Andrews Kurth — "New Jersey Amends Data Breach Law to Include Online Account Information" (May 2019)</li>
+<li>KPMG Tax News Flash — "House passes bill increasing penalties for illegal tax disclosures" (Sept 2024)</li>
+</ul>
+
+<p><small><em>This document is for informational purposes only and does not constitute legal advice. The analysis of TaxFile's legal obligations is based on the product's current architecture and capabilities as described. Consultation with a qualified attorney is recommended before making compliance decisions.</em></small></p>
+
+</body>
+</html>

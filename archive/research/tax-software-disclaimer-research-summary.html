@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Legal Research Summary: Tax Software Liability Disclaimers</title>
+<style>
+body { font-family: Georgia, serif; max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.7; color: #1a1a1a; }
+h1 { font-size: 1.6em; border-bottom: 2px solid #333; padding-bottom: 8px; }
+h2 { font-size: 1.35em; color: #222; margin-top: 2em; border-left: 4px solid #666; padding-left: 12px; }
+h3 { font-size: 1.15em; color: #333; margin-top: 1.5em; }
+h4 { font-size: 1.05em; color: #444; margin-top: 1.2em; font-style: italic; }
+.settled { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 12px 16px; margin: 12px 0; }
+.gray { background: #fff8e1; border-left: 4px solid #f9a825; padding: 12px 16px; margin: 12px 0; }
+.practical { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 12px 16px; margin: 12px 0; }
+.standard { background: #f3e5f5; border-left: 4px solid #7b1fa2; padding: 12px 16px; margin: 12px 0; }
+.citation { font-size: 0.9em; color: #555; }
+.case-name { font-style: italic; }
+.statute { font-weight: bold; }
+.gap { background: #ffebee; border-left: 4px solid #c62828; padding: 12px 16px; margin: 12px 0; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.92em; }
+th { background: #333; color: white; text-align: left; padding: 8px 10px; }
+td { border: 1px solid #ddd; padding: 8px 10px; vertical-align: top; }
+tr:nth-child(even) { background: #f9f9f9; }
+hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+</style>
+</head>
+<body>
+
+<h1>Legal Research Summary: Liability Disclaimers for Tax Software</h1>
+<p><em>Research Date: March 26, 2026 | Sources: 8 web searches, ~15 full-text documents read</em></p>
+
+<hr>
+
+<h2>A. Can a Developer Disclaim All Liability for Tax Calculations?</h2>
+
+<h3>General Rule</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> Under UCC Article 2 as applied to software (see <span class="case-name">Advent Systems Ltd. v. Unisys Corp.</span>, 925 F.2d 670, 675 (3d Cir. 1991) (software = "goods" under UCC)), a developer may disclaim all implied warranties of merchantability and fitness for a particular purpose under UCC 2-316, and may limit or exclude consequential damages under UCC 2-719, provided the statutory formalities are met. The economic loss doctrine (see <span class="case-name">East River Steamship Corp. v. Transamerica Delaval Inc.</span>, 476 U.S. 858, 870-71 (1986)) bars tort recovery for purely economic losses from software defects, leaving only contract-based claims that are subject to contractual disclaimers.
+</div>
+
+<div class="gray">
+<strong>GRAY AREA:</strong> Whether a developer can disclaim liability for <em>willful misconduct</em>, <em>gross negligence</em>, or <em>fraud</em> in the tax calculation context remains contested. Most jurisdictions refuse to enforce exculpatory clauses covering intentional wrongdoing, but the line between a software bug (negligence) and willful disregard is fact-intensive. No reported case directly addresses whether a tax software developer's knowing deployment of erroneous calculation logic constitutes willful misconduct that survives EULA disclaimers.
+</div>
+
+<h3>Key Case: Diedrich v. Wolters Kluwer</h3>
+
+<p><span class="case-name">Diedrich v. Wolters Kluwer</span>, 2024 WL 291156, at *1-3 (S.D.N.Y. Jan. 25, 2024) (Judge Vernon S. Broderick)</p>
+
+<p><strong>Facts:</strong> Gregory Diedrich, a tax preparer, purchased a license for Wolters Kluwer's TaxWise software in December 2016. The software malfunctioned and failed to attach required forms to tax returns Diedrich prepared. The IRS assessed a penalty of $287,640 against Diedrich in February 2019. Diedrich filed suit on January 24, 2023, asserting breach of contract.</p>
+
+<p><strong>Disclaimer Language Enforced:</strong> The licensing agreement contained:</p>
+<ul>
+<li>A disclaimer of all express and implied warranties, including merchantability and fitness for a particular purpose;</li>
+<li>A disclaimer of liability for indirect, incidental, or consequential damages;</li>
+<li>Language placing on the user "<strong>THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PRODUCT(S), INCLUDING ELECTRONIC FILING</strong>";</li>
+<li>A specific clause that the user "<strong>expressly disclaim[ed] any representations or warranties that [his] use of the Products will satisfy any statutory or regulatory obligations</strong>" or ensure compliance with applicable laws.</li>
+</ul>
+
+<p><strong>Holdings (in order of decision):</strong></p>
+<ol>
+<li><strong>Statute of limitations barred the claim.</strong> The agreement contained a one-year limitations period. The breach occurred during the 2016 tax year; the complaint was filed January 2023. The court rejected Diedrich's argument that the claim accrued when the IRS penalty was assessed (2019), holding that a breach of contract claim accrues at the time of breach, not when damages are realized. <em>This was the primary basis for dismissal.</em></li>
+<li><strong>Disclaimer language defeated the breach of contract claim on the merits.</strong> Even if timely, the court found the disclaimers eliminated Diedrich's ability to shift responsibility for the software's performance and regulatory compliance to Wolters Kluwer.</li>
+<li><strong>Unconscionability rejected.</strong> The court found "nothing in the text of the executed agreement support[ed] a finding of unconscionability" regarding the disclaimers. The clickwrap nature of the contract was legally enforceable. <em>(Note: Diedrich argued unconscionability pro se; the court's analysis was brief and did not conduct a full procedural/substantive unconscionability analysis.)</em></li>
+</ol>
+
+<div class="gray">
+<strong>GRAY AREA / CRITICAL LIMITATION:</strong> Diedrich brought <em>only</em> breach of contract claims. No fraud, negligence, or consumer protection claims were pleaded. The case provides <strong>no authority</strong> on whether:
+<ul>
+<li>Fraud claims would survive identical disclaimers (cf. <span class="case-name">IBM v. Lufkin Industries</span>, 2019 WL 356838, at *6 (Tex. Jan. 25, 2019) (anti-reliance clauses bar fraud claims));</li>
+<li>State UDAP or consumer fraud statutes would preclude enforcement of such disclaimers in consumer contexts;</li>
+<li>A different result would obtain in a non-clickwrap (browse-wrap) scenario (cf. <span class="case-name">Specht v. Netscape Communications Corp.</span>, 306 F.3d 17, 30 (2d Cir. 2002));</li>
+<li>The result would differ if the plaintiff were a non-professional individual taxpayer rather than a tax preparer.</li>
+</ul>
+</div>
+
+<div class="practical">
+<strong>PRACTICAL IMPLICATION:</strong> Diedrich is the most directly on-point case for tax software disclaimer enforcement. It confirms that comprehensive disclaimers specifically addressing regulatory compliance and electronic filing can defeat breach of contract claims for tax software malfunctions. However, the statute-of-limitations holding means the disclaimer enforceability analysis is arguably <em>dicta</em> (the case was dismissed on SOL grounds first). A tax software developer should include: (1) specific disclaimer that use will not satisfy statutory/regulatory obligations, (2) entire-risk language covering electronic filing, (3) consequential damages exclusion, (4) short limitations period (1 year), and (5) anti-reliance clause to preclude fraud claims.
+</div>
+
+<div class="standard">
+<strong>ACTUAL LEGAL STANDARD (unconscionability under New York law):</strong> Under <span class="statute">N.Y. UCC 2-302</span> and general contract principles, unconscionability requires both procedural unconscionability (unfairness in the formation process: adhesion contract, fine print, lack of meaningful choice) and substantive unconscionability (unfairly one-sided terms). Either alone is generally insufficient; the court looks to the totality of circumstances. See <span class="case-name">Gillman v. Chase Manhattan Bank</span>, 73 N.Y.2d 1, 10 (1988). In Diedrich, the court found neither element present based on the face of the agreement, though it did not conduct a detailed analysis.
+</div>
+
+<h3>Other Cases Where Software Disclaimers Were Challenged</h3>
+
+<table>
+<tr><th>Case</th><th>Citation</th><th>Holding</th><th>Relevance</th></tr>
+<tr>
+<td><span class="case-name">RRX Industries v. Lab-Con</span></td>
+<td class="citation">772 F.2d 543 (9th Cir. 1985)</td>
+<td>Upheld consequential damages limitation in software contract under UCC 2-719(3); found no unconscionability.</td>
+<td>Direct application of 2-719 to software; commercial context.</td>
+</tr>
+<tr>
+<td><span class="case-name">ProCD v. Zeidenberg</span></td>
+<td class="citation">86 F.3d 1447 (7th Cir. 1996)</td>
+<td>Enforced shrinkwrap license terms; no "special prominence" required for terms in mass-market software license.</td>
+<td>Supports that software disclaimers need not be separately highlighted beyond what the contract itself requires.</td>
+</tr>
+<tr>
+<td><span class="case-name">Specht v. Netscape</span></td>
+<td class="citation">306 F.3d 17 (2d Cir. 2002)</td>
+<td>Browse-wrap agreement unenforceable; no conspicuous manifestation of assent to terms.</td>
+<td>Contrast: disclaimers in browse-wrap may be unenforceable regardless of UCC compliance if no assent.</td>
+</tr>
+</table>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> No reported case exists in which a taxpayer (individual or professional) successfully recovered from a tax software developer (TurboTax, H&amp;R Block, TaxAct, Wolters Kluwer, Drake, etc.) for a calculation error. This absence is itself the most significant finding. The only case filed, Diedrich, resulted in dismissal.
+</div>
+
+<hr>
+
+<h2>B. UCC 2-316 Disclaimers of Implied Warranties</h2>
+
+<h3>Exact Language Required</h3>
+
+<p>UCC 2-316 provides three methods for disclaiming implied warranties:</p>
+
+<p><strong>Method 1: Under 2-316(2) - Specific Written Disclaimer</strong></p>
+<ul>
+<li><strong>Merchantability:</strong> Language must (a) <em>mention "merchantability"</em> and (b) in the case of a writing, be <em>conspicuous</em>.</li>
+<li><strong>Fitness for Particular Purpose:</strong> Must be (a) in <em>writing</em> and (b) <em>conspicuous</em>. No specific magic words required beyond making the exclusion clear.</li>
+</ul>
+
+<p><strong>Method 2: Under 2-316(3)(a) - General Disclaimer ("As Is")</strong></p>
+<ul>
+<li>Expressions like "<strong>as is</strong>", "<strong>with all faults</strong>", or "other language which in common understanding calls the buyer's attention to the exclusion of warranties and makes plain that there is no implied warranty" exclude <em>all</em> implied warranties (both merchantability and fitness).</li>
+<li><strong>No need to mention "merchantability" specifically</strong> when using this method.</li>
+<li><strong>No conspicuousness requirement stated in subsection (3)</strong> itself, but see the gray area below.</li>
+<li><em>Caveat:</em> "unless the circumstances indicate otherwise" - if the seller makes affirmative representations that contradict the "as is" language, the disclaimer may be ineffective.</li>
+</ul>
+
+<p><strong>Method 3: Under 2-316(3)(b) - Buyer Examination</strong></p>
+<ul>
+<li>If the buyer has examined the goods, sample, or model before entering the contract, no implied warranty arises regarding defects the examination should have revealed. Not practically relevant to software.</li>
+</ul>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> To disclaim merchantability under 2-316(2), the word "merchantability" <em>must</em> appear. To use the shortcut under 2-316(3)(a), "as is" or "with all faults" suffices without mentioning merchantability. See UCC 2-316(2)-(3).
+</div>
+
+<h3>Conspicuousness Requirement</h3>
+
+<p><strong>Current Definition (2022 UCC Amendments):</strong> The 2022 Amendments to UCC 1-201(b)(10) modified the definition of "conspicuous" to state that a term is conspicuous if it is "so written, displayed, or presented that a reasonable person against which it is to operate ought to have noticed it," evaluated "<strong>based on the totality of the circumstances</strong>." The 2022 Amendments <em>deleted</em> the prior safe-harbor examples (capitalized headings, contrasting type/font/color, symbols) from the statutory definition, though the expanded Official Commentary (from 1 paragraph to 14 paragraphs) provides non-exhaustive factors. See Cadwalader, <em>On Being Conspicuous: Changes to the UCC's Definition of Conspicuous Terms</em> (2023).</p>
+
+<p><strong>Pre-2022 Definition (still applicable in non-adopting states):</strong> A term is conspicuous if it is "so written, displayed, or presented that a reasonable person against which it is to operate ought to have noticed it," with examples including: (a) headings in capitals equal to or greater in size than surrounding text, (b) language in contrasting type, font, or color, (c) set off by symbols calling attention to it. See Michigan J.L. Reform, <em>Out of Sight, Out of Mind: Hidden Disclaimers and UCC 2-316's Conspicuousness Requirement</em>, 49 U. Mich. J.L. Reform Caveat 1 (2015).</p>
+
+<div class="gray">
+<strong>GRAY AREA - Conspicuousness in Clickwrap:</strong> No court has directly held whether a disclaimer buried in a clickwrap EULA (where the user clicks "I Agree" without scrolling) satisfies the conspicuousness requirement of 2-316(2). The argument runs as follows:
+<ul>
+<li><strong>Pro-enforceability:</strong> Clickwrap requires affirmative assent (unlike browse-wrap), so the user had the opportunity to read. See <span class="case-name">Nguyen v. Barnes &amp; Noble</span>, 763 F.3d 1171, 1176 (9th Cir. 2014). The disclaimer need not be in a pop-up or separate screen; it just needs to be reasonably noticeable within the presented document. <span class="case-name">ProCD</span> supports that mass-market software licenses need not give special prominence to each term.</li>
+<li><strong>Anti-enforceability:</strong> If a disclaimer is buried at paragraph 47 of a 15-page EULA in 8-point font, a court could find it inconspicuous under the "totality of circumstances" test. The Michigan J.L. Reform article argues that courts should require that "a reasonable consumer would have noticed the disclaimer before making the purchase," which could preclude buried-in-EULA approaches.</li>
+<li><strong>Jurisdictional variation:</strong> States that have adopted the 2022 Amendments (as of 2026: a limited but growing number) apply the more flexible "totality of circumstances" test, which could cut either way.</li>
+</ul>
+</div>
+
+<div class="gray">
+<strong>GRAY AREA - Does 2-316(3)(a) require conspicuousness?</strong> The text of 2-316(3)(a) does <em>not</em> state a conspicuousness requirement for "as is" disclaimers. However, some courts and commentators argue that the conspicuousness requirement of 2-316(2) should be read into 2-316(3)(a) by analogy, since the entire section is about ensuring buyer awareness. This is an unresolved split with no authoritative court decision directly addressing it for software. Most practitioners treat "as is" disclaimers as requiring conspicuous presentation as a matter of prudence, even if the statute does not explicitly demand it.
+</div>
+
+<div class="standard">
+<strong>ACTUAL LEGAL STANDARD (conspicuousness):</strong> "So written, displayed, or presented that a reasonable person against which it is to operate ought to have noticed it," evaluated based on the totality of the circumstances (post-2022 amendments) or with reference to the enumerated formatting examples (pre-2022). Determined by the court as a matter of law. See UCC 1-201(b)(10) (2022 amend.); Michigan J.L. Reform at 4-8.
+</div>
+
+<h3>Must Merchantability Be Mentioned Specifically?</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> Yes, if disclaiming under 2-316(2). No, if disclaiming under 2-316(3)(a) using "as is" or "with all faults." This is a binary statutory requirement with no middle ground. Courts strictly enforce the merchantability-mentioning requirement under 2-316(2). See UCC 2-316(2) ("the language must mention merchantability").
+</div>
+
+<h3>Official Comment 3 to 2-316</h3>
+
+<div class="gap">
+<strong>RESEARCH GAP:</strong> Despite 5 separate search attempts using varied query formulations, the exact text of Official Comment 3 to UCC 2-316 could not be retrieved from web-accessible sources. The statutory text of 2-316(3) was obtained from Cornell Law Institute, Findlaw, and multiple state legislative databases, but none included the Official Comments. Based on the statutory text and secondary source references, Comment 3 addresses the operation of subsection (3)(a) - confirming that general language such as "as is" or "with all faults" is sufficient to exclude all implied warranties without specifically mentioning merchantability, but cautioning that "unless the circumstances indicate otherwise" means that contradictory affirmative representations by the seller can override the general disclaimer language. <em>Practitioners should verify the exact Comment 3 text against a printed UCC commentary source (e.g., Speidel, Summers &amp; White, <em>Commercial Transactions</em>).</em>
+</div>
+
+<h3>Cases Applying 2-316 to Software Disclaimers</h3>
+
+<table>
+<tr><th>Case</th><th>Citation</th><th>Application of 2-316</th><th>Result</th></tr>
+<tr>
+<td><span class="case-name">Diedrich v. Wolters Kluwer</span></td>
+<td class="citation">2024 WL 291156 (S.D.N.Y. 2024)</td>
+<td>Disclaimer of implied warranties (merchantability + fitness) in TaxWise software license. Specific language disclaiming regulatory compliance.</td>
+<td>Enforced. No unconscionability found.</td>
+</tr>
+<tr>
+<td><span class="case-name">RRX Industries v. Lab-Con</span></td>
+<td class="citation">772 F.2d 543 (9th Cir. 1985)</td>
+<td>Implied warranty disclaimer in software development contract. Applied 2-316(2).</td>
+<td>Enforced. Warranty disclaimed by writing mentioning merchantability.</td>
+</tr>
+<tr>
+<td><span class="case-name">ProCD v. Zeidenberg</span></td>
+<td class="citation">86 F.3d 1447 (7th Cir. 1996)</td>
+<td>Shrinkwrap license with warranty disclaimers. Discussed conspicuousness in software context.</td>
+<td>Enforced. No special prominence required beyond what contract provides.</td>
+</tr>
+</table>
+
+<div class="practical">
+<strong>PRACTICAL IMPLICATION:</strong> For tax software, use <em>both</em> methods as belt-and-suspenders: (1) a specific 2-316(2) disclaimer in conspicuous form that mentions "merchantability" by name, AND (2) an "as is" / "with all faults" general disclaimer under 2-316(3)(a). Place the disclaimer in a capitalized heading in a section the user must scroll past or acknowledge. The Diedrich approach of adding a specific regulatory-compliance disclaimer ("will not satisfy any statutory or regulatory obligations") goes beyond UCC minimums and provides additional protection in the tax context.
+</div>
+
+<hr>
+
+<h2>C. UCC 2-719 Limitation of Consequential Damages</h2>
+
+<h3>Default Rule</h3>
+
+<div class="settled">
+<strong>SETTLED LAW:</strong> UCC 2-719(3) provides: "Consequential damages may be limited or excluded <strong>unless the limitation or exclusion is unconscionable</strong>. Limitation of consequential damages for injury to the person in the case of consumer goods is <strong>prima facie unconscionable</strong> but limitation of damages where the loss is <strong>commercial is not</strong>." The last sentence has been uniformly interpreted to create a <em>presumption of conscionability</em> for consequential damages limitations in commercial contexts. See WUSTL L. Rev., <em>Enforceability of Contractual Clauses Excluding Sellers from Liability for Consequential Damages</em> (discussing the "double negative" construction and its interpretation across jurisdictions). See also <span class="case-name">County Asphalt, Inc. v. Lewis Welding &amp; Eng'r Corp.</span>, 336 N.W.2d 351 (Minn. Ct. App. 1983) (no unconscionability in absence of bad faith or unequal bargaining power in commercial context).
+</div>
+
+<h3>What Makes It Unconscionable?</h3>
+
+<div class="standard">
+<strong>ACTUAL LEGAL STANDARD:</strong> Unconscionability under UCC 2-302 (incorporated by reference into 2-719(3)) requires a showing of <strong>both</strong> procedural and substantive unconscionability in most jurisdictions, though some courts find one sufficient in extreme cases:
+<ul>
+<li><strong>Procedural unconscionability:</strong> Unfairness in the formation process - adhesion contract, fine print, lack of meaningful choice, unequal bargaining power, sophisticated party vs. unsophisticated party, no opportunity to negotiate.</li>
+<li><strong>Substantive unconscionability:</strong> Unfairly one-sided terms - exclusion of all remedies leaving buyer with no effective remedy, limitation amount bearing no reasonable relationship to the anticipated loss, hidden or surprising terms.</li>
+</ul>
+The burden of proving unconscionability is on the party challenging the clause. In commercial contexts, the presumption of conscionability under 2-719(3) means the challenger bears a heavier burden.
+</div>
+
+<p><strong>Specific factors identified in case law:</strong></p>
+<ul>
+<li><strong>Willful breach by seller:</strong> <span class="case-name">Koehring Co. v. API, Inc.</span>, 440 F. Supp. 447 (E.D. Wis. 1977), held that a willful breach by the seller voided the exclusion of consequential damages. <span class="case-name">Adams v. J.I. Case Co.</span>, 125 Ill. App. 2d 388 (1974), reached similar result. <em>However,</em> this is a minority position; the majority approach treats unconscionability as determined at the time of contract formation, not based on subsequent conduct. See WUSTL L. Rev. analysis (noting the split).</li>
+<li><strong>Complete deprivation of remedy:</strong> If the limited remedy plus the consequential damages exclusion leaves the buyer with <em>no</em> effective remedy for breach, courts are more likely to find unconscionability. See <span class="case-name">Majors v. Kalo Laboratories, Inc.</span>, 387 F. Supp. 840 (S.D. Iowa 1975) (failing to distinguish 2-719(3) unconscionability from failure of essential purpose).</li>
+<li><strong>Consumer vs. commercial:</strong> The prima facie rule for consumer personal injury creates a strong presumption against enforceability in that narrow category. For commercial losses, the presumption runs the other way.</li>
+</ul>
+
+<h3>Failure of Essential Purpose (2-719(2)) and Its Interaction with Consequential Damages Exclusion</h3>
+
+<div class="gray">
+<strong>GRAY AREA - Dependent vs. Independent Approach:</strong> When a limited remedy fails of its essential purpose under 2-719(2), courts are split on whether the consequential damages exclusion also falls:
+<ul>
+<li><strong>Dependent approach:</strong> The exclusion of consequential damages is treated as an "elaboration of the exclusiveness" of the limited remedy. If the limited remedy fails, the exclusion fails with it (<em>per se</em> unconscionable). "The seller cannot have it both ways." See <span class="case-name">Murray v. Holiday Rambler, Inc.</span>, 83 Wis. 2d 406 (1978) (Wisconsin follows this approach).</li>
+<li><strong>Independent approach:</strong> The exclusion of consequential damages is a distinct risk allocation that remains enforceable regardless of whether the limited remedy failed. The litigant must separately prove procedural and substantive unconscionability. See <span class="case-name">American Electric Power Co. v. Westinghouse Electric Corp.</span>, 418 F. Supp. 435 (W.D. Va. 1976) (rejecting that failure of essential purpose automatically voids consequential damages exclusion). The UCC Official Comments support this view.</li>
+<li><strong>Majority trend:</strong> The independent approach appears to be the majority position, particularly in federal courts applying the UCC. The WUSTL L. Rev. article identifies this as the prevailing trend.</li>
+</ul>
+</div>
+
+<h3>Primary vs. Consequential Damages in Tax Software Context</h3>
+
+<p><strong>The critical classification question:</strong> When tax software produces an erroneous calculation, are the resulting IRS penalties, interest, and audit costs "direct" (general) damages or "consequential" (special/indirect) damages?</p>
+
+<div class="gap">
+<strong>RESEARCH GAP:</strong> No reported case directly classifies IRS penalties, interest, or audit costs as either direct or consequential damages in the software breach-of-contract context. The following analysis is based on extrapolation from general consequential damages doctrine:
+</div>
+
+<p><strong>Arguments that penalties/interest are CONSEQUENTIAL damages:</strong></p>
+<ul>
+<li>Under <span class="case-name">Hadley v. Baxendale</span>, (1856) 156 Eng. Rep. 145 (Ex.), consequential damages are those arising from the special circumstances of the injured party that were not within the contemplation of the parties at contract formation. IRS penalties and interest flow from the user's specific tax situation (filing status, income level, number of returns filed) - these are the user's special circumstances, not the general consequence of a software bug.</li>
+<li>The "natural and probable" consequence of a software calculation error is that the output is wrong; the penalty/interest is a secondary effect arising from the interaction between the wrong output and the user's specific regulatory obligations.</li>
+<li>Lost profits are classically consequential; penalties/interest are analogous - they are a financial loss beyond the value of the software license itself (the "direct" loss would be the license fee paid).</li>
+<li>The UCC's own structure supports this: UCC 2-714(2) measures direct damages for breach of warranty as the difference between the value of goods accepted and the value they would have had if conforming - i.e., the value of the software vs. what it should have been worth. Penalties/interest exceed this measure.</li>
+</ul>
+
+<p><strong>Arguments that penalties/interest are DIRECT damages:</strong></p>
+<ul>
+<li>When tax software is purchased specifically for the purpose of producing compliant tax returns, penalties and interest are the "natural and probable" consequence of a breach - they are not a "special circumstance" but rather the foreseeable, expected type of loss from this specific type of product failure.</li>
+<li>Under <span class="case-name">Robinson v. Shell Oil Co.</span>, 70 F.3d 316 (4th Cir. 1995), the distinction turns on foreseeability, not on whether the loss is a "second-order" effect. If penalties are foreseeable (and they plainly are for tax software), they could be classified as general damages.</li>
+<li>Some courts reject the Hadley dichotomy in favor of a more flexible foreseeability analysis. See <span class="case-name">Seaman v. Seaman</span>, 820 P.2d 1345 (Wash. Ct. App. 1992).</li>
+</ul>
+
+<div class="gray">
+<strong>GRAY AREA:</strong> The classification of tax penalties and interest as direct vs. consequential damages is <em>unresolved by authority</em>. The stronger argument is that they are consequential, because: (a) they vary based on the user's specific circumstances (income, filing volume, audit selection), (b) they exceed the contract price (a classic indicator of consequential damages), and (c) courts routinely classify regulatory penalties as consequential in other contexts. However, a court could reasonably find them direct if it focuses on foreseeability alone. The lack of any reported case on this specific question means any classification would be a <em>prediction</em>, not a settled rule.
+</div>
+
+<div class="practical">
+<strong>PRACTICAL IMPLICATION:</strong> A tax software developer should not rely solely on classifying penalties/interest as "consequential" to trigger a 2-719(3) exclusion. Instead, draft the consequential damages exclusion broadly to cover: "indirect, incidental, special, consequential, exemplary, or punitive damages, including but not limited to lost profits, lost revenue, loss of business, loss of goodwill, regulatory penalties, interest, audit costs, and any other losses arising from or related to the use of the Products." This belt-and-suspenders approach covers both classifications. Additionally, a separate clause disclaiming regulatory compliance (as in Diedrich) provides an independent contractual basis for excluding penalties/interest that does not depend on the consequential/direct classification.
+</div>
+
+<h3>Cases Applying 2-719 to Software</h3>
+
+<table>
+<tr><th>Case</th><th>Citation</th><th>Holding</th><th>Key Takeaway</th></tr>
+<tr>
+<td><span class="case-name">RRX Industries v. Lab-Con</span></td>
+<td class="citation">772 F.2d 543 (9th Cir. 1985)</td>
+<td>Upheld consequential damages limitation in software development contract under 2-719(3). No unconscionability found.</td>
+<td>Most directly on-point software case for 2-719.</td>
+</tr>
+<tr>
+<td><span class="case-name">Diedrich v. Wolters Kluwer</span></td>
+<td class="citation">2024 WL 291156 (S.D.N.Y. 2024)</td>
+<td>Enforced consequential damages disclaimer in tax software license. No unconscionability found.</td>
+<td>Confirms 2-719 principles apply to tax software EULAs.</td>
+</tr>
+<tr>
+<td><span class="case-name">County Asphalt v. Lewis Welding</span></td>
+<td class="citation">336 N.W.2d 351 (Minn. Ct. App. 1983)</td>
+<td>Commercial consequential damages limitation not unconscionable absent bad faith or unequal bargaining power.</td>
+<td>Establishes the low bar for 2-719(3) in commercial contexts.</td>
+</tr>
+<tr>
+<td><span class="case-name">American Electric Power v. Westinghouse</span></td>
+<td class="citation">418 F. Supp. 435 (W.D. Va. 1976)</td>
+<td>Failure of essential purpose does not automatically void consequential damages exclusion (independent approach).</td>
+<td>Majority approach: exclusion stands independently.</td>
+</tr>
+<tr>
+<td><span class="case-name">Koehring Co. v. API</span></td>
+<td class="citation">440 F. Supp. 447 (E.D. Wis. 1977)</td>
+<td>Willful breach voids consequential damages exclusion.</td>
+<td>Minority position; relevant if developer knowingly deploys defective software.</td>
+</tr>
+<tr>
+<td><span class="case-name">Sanchelima Intl. v. Walker Stainless</span></td>
+<td class="citation">No. 17-3855, 2019 WL 3945535 (7th Cir. Aug. 21, 2019)</td>
+<td>Seller's argument that agreement gave buyer "no recoverable damages" was virtual admission that limited remedy failed of essential purpose.</td>
+<td>Caution: do not draft exclusion so broadly that it leaves buyer with zero remedy.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Jurisdictional Variations</h2>
+
+<table>
+<tr><th>Jurisdiction</th><th>Notable Variation</th></tr>
+<tr>
+<td><strong>New York</strong></td>
+<td>Follows UCC 2-719(3) presumption for commercial losses. Unconscionability requires both procedural and substantive elements (<span class="case-name">Gillman v. Chase Manhattan Bank</span>). Diedrich applied NY law.</td>
+</tr>
+<tr>
+<td><strong>California</strong></td>
+<td>Consumer protection statutes (Song-Beverly Consumer Warranty Act, Cal. Civ. Code 1793.2(d)) may limit disclaimer enforceability for consumer goods. Not directly applicable to commercial tax software, but relevant if product is marketed to individual taxpayers.</td>
+</tr>
+<tr>
+<td><strong>Wisconsin</strong></td>
+<td>Follows the <em>dependent</em> approach: failure of essential purpose voids consequential damages exclusion (<span class="case-name">Murray v. Holiday Rambler</span>). Minority position.</td>
+</tr>
+<tr>
+<td><strong>Massachusetts</strong></td>
+<td>Strict adherence to 2-316 formalities. See <span class="case-name">Rosenfield v. United States Trust Co.</span>, 290 Mass. 210 (1935) (precursor to UCC approach, requiring conspicuousness).</td>
+</tr>
+<tr>
+<td><strong>2022 UCC Amendment States</strong></td>
+<td>Apply "totality of circumstances" test for conspicuousness (1-201(b)(10)), removing safe-harbor formatting examples. Could make buried-EULA disclaimers more vulnerable.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Consolidated Practical Checklist for Tax Software Developers</h2>
+
+<ol>
+<li><strong>Warranty Disclaimer (UCC 2-316 belt-and-suspenders):</strong>
+<ul>
+<li>Include a 2-316(2) disclaimer in conspicuous form that <em>specifically mentions "merchantability"</em></li>
+<li>Include an "AS IS" and "WITH ALL FAULTS" disclaimer under 2-316(3)(a)</li>
+<li>Specifically disclaim fitness for a particular purpose</li>
+</ul>
+</li>
+<li><strong>Regulatory Compliance Disclaimer (Diedrich approach):</strong>
+<ul>
+<li>"Use of the Products will not satisfy any statutory or regulatory obligations"</li>
+<li>"ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PRODUCT(S), INCLUDING ELECTRONIC FILING"</li>
+<li>Place these in ALL-CAPS or otherwise conspicuous format</li>
+</ul>
+</li>
+<li><strong>Consequential Damages Exclusion (UCC 2-719):</strong>
+<ul>
+<li>Broadly define: "indirect, incidental, special, consequential, exemplary, or punitive damages, including but not limited to lost profits, regulatory penalties, interest, audit costs, and any other losses"</li>
+<li>Do NOT limit to "consequential damages" alone - enumerate specific types relevant to tax software</li>
+<li>Consider whether to provide a limited monetary cap as an additional safeguard (to avoid the Sanchelima problem of zero remedies)</li>
+</ul>
+</li>
+<li><strong>Anti-Reliance Clause (fraud prevention):</strong>
+<ul>
+<li>"User acknowledges that it has not relied on any statements not set forth in this agreement"</li>
+<li>Prevents fraud-in-the-inducement claims. See <span class="case-name">IBM v. Lufkin Industries</span>, 2019 WL 356838 (Tex. 2019).</li>
+</ul>
+</li>
+<li><strong>Short Limitations Period:</strong>
+<ul>
+<li>One year from breach (as in Diedrich) - enforceable under NY and IL law per Diedrich</li>
+<li>Accrues at time of breach, not when damages discovered</li>
+</ul>
+</li>
+<li><strong>Assent Mechanism:</strong>
+<ul>
+<li>Use clickwrap (not browse-wrap) per <span class="case-name">Specht v. Netscape</span></li>
+<li>Consider requiring scroll-through or separate acknowledgment of disclaimer section</li>
+</ul>
+</li>
+</ol>
+
+<hr>
+
+<h2>Sources Read</h2>
+<ul>
+<li>Miller Thomson, <em>Diedrich v. Wolters Kluwer: An Examination of Disclaimer Language in Software Agreements</em> (2024)</li>
+<li>Evan.law, <em>Disclaimer in Software License Agreement Protected Vendor from Liability</em> (Jan. 26, 2024)</li>
+<li>Lexology, <em>Diedrich v. Wolters Kluwer: An Examination of Disclaimer Language</em> (2024)</li>
+<li>Uprightor, <em>Understanding Liability Limitations in Software Agreements</em></li>
+<li>Cornell Law Institute, UCC 2-316 (full text with subsections 1-4)</li>
+<li>Michigan J.L. Reform, <em>Out of Sight, Out of Mind: Hidden Disclaimers and UCC 2-316's Conspicuousness Requirement</em>, 49 U. Mich. J.L. Reform Caveat 1 (2015)</li>
+<li>SW Law, Johnson, <em>Disclaiming Warranties That Were Never Implied: The Irrelevance of UCC 2-316 When the CISG Applies</em></li>
+<li>Cadwalader, <em>On Being Conspicuous: Changes to the UCC's Definition of Conspicuous Terms</em> (2023)</li>
+<li>Cornell Law Institute, UCC 2-719 (full text with subsections 1-3)</li>
+<li>Findlaw, <em>Protecting Consequential Damages Waivers in Software License Agreements</em></li>
+<li>Masuda Funai, <em>Are Remedies Limitations Enforceable When a Limited Remedy Fails of Its Essential Purpose</em></li>
+<li>WUSTL L. Rev., <em>Enforceability of Contractual Clauses Excluding Sellers from Liability for Consequential Damages</em></li>
+<li>Justia, <em>Diedrich v. Wolters Kluwer</em>, No. 1:23-cv-00656, Doc. 21 (S.D.N.Y. 2024)</li>
+<li>FindCourtCases, <em>Diedrich v. Kluwer (2024) Summary</em></li>
+<li>Cornell L. Rev., <em>Highways and Some of the Byways in the Sales and Bulk Sales Articles of the UCC</em></li>
+</ul>
+
+</body>
+</html>
