@@ -37,3 +37,7 @@ yarn-error.log*
 next-env.d.ts
 /data
 taxfile-workpack/
+
+dist
+__pycache__
+target/
